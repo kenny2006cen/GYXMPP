@@ -7,10 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "XMPPFramework.h"
-#import <XMPPFramework/XMPP.h>
-#import "XMPPReconnect.h"
-#import "XMPPLogging.h"
 
 //// 自定义Log
 //#ifdef DEBUG
@@ -19,6 +15,7 @@
 //
 //#else
 //#define WCLog(...)
+//static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 typedef enum {
     XMPPResultTypeConnecting,//连接中...

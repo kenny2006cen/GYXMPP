@@ -9,6 +9,9 @@
 #import "GYXMPP.h"
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "XMPPFramework.h"
+#import "XMPPReconnect.h"
+#import "XMPPLogging.h"
 
 
 NSString *const WCLoginStatusChangeNotification = @"WCLoginStatusNotification";
@@ -152,6 +155,7 @@ static id _instace;
     NSError *err = nil;
     if(![_xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&err]){
       //  WCLog(@"%@",err);
+      //  DDLogInfo(@"");
     }
     
 }

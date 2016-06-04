@@ -14,6 +14,7 @@
 		604357741D026B4600CF2228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 604357731D026B4600CF2228 /* Assets.xcassets */; };
 		604357821D026B4600CF2228 /* GYXMPPUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 604357811D026B4600CF2228 /* GYXMPPUITests.m */; };
 		6043578F1D027AD100CF2228 /* GYXMPP.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043578E1D027AD100CF2228 /* GYXMPP.m */; };
+		604357921D028ED900CF2228 /* GYXMPPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 604357911D028ED900CF2228 /* GYXMPPTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		604357831D026B4600CF2228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6043578D1D027AD100CF2228 /* GYXMPP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYXMPP.h; sourceTree = "<group>"; };
 		6043578E1D027AD100CF2228 /* GYXMPP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYXMPP.m; sourceTree = "<group>"; };
+		604357901D028ED900CF2228 /* GYXMPPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYXMPPTool.h; sourceTree = "<group>"; };
+		604357911D028ED900CF2228 /* GYXMPPTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYXMPPTool.m; sourceTree = "<group>"; };
 		F96369142F567A2A9EFBFFAE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +141,8 @@
 			children = (
 				6043578D1D027AD100CF2228 /* GYXMPP.h */,
 				6043578E1D027AD100CF2228 /* GYXMPP.m */,
+				604357901D028ED900CF2228 /* GYXMPPTool.h */,
+				604357911D028ED900CF2228 /* GYXMPPTool.m */,
 			);
 			path = GYXMPP;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				6043578F1D027AD100CF2228 /* GYXMPP.m in Sources */,
 				6043576F1D026B4600CF2228 /* ViewController.m in Sources */,
 				6043576C1D026B4600CF2228 /* AppDelegate.m in Sources */,
+				604357921D028ED900CF2228 /* GYXMPPTool.m in Sources */,
 				604357691D026B4600CF2228 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

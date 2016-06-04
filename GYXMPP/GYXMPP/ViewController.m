@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "GYXMPP.h"
 @interface ViewController ()
 
 @end
@@ -17,6 +17,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [[GYXMPP sharedInstance]xmppUserLogin:^(XMPPResultType type) {
+        
+        if (type==XMPPResultTypeLoginSuccess) {
+            
+            NSLog(@"登陆成功");
+        }
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -13,6 +13,7 @@
 		6043576F1D026B4600CF2228 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043576E1D026B4600CF2228 /* ViewController.m */; };
 		604357741D026B4600CF2228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 604357731D026B4600CF2228 /* Assets.xcassets */; };
 		604357821D026B4600CF2228 /* GYXMPPUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 604357811D026B4600CF2228 /* GYXMPPUITests.m */; };
+		6043578F1D027AD100CF2228 /* GYXMPP.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043578E1D027AD100CF2228 /* GYXMPP.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,8 @@
 		6043577D1D026B4600CF2228 /* GYXMPPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GYXMPPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		604357811D026B4600CF2228 /* GYXMPPUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GYXMPPUITests.m; sourceTree = "<group>"; };
 		604357831D026B4600CF2228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6043578D1D027AD100CF2228 /* GYXMPP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYXMPP.h; sourceTree = "<group>"; };
+		6043578E1D027AD100CF2228 /* GYXMPP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYXMPP.m; sourceTree = "<group>"; };
 		F96369142F567A2A9EFBFFAE /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +104,7 @@
 		604357661D026B4600CF2228 /* GYXMPP */ = {
 			isa = PBXGroup;
 			children = (
+				6043578C1D027A8F00CF2228 /* GYXMPP */,
 				6043576A1D026B4600CF2228 /* AppDelegate.h */,
 				6043576B1D026B4600CF2228 /* AppDelegate.m */,
 				6043576D1D026B4600CF2228 /* ViewController.h */,
@@ -127,6 +131,15 @@
 				604357831D026B4600CF2228 /* Info.plist */,
 			);
 			path = GYXMPPUITests;
+			sourceTree = "<group>";
+		};
+		6043578C1D027A8F00CF2228 /* GYXMPP */ = {
+			isa = PBXGroup;
+			children = (
+				6043578D1D027AD100CF2228 /* GYXMPP.h */,
+				6043578E1D027AD100CF2228 /* GYXMPP.m */,
+			);
+			path = GYXMPP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6043578F1D027AD100CF2228 /* GYXMPP.m in Sources */,
 				6043576F1D026B4600CF2228 /* ViewController.m in Sources */,
 				6043576C1D026B4600CF2228 /* AppDelegate.m in Sources */,
 				604357691D026B4600CF2228 /* main.m in Sources */,
@@ -389,6 +403,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GYXMPP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jlc.GYXMPP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -401,6 +416,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GYXMPP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jlc.GYXMPP;
 				PRODUCT_NAME = "$(TARGET_NAME)";

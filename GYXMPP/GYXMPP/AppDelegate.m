@@ -31,6 +31,7 @@
     
     self.window.rootViewController = navLoginVc;
 
+    [self.window makeKeyAndVisible];
     
     return YES;
 }

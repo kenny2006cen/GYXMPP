@@ -8,19 +8,60 @@
 
 #import "ViewController.h"
 #import "GYXMPP.h"
-#import <MagicalRecord/MagicalRecord.h>
+#import "GYHDBusinessCell.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate,GYXMPPDelegate>{
+
+}
+
+@property (nonatomic, strong) UITableView *tableView;
+/**
+ *数据源数组
+ */
+@property(nonatomic, strong) NSMutableArray *messageArray;
+
 
 @end
 
 @implementation ViewController
 
+- (NSMutableArray *)messageArray
+{
+    if (!_messageArray) {
+        _messageArray = [NSMutableArray array];
+    }
+    return _messageArray;
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+  
+   
+    [self setUpNav];
     
-    self.title = @"登录";
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, 568 - 108)];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _tableView.rowHeight = 68.0f;
+    
+    [self.view addSubview:_tableView];
+    
+    self.tableView.delegate=self;
+    self.tableView.dataSource=self;
+    
+    [self.tableView registerClass:[GYHDBusinessCell class] forCellReuseIdentifier:@"GYHDBusinessCell"];
+    
+    //[self getData];
+    
+    [GYXMPP sharedInstance].delegate = self;
+    
+}
+
+-(void)setUpNav{
+    self.title = @"消息";
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     
@@ -30,7 +71,6 @@
     
     [button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.view addSubview:button];
     
     UIButton *button2 = [UIButton buttonWithType:UIButtonTypeSystem];
     
@@ -40,7 +80,11 @@
     
     [button2 addTarget:self action:@selector(sendAction) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.view addSubview:button2];
+    self.navigationItem.leftBarButtonItem =[[UIBarButtonItem alloc]initWithCustomView:button];
+    
+    
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:button2];
+
 }
 
 -(void)loginAction{
@@ -51,18 +95,23 @@
             
             NSLog(@"登陆成功");
             
-            
+            [self getData];
         }
         
     }];
     
 }
 
+-(void)getData{
+    
+   
+}
+
 -(void)sendAction{
 
-    GYMessage *message =[GYMessage MR_createEntity];
+    GYMessage *message =[[GYMessage alloc]init];
     
-    message.msgFromUser =@"";
+    message.msgFromUser =[GYXMPP sharedInstance].userName;
     message.msgToUser =@"m_e_0603211000000260000@im.gy.com";
     message.msgType =@1;
     
@@ -93,5 +142,59 @@
     return string;
 }
 
+#pragma mark - UITableViewDataSource,UITableViewDelegate
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.messageArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    GYHDBusinessCell *cell = [GYHDBusinessCell cellWithTableView:tableView];
+    cell.businessModel = self.messageArray[indexPath.row];
+    
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    return 70;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    GYMessage *message = self.messageArray[indexPath.row];
+    
+    
+//    GYHDBasicViewController *NextVC = [[businessModel.pushNextController alloc] init];
+//    NextVC.title = businessModel.userNameStr;
+//    
+//    NSString *messageCard = businessModel.messageCard;
+//    NextVC.messageCard = messageCard;
+//    
+//    NextVC.operatorName = businessModel.operatorName;//如果有数据的话
+//    NextVC.operId = businessModel.operId;
+//    
+//    if ([businessModel.userType containsString:@"c"]) {
+//        
+//        [NextVC segmentViewTitle:businessModel.userNameStr];
+//    }
+//    
+//    [self.navigationController pushViewController:NextVC animated:YES];
+}
+
+#pragma mark - GYXMPP Delegate
+
+-(void)xmppSendingMessage:(GYMessage *)message{
+
+    [self.messageArray addObject:message];
+    
+    [self.tableView reloadData];
+}
 
 @end

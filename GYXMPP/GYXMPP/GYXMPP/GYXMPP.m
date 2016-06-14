@@ -29,12 +29,7 @@ NSString *const WCLoginStatusChangeNotification = @"WCLoginStatusNotification";
 }
 @property (nonatomic, assign) NSTimeInterval connectTimeout;
 
-@property (nonatomic,strong) NSString *userName;
-@property (nonatomic,strong) NSString *passWord;
-@property (nonatomic,strong) NSString *host;
-@property (nonatomic,strong) NSString *port;
-@property (nonatomic,strong) NSString *domain;
-@property (nonatomic,strong) NSString *resource;
+
 
 
 //内部方法
@@ -123,7 +118,7 @@ static id _instace;
   //  [self postNotification:XMPPResultTypeConnecting];
     
     self.userName =@"m_e_0603211000000000000";
-    self.passWord = @"0603211000000000000,4,6351fa223472db83d0b5254034917100d1a972a53e57b78ca5f08881e643ae52,06032110000";
+    self.passWord = @"0603211000000000000,4,bc84d7991daf0fc07371e5d0285d7c7d598ae68c5e25969ecfbc92c0f1655281,06032110000";
     
     self.domain = @"im.gy.com";
     self.host = @"ldev04.dev.gyist.com";
@@ -252,27 +247,7 @@ static id _instace;
     NSXMLElement *requestACK = [message elementForName:@"request" xmlnsPrefix:@"gy:abnormal:offline"];
     NSString *elementId = [[requestACK elementForName:@"id"] stringValue];
 
-    /*
-    if([UIApplication sharedApplication].applicationState != UIApplicationStateActive){
-       // WCLog(@"在后台");
-        
-        //本地通知
-        UILocalNotification *localNoti = [[UILocalNotification alloc] init];
-        
-        // 设置内容
-        localNoti.alertBody = [NSString stringWithFormat:@"%@\n%@",message.fromStr,message.body];
-        
-        // 设置通知执行时间
-        localNoti.fireDate = [NSDate date];
-        
-        //声音
-        localNoti.soundName = @"default";
-        
-        //执行
-        [[UIApplication sharedApplication] scheduleLocalNotification:localNoti];
-        
-        //{"aps":{'alert':"zhangsan\n have dinner":'sound':'default',badge:'12'}}
-    }*/
+
 }
 
 -(void)xmppStream:(XMPPStream *)sender didSendMessage:(XMPPMessage *)message{
@@ -360,21 +335,20 @@ static id _instace;
     
     [_xmppStream sendElement:xmppMessage];
     
-     
+    
+    if (self.delegate&&[self.delegate respondsToSelector:@selector(xmppSendingMessage:)]) {
+        
+        [self.delegate xmppSendingMessage:message];
+        
+    }
+    
     [self saveMessageToDB:message];
   
-    sleep(1);
-    
-   NSArray *GYMessageArray = [GYMessage MR_findAll];
-
 }
 
 -(BOOL)saveMessageToDB:(GYMessage *)message{
 
-    NSManagedObjectContext *localContext    = [NSManagedObjectContext MR_context];
-    
-    // 保存修改到当前上下文中.
-    [localContext MR_saveToPersistentStoreAndWait];
+   
     
     return YES;
 }

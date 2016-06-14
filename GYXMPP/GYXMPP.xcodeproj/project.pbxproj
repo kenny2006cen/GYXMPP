@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		189C75A71D0FA80400FCEC31 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 189C75A51D0FA80400FCEC31 /* Model.xcdatamodeld */; };
-		189C75AC1D0FB14500FCEC31 /* GYMessage+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C75A91D0FB14500FCEC31 /* GYMessage+CoreDataProperties.m */; };
 		189C75AD1D0FB14500FCEC31 /* GYMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C75AB1D0FB14500FCEC31 /* GYMessage.m */; };
-		189C75B61D0FD52000FCEC31 /* AppDelegate+GYCordata.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C75B51D0FD52000FCEC31 /* AppDelegate+GYCordata.m */; };
 		189C75BC1D0FDED000FCEC31 /* GYMessengeExtendElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C75BB1D0FDED000FCEC31 /* GYMessengeExtendElement.m */; };
 		189C75BF1D0FDF3E00FCEC31 /* GYGenUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C75BE1D0FDF3E00FCEC31 /* GYGenUUID.m */; };
+		189C75C11D0FF97900FCEC31 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 189C75C01D0FF97900FCEC31 /* Default-568h@2x.png */; };
+		189C75C41D0FFB1D00FCEC31 /* GYHDBusinessCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C75C31D0FFB1D00FCEC31 /* GYHDBusinessCell.m */; };
 		3D905A33E0153DD120C33C73 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5205B05BDC3E478BBBE69240 /* libPods.a */; };
 		604357691D026B4600CF2228 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 604357681D026B4600CF2228 /* main.m */; };
 		6043576C1D026B4600CF2228 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043576B1D026B4600CF2228 /* AppDelegate.m */; };
@@ -34,17 +33,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		189C75A61D0FA80400FCEC31 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		189C75A81D0FB14500FCEC31 /* GYMessage+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GYMessage+CoreDataProperties.h"; sourceTree = "<group>"; };
-		189C75A91D0FB14500FCEC31 /* GYMessage+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GYMessage+CoreDataProperties.m"; sourceTree = "<group>"; };
 		189C75AA1D0FB14500FCEC31 /* GYMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYMessage.h; sourceTree = "<group>"; };
 		189C75AB1D0FB14500FCEC31 /* GYMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYMessage.m; sourceTree = "<group>"; };
-		189C75B41D0FD52000FCEC31 /* AppDelegate+GYCordata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+GYCordata.h"; sourceTree = "<group>"; };
-		189C75B51D0FD52000FCEC31 /* AppDelegate+GYCordata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+GYCordata.m"; sourceTree = "<group>"; };
 		189C75BA1D0FDED000FCEC31 /* GYMessengeExtendElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYMessengeExtendElement.h; sourceTree = "<group>"; };
 		189C75BB1D0FDED000FCEC31 /* GYMessengeExtendElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYMessengeExtendElement.m; sourceTree = "<group>"; };
 		189C75BD1D0FDF3E00FCEC31 /* GYGenUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYGenUUID.h; sourceTree = "<group>"; };
 		189C75BE1D0FDF3E00FCEC31 /* GYGenUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYGenUUID.m; sourceTree = "<group>"; };
+		189C75C01D0FF97900FCEC31 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		189C75C21D0FFB1D00FCEC31 /* GYHDBusinessCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDBusinessCell.h; sourceTree = "<group>"; };
+		189C75C31D0FFB1D00FCEC31 /* GYHDBusinessCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDBusinessCell.m; sourceTree = "<group>"; };
 		207A870B5368F32B0EACE0E8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5205B05BDC3E478BBBE69240 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		604357641D026B4600CF2228 /* GYXMPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GYXMPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +101,7 @@
 		6043575B1D026B4600CF2228 = {
 			isa = PBXGroup;
 			children = (
+				189C75C01D0FF97900FCEC31 /* Default-568h@2x.png */,
 				604357661D026B4600CF2228 /* GYXMPP */,
 				604357801D026B4600CF2228 /* GYXMPPUITests */,
 				604357651D026B4600CF2228 /* Products */,
@@ -127,8 +125,8 @@
 				6043578C1D027A8F00CF2228 /* GYXMPP */,
 				6043576A1D026B4600CF2228 /* AppDelegate.h */,
 				6043576B1D026B4600CF2228 /* AppDelegate.m */,
-				189C75B41D0FD52000FCEC31 /* AppDelegate+GYCordata.h */,
-				189C75B51D0FD52000FCEC31 /* AppDelegate+GYCordata.m */,
+				189C75C21D0FFB1D00FCEC31 /* GYHDBusinessCell.h */,
+				189C75C31D0FFB1D00FCEC31 /* GYHDBusinessCell.m */,
 				6043576D1D026B4600CF2228 /* ViewController.h */,
 				6043576E1D026B4600CF2228 /* ViewController.m */,
 				604357731D026B4600CF2228 /* Assets.xcassets */,
@@ -162,9 +160,6 @@
 				6043578E1D027AD100CF2228 /* GYXMPP.m */,
 				604357901D028ED900CF2228 /* GYXMPPTool.h */,
 				604357911D028ED900CF2228 /* GYXMPPTool.m */,
-				189C75A51D0FA80400FCEC31 /* Model.xcdatamodeld */,
-				189C75A81D0FB14500FCEC31 /* GYMessage+CoreDataProperties.h */,
-				189C75A91D0FB14500FCEC31 /* GYMessage+CoreDataProperties.m */,
 				189C75AA1D0FB14500FCEC31 /* GYMessage.h */,
 				189C75AB1D0FB14500FCEC31 /* GYMessage.m */,
 				189C75BA1D0FDED000FCEC31 /* GYMessengeExtendElement.h */,
@@ -259,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				604357741D026B4600CF2228 /* Assets.xcassets in Resources */,
+				189C75C11D0FF97900FCEC31 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,14 +323,12 @@
 				6043578F1D027AD100CF2228 /* GYXMPP.m in Sources */,
 				6043576F1D026B4600CF2228 /* ViewController.m in Sources */,
 				189C75BC1D0FDED000FCEC31 /* GYMessengeExtendElement.m in Sources */,
-				189C75B61D0FD52000FCEC31 /* AppDelegate+GYCordata.m in Sources */,
 				6043576C1D026B4600CF2228 /* AppDelegate.m in Sources */,
+				189C75C41D0FFB1D00FCEC31 /* GYHDBusinessCell.m in Sources */,
 				189C75AD1D0FB14500FCEC31 /* GYMessage.m in Sources */,
 				189C75BF1D0FDF3E00FCEC31 /* GYGenUUID.m in Sources */,
 				604357921D028ED900CF2228 /* GYXMPPTool.m in Sources */,
 				604357691D026B4600CF2228 /* main.m in Sources */,
-				189C75AC1D0FB14500FCEC31 /* GYMessage+CoreDataProperties.m in Sources */,
-				189C75A71D0FA80400FCEC31 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,19 +512,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		189C75A51D0FA80400FCEC31 /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				189C75A61D0FA80400FCEC31 /* Model.xcdatamodel */,
-			);
-			currentVersion = 189C75A61D0FA80400FCEC31 /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 6043575C1D026B4600CF2228 /* Project object */;
 }

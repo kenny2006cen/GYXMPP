@@ -32,6 +32,8 @@ typedef void (^XMPPResultBlock)(XMPPResultType type);// XMPP请求结果的block
 
 @protocol GYXMPPDelegate <NSObject>
 
+-(void)xmppSendingMessage:(GYMessage*)message;
+
 -(void)xmppDidSendMessage:(GYMessage*)message;
 
 -(void)xmppDidFailedSendMessage:(GYMessage*)message;
@@ -44,6 +46,12 @@ typedef void (^XMPPResultBlock)(XMPPResultType type);// XMPP请求结果的block
 
 @property(nonatomic,assign)id <GYXMPPDelegate>delegate;
 
+@property (nonatomic,copy) NSString *userName;
+@property (nonatomic,copy) NSString *passWord;
+@property (nonatomic,copy) NSString *host;
+@property (nonatomic,copy) NSString *port;
+@property (nonatomic,copy) NSString *domain;
+@property (nonatomic,copy) NSString *resource;
 
 + (instancetype)sharedInstance;
 

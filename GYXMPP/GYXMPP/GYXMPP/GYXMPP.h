@@ -7,23 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "DDlog.h"
 //// 自定义Log
+
 //#ifdef DEBUG
 //
 //#define WCLog(...) NSLog(@"%s %d \n %@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
 //
 //#else
 //#define WCLog(...)
-//static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
 typedef enum {
     XMPPResultTypeConnecting,//连接中...
     XMPPResultTypeLoginSuccess,//登录成功
     XMPPResultTypeLoginFailure,//登录失败
     XMPPResultTypeNetErr,//网络不给力
-    XMPPResultTypeRegisterSuccess,//注册成功
-    XMPPResultTypeRegisterFailure//注册失败
 }XMPPResultType;
 
 typedef void (^XMPPResultBlock)(XMPPResultType type);// XMPP请求结果的block

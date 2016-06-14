@@ -26,6 +26,14 @@ NSString *const WCLoginStatusChangeNotification = @"WCLoginStatusNotification";
 }
 @property (nonatomic, assign) NSTimeInterval connectTimeout;
 
+@property (nonatomic,strong) NSString *userName;
+@property (nonatomic,strong) NSString *passWord;
+@property (nonatomic,strong) NSString *host;
+@property (nonatomic,strong) NSString *port;
+@property (nonatomic,strong) NSString *domain;
+@property (nonatomic,strong) NSString *resource;
+
+
 //内部方法
 // 1. 初始化XMPPStream
 -(void)setupXMPPStream;
@@ -83,22 +91,32 @@ static id _instace;
     return self;
 }
 
+/*
+-(NSString*)domain{
+    if (!_domain) {
+        _domain = @"im.gy.com";
+    }
+    return _domain;
+}
 
+-(NSString*)resource{
+    if (!_resource) {
+        _resource = @"mobile_im";
+    }
+    return _resource;
+}
+ */
 #pragma mark  -私有方法
 #pragma mark 初始化XMPPStream
 -(void)setupXMPPStream{
     
     _xmppStream = [[XMPPStream alloc] init];
-#warning 每一个模块添加后都要激活
+// 每一个模块添加后都要激活
     //添加自动连接模块
     _reconnect = [[XMPPReconnect alloc] init];
     [_reconnect activate:_xmppStream];
     
-    
     // 添加聊天模块
-//    _msgStorage = [[XMPPMessageArchivingCoreDataStorage alloc] init];
-//    _msgArchiving = [[XMPPMessageArchiving alloc] initWithMessageArchivingStorage:_msgStorage];
-//    [_msgArchiving activate:_xmppStream];
     
     _xmppStream.enableBackgroundingOnSocket = YES;
     
@@ -114,9 +132,7 @@ static id _instace;
     
     // 停止模块
     [_reconnect deactivate];
-  
-//    [_msgArchiving deactivate];
-    
+      
     // 断开连接
     [_xmppStream disconnect];
     
@@ -133,29 +149,40 @@ static id _instace;
     }
     
     // 发送通知【正在连接】
-    [self postNotification:XMPPResultTypeConnecting];
+  //  [self postNotification:XMPPResultTypeConnecting];
     
     // 设置登录用户JID
     //resource 标识用户登录的客户端 iphone android
     
     // 从单例获取用户名
-    NSString *user = @"jianglincen";
-   
     
-    XMPPJID *myJID = [XMPPJID jidWithUser:user domain:@"127.0.0.1" resource:@"iphone" ];
+    self.userName =@"m_e_0603211000000000000";
+    self.passWord = @"0603211000000000000,4,6351fa223472db83d0b5254034917100d1a972a53e57b78ca5f08881e643ae52,06032110000";
+    
+    self.domain = @"im.gy.com";
+    self.host = @"ldev04.dev.gyist.com";
+    self.port = @"5222";
+    
+    self.resource = @"mobile_im";
+    
+    
+    XMPPJID *myJID = [XMPPJID jidWithUser:self.userName domain: self.domain resource:self.resource];
+    
     _xmppStream.myJID = myJID;
     
     // 设置服务器域名
-    _xmppStream.hostName = @"127.0.0.1";//不仅可以是域名，还可是IP地址
+    _xmppStream.hostName =  self.host;//不仅可以是域名，还可是IP地址
     
     // 设置端口 如果服务器端口是5222，可以省略
-    _xmppStream.hostPort = 5222;
+    _xmppStream.hostPort = [self.port intValue];
     
     // 连接
     NSError *err = nil;
     if(![_xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&err]){
-      //  WCLog(@"%@",err);
-      //  DDLogInfo(@"");
+        
+        if (err) {
+             DDLogInfo(@"%@",err);
+        }
     }
     
 }
@@ -168,12 +195,11 @@ static id _instace;
     
     // 从单例里获取密码
    // NSString *pwd = [WCUserInfo sharedWCUserInfo].pwd;
-     NSString *pwd =@"123";
     
-    [_xmppStream authenticateWithPassword:pwd error:&err];
+    [_xmppStream authenticateWithPassword:self.passWord error:&err];
     
     if (err) {
-       // WCLog(@"%@",err);
+        DDLogInfo(@"%@",err);
     }
 }
 
@@ -188,11 +214,6 @@ static id _instace;
     
 }
 
-
-/**
- * 通知 WCHistoryViewControllers 登录状态
- *
- */
 -(void)postNotification:(XMPPResultType)resultType{
     
     // 将登录状态放入字典，然后通过通知传递
@@ -212,10 +233,8 @@ static id _instace;
 }
 #pragma mark  与主机断开连接
 -(void)xmppStreamDidDisconnect:(XMPPStream *)sender withError:(NSError *)error{
-    // 如果有错误，代表连接失败
     
     // 如果没有错误，表示正常的断开连接(人为断开连接)
-    
     
     if(error && _resultBlock){
         _resultBlock(XMPPResultTypeNetErr);
@@ -260,11 +279,19 @@ static id _instace;
 }
 
 
-#pragma mark 接收到好友消息
+#pragma mark -消息方法
 -(void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message{
   //  WCLog(@"%@",message);
     
     //如果当前程序不在前台，发出一个本地通知
+    
+    NSString *toID = [[message attributeForName:@"to"] stringValue];
+    
+    //add by shiang,检查是否收到消息回执
+    NSXMLElement *requestACK = [message elementForName:@"request" xmlnsPrefix:@"gy:abnormal:offline"];
+    NSString *elementId = [[requestACK elementForName:@"id"] stringValue];
+
+    /*
     if([UIApplication sharedApplication].applicationState != UIApplicationStateActive){
        // WCLog(@"在后台");
         
@@ -284,7 +311,15 @@ static id _instace;
         [[UIApplication sharedApplication] scheduleLocalNotification:localNoti];
         
         //{"aps":{'alert':"zhangsan\n have dinner":'sound':'default',badge:'12'}}
-    }
+    }*/
+}
+
+-(void)xmppStream:(XMPPStream *)sender didSendMessage:(XMPPMessage *)message{
+
+}
+
+- (void)xmppStream:(XMPPStream *)sender didFailToSendMessage:(XMPPMessage *)message error:(NSError *)error{
+
 }
 
 -(void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence{

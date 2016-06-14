@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		189C75A41D0F9D1E00FCEC31 /* GYMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C75A31D0F9D1E00FCEC31 /* GYMessage.m */; };
 		3D905A33E0153DD120C33C73 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5205B05BDC3E478BBBE69240 /* libPods.a */; };
 		604357691D026B4600CF2228 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 604357681D026B4600CF2228 /* main.m */; };
 		6043576C1D026B4600CF2228 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6043576B1D026B4600CF2228 /* AppDelegate.m */; };
@@ -28,6 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		189C75A21D0F9D1E00FCEC31 /* GYMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYMessage.h; sourceTree = "<group>"; };
+		189C75A31D0F9D1E00FCEC31 /* GYMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYMessage.m; sourceTree = "<group>"; };
 		207A870B5368F32B0EACE0E8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5205B05BDC3E478BBBE69240 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		604357641D026B4600CF2228 /* GYXMPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GYXMPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +146,8 @@
 				6043578E1D027AD100CF2228 /* GYXMPP.m */,
 				604357901D028ED900CF2228 /* GYXMPPTool.h */,
 				604357911D028ED900CF2228 /* GYXMPPTool.m */,
+				189C75A21D0F9D1E00FCEC31 /* GYMessage.h */,
+				189C75A31D0F9D1E00FCEC31 /* GYMessage.m */,
 			);
 			path = GYXMPP;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 				6043578F1D027AD100CF2228 /* GYXMPP.m in Sources */,
 				6043576F1D026B4600CF2228 /* ViewController.m in Sources */,
 				6043576C1D026B4600CF2228 /* AppDelegate.m in Sources */,
+				189C75A41D0F9D1E00FCEC31 /* GYMessage.m in Sources */,
 				604357921D028ED900CF2228 /* GYXMPPTool.m in Sources */,
 				604357691D026B4600CF2228 /* main.m in Sources */,
 			);

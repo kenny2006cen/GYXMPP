@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "DDlog.h"
+#import "GYMessage.h"
+
 //// 自定义Log
 
 //#ifdef DEBUG
@@ -28,7 +30,20 @@ typedef enum {
 typedef void (^XMPPResultBlock)(XMPPResultType type);// XMPP请求结果的block
 
 
+@protocol GYXMPPDelegate <NSObject>
+
+-(void)xmppDidSendMessage:(GYMessage*)message;
+
+-(void)xmppDidFailedSendMessage:(GYMessage*)message;
+
+-(void)xmppdidReceiveMessage:(GYMessage*)message;
+
+@end
+
 @interface GYXMPP : NSObject
+
+@property(nonatomic,assign)id <GYXMPPDelegate>delegate;
+
 
 + (instancetype)sharedInstance;
 
@@ -41,5 +56,8 @@ typedef void (^XMPPResultBlock)(XMPPResultType type);// XMPP请求结果的block
  *  用户登录
  */
 -(void)xmppUserLogin:(XMPPResultBlock)resultBlock;
+
+-(void)sendMessage:(GYMessage*)message;
+
 
 @end

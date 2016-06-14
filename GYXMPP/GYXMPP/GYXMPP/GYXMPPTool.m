@@ -156,7 +156,6 @@
 #pragma mark 下载进度
 -(void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite{
     
-    
     if (_dowloadProgressBlock) {
         //已写数据字节数除以总字节数就是下载进度
         CGFloat progress = (CGFloat)totalBytesWritten / totalBytesExpectedToWrite;

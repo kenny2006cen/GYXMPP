@@ -12,7 +12,10 @@
 #import "XMPPFramework.h"
 #import "XMPPReconnect.h"
 #import "XMPPLogging.h"
+#import "GYGenUUID.h"
+#import "GYMessengeExtendElement.h"
 
+//#import "GYMessengeExtendElement.h"
 
 NSString *const WCLoginStatusChangeNotification = @"WCLoginStatusNotification";
 
@@ -57,14 +60,6 @@ NSString *const WCLoginStatusChangeNotification = @"WCLoginStatusNotification";
 #pragma mark - xmpp单例
 static id _instace;
 
-+ (id)allocWithZone:(struct _NSZone *)zone
-{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _instace = [super allocWithZone:zone];
-    });
-    return _instace;
-}
 
 + (instancetype)sharedInstance
 {
@@ -75,41 +70,18 @@ static id _instace;
     return _instace;
 }
 
-- (id)copyWithZone:(NSZone *)zone
-{
-    return _instace;
-}
-
 - (instancetype)init
 {
     if (self = [super init])
     {
         _connectTimeout = 15.f;
-       
            // [DDLog addLogger:[DDTTYLogger sharedInstance] withLogLevel:XMPP_LOG_FLAG_SEND_RECV];
     }
     return self;
 }
 
-/*
--(NSString*)domain{
-    if (!_domain) {
-        _domain = @"im.gy.com";
-    }
-    return _domain;
-}
-
--(NSString*)resource{
-    if (!_resource) {
-        _resource = @"mobile_im";
-    }
-    return _resource;
-}
- */
-#pragma mark  -私有方法
-#pragma mark 初始化XMPPStream
+#pragma mark  -初始化XMPPStream
 -(void)setupXMPPStream{
-    
     _xmppStream = [[XMPPStream alloc] init];
 // 每一个模块添加后都要激活
     //添加自动连接模块
@@ -124,7 +96,6 @@ static id _instace;
     [_xmppStream addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
 }
 
-#pragma mark 释放xmppStream相关的资源
 -(void)teardownXmpp{
     
     // 移除代理
@@ -141,7 +112,7 @@ static id _instace;
     _xmppStream = nil;
     
 }
-#pragma mark 连接到服务器
+
 -(void)connectToHost{
   //  WCLog(@"开始连接到服务器");
     if (!_xmppStream) {
@@ -150,11 +121,6 @@ static id _instace;
     
     // 发送通知【正在连接】
   //  [self postNotification:XMPPResultTypeConnecting];
-    
-    // 设置登录用户JID
-    //resource 标识用户登录的客户端 iphone android
-    
-    // 从单例获取用户名
     
     self.userName =@"m_e_0603211000000000000";
     self.passWord = @"0603211000000000000,4,6351fa223472db83d0b5254034917100d1a972a53e57b78ca5f08881e643ae52,06032110000";
@@ -203,7 +169,6 @@ static id _instace;
     }
 }
 
-#pragma mark  授权成功后，发送"在线" 消息
 -(void)sendOnlineToHost{
     
    // WCLog(@"发送 在线 消息");
@@ -222,12 +187,10 @@ static id _instace;
     [[NSNotificationCenter defaultCenter] postNotificationName:WCLoginStatusChangeNotification object:nil userInfo:userInfo];
 }
 
-#pragma mark -XMPPStream的代理
-#pragma mark 与主机连接成功
+#pragma mark -XMPPStream Delegate
+
 -(void)xmppStreamDidConnect:(XMPPStream *)sender{
-   // WCLog(@"与主机连接成功");
     
-   //登录操作
         // 主机连接成功后，发送密码进行授权
         [self sendPwdToHost];
 }
@@ -249,7 +212,7 @@ static id _instace;
 }
 
 
-#pragma mark 授权成功
+#pragma mark -Auth method
 -(void)xmppStreamDidAuthenticate:(XMPPStream *)sender{
   //  WCLog(@"授权成功");
     
@@ -265,8 +228,6 @@ static id _instace;
     
 }
 
-
-#pragma mark 授权失败
 -(void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(DDXMLElement *)error{
   //  WCLog(@"授权失败 %@",error);
     
@@ -279,7 +240,7 @@ static id _instace;
 }
 
 
-#pragma mark -消息方法
+#pragma mark -XMPPMessage method
 -(void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message{
   //  WCLog(@"%@",message);
     
@@ -316,6 +277,7 @@ static id _instace;
 
 -(void)xmppStream:(XMPPStream *)sender didSendMessage:(XMPPMessage *)message{
 
+    
 }
 
 - (void)xmppStream:(XMPPStream *)sender didFailToSendMessage:(XMPPMessage *)message error:(NSError *)error{
@@ -328,7 +290,7 @@ static id _instace;
     //presence.from 消息是谁发送过来
 }
 
-#pragma mark -公共方法
+#pragma mark -Custom method
 -(void)xmppUserlogout{
     // 1." 发送 "离线" 消息"
     XMPPPresence *offline = [XMPPPresence presenceWithType:@"unavailable"];
@@ -337,15 +299,6 @@ static id _instace;
     // 2. 与服务器断开连接
     [_xmppStream disconnect];
     
-    // 3. 回到登录界面
-    //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
-    //
-    //    self.window.rootViewController = storyboard.instantiateInitialViewController;
-    
-    
-    //4.更新用户的登录状态
-//    [WCUserInfo sharedWCUserInfo].loginStatus = NO;
-//    [[WCUserInfo sharedWCUserInfo] saveUserInfoToSanbox];
     
 }
 
@@ -354,7 +307,6 @@ static id _instace;
     // 先把block存起来
     _resultBlock = resultBlock;
     
-    //    Domain=XMPPStreamErrorDomain Code=1 "Attempting to connect while already connected or connecting." UserInfo=0x7fd86bf06700 {NSLocalizedDescription=Attempting to connect while already connected or connecting.}
     // 如果以前连接过服务，要断开
     [_xmppStream disconnect];
     
@@ -374,7 +326,60 @@ static id _instace;
     [self connectToHost];
 }
 
+-(void)sendMessage:(GYMessage *)message{
+    
+    //先保存默认数据
+    message.msgId = [NSNumber numberWithLongLong:[[NSDate date] timeIntervalSince1970]] ;
+    
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *dateString = [formatter stringFromDate:date];
+    
+    message.msgSendTime=dateString;
+    message.msgRecTime =dateString;
+    
+    message.msgIsSelf=@(YES);
+    message.msgRead=@(NO);
+    message.msgFromUser = self.userName;
 
+    NSString *elementID = [NSString stringWithFormat:@"%@",message.msgId];
+    
+    XMPPJID *JID = [XMPPJID jidWithString:message.msgToUser];
+    
+    XMPPMessage *xmppMessage = [XMPPMessage messageWithType:@"chat" to:JID elementID:elementID];
+    
+    NSString *uuid=[GYGenUUID gen_uuid];
+    NSXMLElement *element=[GYMessengeExtendElement GYExtendElementWithID:uuid];
+    
+    [xmppMessage addChild:element];
+    
+    [xmppMessage addAttributeWithName:@"from" stringValue:[NSString stringWithFormat:@"%@@%@",message.msgFromUser,self.domain]];
+    
+    [xmppMessage addBody:message.msgBody];
+    
+    [_xmppStream sendElement:xmppMessage];
+    
+     
+    [self saveMessageToDB:message];
+  
+    sleep(1);
+    
+   NSArray *GYMessageArray = [GYMessage MR_findAll];
+
+}
+
+-(BOOL)saveMessageToDB:(GYMessage *)message{
+
+    NSManagedObjectContext *localContext    = [NSManagedObjectContext MR_context];
+    
+    // 保存修改到当前上下文中.
+    [localContext MR_saveToPersistentStoreAndWait];
+    
+    return YES;
+}
+
+#pragma mark - lifecycle
 -(void)dealloc{
     [self teardownXmpp];
 }

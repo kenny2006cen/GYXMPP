@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="14F27" minimumToolsVersion="Xcode 7.0">
+    <entity name="GYMessage" representedClassName="GYMessage" syncable="YES">
+        <attribute name="msgBody" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="msgCard" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="msgFromUser" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="msgId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="msgIsSelf" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="msgRead" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="msgRecTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="msgSendTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="msgState" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="msgToUser" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="msgType" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="GYMessage" positionX="-63" positionY="-18" width="128" height="210"/>
+    </elements>
+</model>

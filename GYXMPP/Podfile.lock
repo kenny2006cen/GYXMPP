@@ -14,6 +14,8 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - GYFMDB (1.0.0):
+    - FMDB (~> 2.6.2)
   - IQKeyboardManager (3.3.7)
   - Masonry (1.0.0)
   - UITableView+FDTemplateLayoutCell (1.4)
@@ -162,15 +164,26 @@ PODS:
 
 DEPENDENCIES:
   - FMDB
+  - GYFMDB (from `https://github.com/kenny2006cen/GYFMDB.git`)
   - IQKeyboardManager
   - Masonry
   - UITableView+FDTemplateLayoutCell
   - XMPPFramework
 
+EXTERNAL SOURCES:
+  GYFMDB:
+    :git: https://github.com/kenny2006cen/GYFMDB.git
+
+CHECKOUT OPTIONS:
+  GYFMDB:
+    :commit: 3002999f56a7f3b401231256ecf0b1a12acfbe63
+    :git: https://github.com/kenny2006cen/GYFMDB.git
+
 SPEC CHECKSUMS:
   CocoaAsyncSocket: a18c75dca4b08723628a0bacca6e94803d90be91
   CocoaLumberjack: 628fca2e88ef06f7cf6817309aa405f325d9a6fa
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  GYFMDB: af5ce923fb9c4c8ca0ad83342e035685d23470a9
   IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
   Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030

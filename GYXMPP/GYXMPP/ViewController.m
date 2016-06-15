@@ -89,6 +89,10 @@
 
 -(void)loginAction{
 
+    [[GYXMPP sharedInstance]xmppUserLoginWithUserName:nil PassWord:nil :^(XMPPResultType type) {
+        
+    }];
+    
     [[GYXMPP sharedInstance]xmppUserLogin:^(XMPPResultType type) {
         
         if (type==XMPPResultTypeLoginSuccess) {

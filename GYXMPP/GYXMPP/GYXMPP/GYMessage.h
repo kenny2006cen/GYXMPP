@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import <GYFMDB/GYFMDB.h>
 @interface GYMessage : NSObject
 
 // Insert code here to declare functionality of your managed object subclass

@@ -117,11 +117,14 @@ static id _instace;
     // 发送通知【正在连接】
   //  [self postNotification:XMPPResultTypeConnecting];
     
-    self.userName =@"m_e_0603211000000000000";
-    self.passWord = @"0603211000000000000,4,bc84d7991daf0fc07371e5d0285d7c7d598ae68c5e25969ecfbc92c0f1655281,06032110000";
+//    self.userName =@"m_e_0603211000000000000";
+//    self.passWord = @"0603211000000000000,4,bc84d7991daf0fc07371e5d0285d7c7d598ae68c5e25969ecfbc92c0f1655281,06032110000";
     
-    self.domain = @"im.gy.com";
-    self.host = @"ldev04.dev.gyist.com";
+//    self.domain = @"im.gy.com";
+//    self.host = @"ldev04.dev.gyist.com";
+    self.domain = @"appledemacintosh.local";
+    self.host = @"appledemacintosh.local";
+    
     self.port = @"5222";
     
     self.resource = @"mobile_im";
@@ -289,6 +292,21 @@ static id _instace;
     [self connectToHost];
 }
 
+-(void)xmppUserLoginWithUserName:(NSString *)userName PassWord:(NSString*)password :(XMPPResultBlock)resultBlock{
+
+    // 先把block存起来
+    _resultBlock = resultBlock;
+    
+    // 如果以前连接过服务，要断开
+    [_xmppStream disconnect];
+    
+//    self.userName =@"m_e_0603211000000000000";
+//    self.passWord = @"0603211000000000000,4,bc84d7991daf0fc07371e5d0285d7c7d598ae68c5e25969ecfbc92c0f1655281,06032110000";
+    self.userName =@"jlc";
+    self.passWord = @"123";
+    // 连接主机 成功后发送登录密码
+    [self connectToHost];
+}
 
 -(void)xmppUserRegister:(XMPPResultBlock)resultBlock{
     // 先把block存起来

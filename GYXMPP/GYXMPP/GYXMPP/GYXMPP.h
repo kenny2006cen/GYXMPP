@@ -65,6 +65,9 @@ typedef void (^XMPPResultBlock)(XMPPResultType type);// XMPP请求结果的block
  */
 -(void)xmppUserLogin:(XMPPResultBlock)resultBlock;
 
+-(void)xmppUserLoginWithUserName:(NSString *)userName PassWord:(NSString*)password :(XMPPResultBlock)resultBlock;
+
+
 -(void)sendMessage:(GYMessage*)message;
 
 

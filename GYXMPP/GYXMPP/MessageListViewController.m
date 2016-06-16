@@ -88,19 +88,24 @@
     
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:button2];
 
-   
-
 }
 
 
 -(void)getData{
     
-    GYMessage *message = [GYMessage findLastInDB];
-    
-    if (message) {
-         [self.messageArray addObject:message];
+    if (self.messageArray.count>0) {
+        [self.messageArray removeAllObjects];
     }
-   
+    
+    NSArray *mesArray = [GYMessage findLastGroup];
+    
+    
+    for ( GYMessage *message  in mesArray) {
+        
+        if (message) {
+            [self.messageArray addObject:message];
+        }
+    }
     
     [self.tableView reloadData];
 }
@@ -110,7 +115,8 @@
     GYMessage *message =[[GYMessage alloc]init];
     
     message.msgUserJid =[GYXMPP sharedInstance].userName;
-    message.msgFriendJId =@"m_e_0603211000000260000@im.gy.com";
+//    message.msgFriendJId =@"m_e_0603211000000270000@im.gy.com";
+     message.msgFriendJid =@"111@im.gy.com";
     message.msgType =@1;
     
     NSDictionary *dic =@{@"msg_content":@"测试",
@@ -190,7 +196,9 @@
 
 -(void)xmppSendingMessage:(GYMessage *)message{
 
-    [self.messageArray addObject:message];
+   // [self.messageArray addObject:message];
+    
+    [self getData];
     
     [self.tableView reloadData];
 }

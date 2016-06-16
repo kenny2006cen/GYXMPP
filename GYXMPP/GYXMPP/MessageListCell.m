@@ -136,7 +136,7 @@ static NSString * const GYTableViewCellID = @"GYHDBusinessCell";
  
     self.iconImageView.image =[UIImage imageNamed:@"Default-568h"];
     
-    self.userNameLabel.text  = businessModel.msgFriendJId;
+    self.userNameLabel.text  = businessModel.msgFriendJid;
     
     self.lasttimeLabel.text = businessModel.msgSendTime;
    

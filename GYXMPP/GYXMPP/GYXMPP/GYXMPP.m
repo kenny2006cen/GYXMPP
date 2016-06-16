@@ -345,7 +345,7 @@ static id _instace;
     
     NSString *elementID = [NSString stringWithFormat:@"%@",message.msgId];
     
-    XMPPJID *JID = [XMPPJID jidWithString:message.msgFriendJId];
+    XMPPJID *JID = [XMPPJID jidWithString:message.msgFriendJid];
     
     XMPPMessage *xmppMessage = [XMPPMessage messageWithType:@"chat" to:JID elementID:elementID];
     

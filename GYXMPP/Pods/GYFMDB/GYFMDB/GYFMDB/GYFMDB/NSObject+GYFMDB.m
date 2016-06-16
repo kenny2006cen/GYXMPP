@@ -563,6 +563,59 @@ static NSMutableString *gysql;
   return user;
 }
 
++ (NSArray*)findLastGroup{
+
+    GYFMDB *gydb = [GYFMDB sharedInstance];
+    
+    NSMutableArray *users = [NSMutableArray array];
+    
+    id user = nil;
+    
+    [gydb.dbQueue inDatabase:^(FMDatabase *db) {
+        
+        NSString *tableName = NSStringFromClass(self.class);
+      
+        NSString *sql =
+        [NSString stringWithFormat:@"SELECT * FROM %@ where msgShow==%@ group by msgFriendJid  order by %@ desc",
+         tableName,@(YES),@"msgSendTime"];
+        
+        FMResultSet *resultSet = [db executeQuery:sql];
+        
+        while ([resultSet next]) {
+            id model = [[self.class alloc] init];
+            
+            NSDictionary *dic = [[self class] getAllProperties];
+            
+            NSMutableArray *columeNames =
+            [[NSMutableArray alloc] initWithArray:[dic objectForKey:@"name"]];
+            NSMutableArray *columeTypes =
+            [[NSMutableArray alloc] initWithArray:[dic objectForKey:@"type"]];
+            
+            for (int i = 0; i < columeNames.count; i++) {
+                NSString *columeName = [columeNames objectAtIndex:i];
+                NSString *columeType = [columeTypes objectAtIndex:i];
+                
+                if ([columeType isEqualToString:SQLTEXT]) {
+                    [model setValue:[resultSet stringForColumn:columeName]
+                             forKey:columeName];
+                } else {
+                    [model setValue:[NSNumber
+                                     numberWithLongLong:
+                                     [resultSet longLongIntForColumn:columeName]]
+                             forKey:columeName];
+                }
+            }
+            [users addObject:model];
+            FMDBRelease(model);
+        }
+    }];
+//    if (users.count > 0) {
+//        user = users[0];
+//    }
+    return users;
+
+}
+
 + (NSInteger)countsOfItemInDB {
   NSString *tableName = NSStringFromClass(self.class);
 

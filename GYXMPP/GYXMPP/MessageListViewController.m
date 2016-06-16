@@ -53,6 +53,20 @@
     
     [self.tableView registerClass:[MessageListCell class] forCellReuseIdentifier:@"GYHDBusinessCell"];
     
+    [[GYXMPP sharedInstance]xmppUserLoginWithUserName:nil PassWord:nil :^(XMPPResultType type) {
+        
+        if (type==XMPPResultTypeLoginSuccess) {
+            
+            DDLogInfo(@"登陆成功");
+            
+            
+        }
+        else{
+            
+            
+        }
+    }];
+    
     [self getData];
     
     [GYXMPP sharedInstance].delegate = self;
@@ -74,19 +88,7 @@
     
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:button2];
 
-    [[GYXMPP sharedInstance]xmppUserLoginWithUserName:nil PassWord:nil :^(XMPPResultType type) {
-        
-        if (type==XMPPResultTypeLoginSuccess) {
-            
-            DDLogInfo(@"登陆成功");
-            
-            
-        }
-        else{
-            
-            
-        }
-    }];
+   
 
 }
 
@@ -107,8 +109,8 @@
 
     GYMessage *message =[[GYMessage alloc]init];
     
-    message.msgFromUser =[GYXMPP sharedInstance].userName;
-    message.msgToUser =@"m_e_0603211000000260000@im.gy.com";
+    message.msgUserJid =[GYXMPP sharedInstance].userName;
+    message.msgFriendJId =@"m_e_0603211000000260000@im.gy.com";
     message.msgType =@1;
     
     NSDictionary *dic =@{@"msg_content":@"测试",

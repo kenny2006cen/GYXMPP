@@ -136,32 +136,12 @@ static NSString * const GYTableViewCellID = @"GYHDBusinessCell";
  
     self.iconImageView.image =[UIImage imageNamed:@"Default-568h"];
     
-    
-    self.userNameLabel.text  = businessModel.msgToUser;
-    
+    self.userNameLabel.text  = businessModel.msgFriendJId;
     
     self.lasttimeLabel.text = businessModel.msgSendTime;
    
     self.messageContentLabel.text = businessModel.msgBody;
     
-    
-    //self.messageContentLabel.attributedText = businessModel.messageContentAttributedString;
-    
-    
-//    if (businessModel.unreadMessageCount.integerValue > 0) {
-//        self.unreadMessageButton.hidden = NO;
-//        [self.unreadMessageButton setTitle:businessModel.unreadMessageCount forState:UIControlStateNormal];
-//// 修改未读数显示大小 设置成固定大小不在随字符长度变动 zhangx
-//
-//    } else {
-//            self.unreadMessageButton.hidden = YES;
-//    }
-//    if (businessModel.unreadPushCount != nil) {
-//        [self.unreadMessageButton setTitle:businessModel.unreadPushCount forState:UIControlStateNormal];
-//        self.unreadMessageButton.hidden = NO;
-//    }
-//    
-   
     
     [self setUIFrame];
 }

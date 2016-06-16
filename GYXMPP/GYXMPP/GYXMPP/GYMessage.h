@@ -15,12 +15,12 @@
 
 // Insert code here to declare functionality of your managed object subclass
 @property (nullable, nonatomic, retain) NSNumber *msgId;
-@property (nullable, nonatomic, retain) NSString *msgFromUser;
-@property (nullable, nonatomic, retain) NSString *msgToUser;
+@property (nullable, nonatomic, retain) NSString *msgUserJid;
+@property (nullable, nonatomic, retain) NSString *msgFriendJId;
 @property (nullable, nonatomic, retain) NSNumber *msgType;
 @property (nullable, nonatomic, retain) NSNumber *msgState;
 @property (nullable, nonatomic, retain) NSNumber *msgRead;
-//@property (nullable, nonatomic, retain) NSString *msgCard;
+@property (nullable, nonatomic, retain) NSNumber *msgShow;//消息是否显示
 
 @property (nullable, nonatomic, retain) NSNumber *msgIsSelf;
 @property (nullable, nonatomic, retain) NSString *msgSendTime;

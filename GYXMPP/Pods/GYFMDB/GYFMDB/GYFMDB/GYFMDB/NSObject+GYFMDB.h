@@ -80,8 +80,9 @@
  */
 + (id)findByAttribute:(NSString *)propertyName WithValue:(NSString*)value;
 
-+ (id)findLastInDB;
++ (id)findLastInDB;//默认按发送时间排序
 
++ (id)findLastByGroup;//默认按发送时间排序,显示所有人的消息最后一条
 
 //表中所有数量数量
 +(NSInteger)countsOfItemInDB;

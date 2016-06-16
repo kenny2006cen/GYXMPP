@@ -70,7 +70,9 @@ static id _instace;
     if (self = [super init])
     {
         _connectTimeout = 15.f;
-           // [DDLog addLogger:[DDTTYLogger sharedInstance] withLogLevel:XMPP_LOG_FLAG_SEND_RECV];
+    
+        [DDLog addLogger:[DDASLLogger sharedInstance]];
+        [DDLog addLogger:[DDTTYLogger sharedInstance]];
     }
     return self;
 }
@@ -255,10 +257,12 @@ static id _instace;
 
 -(void)xmppStream:(XMPPStream *)sender didSendMessage:(XMPPMessage *)message{
 
-    
+    DDLogInfo(@"消息发送成功");
 }
 
 - (void)xmppStream:(XMPPStream *)sender didFailToSendMessage:(XMPPMessage *)message error:(NSError *)error{
+
+    DDLogInfo(@"消息发送失败");
 
 }
 
@@ -335,11 +339,13 @@ static id _instace;
     
     message.msgIsSelf=@(YES);
     message.msgRead=@(NO);
-    message.msgFromUser = self.userName;
-
+    message.msgUserJid = self.userName;
+    
+    message.msgShow= @(YES);
+    
     NSString *elementID = [NSString stringWithFormat:@"%@",message.msgId];
     
-    XMPPJID *JID = [XMPPJID jidWithString:message.msgToUser];
+    XMPPJID *JID = [XMPPJID jidWithString:message.msgFriendJId];
     
     XMPPMessage *xmppMessage = [XMPPMessage messageWithType:@"chat" to:JID elementID:elementID];
     
@@ -348,7 +354,7 @@ static id _instace;
     
     [xmppMessage addChild:element];
     
-    [xmppMessage addAttributeWithName:@"from" stringValue:[NSString stringWithFormat:@"%@@%@",message.msgFromUser,self.domain]];
+    [xmppMessage addAttributeWithName:@"from" stringValue:[NSString stringWithFormat:@"%@@%@",message.msgUserJid,self.domain]];
     
     [xmppMessage addBody:message.msgBody];
     

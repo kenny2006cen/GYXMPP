@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "DDlog.h"
+#import "DDTTYLogger.h"
+#import "DDASLLogger.h"
+
 #import "GYMessage.h"
 
 //// 自定义Log

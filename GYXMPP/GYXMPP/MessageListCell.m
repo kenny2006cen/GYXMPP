@@ -9,11 +9,11 @@
 //  Copyright © 2016年 SHENZHEN GUIYI SCIENCE AND TECHNOLOGY DEVELOP CO.,LTD. All rights reserved.
 //
 
-#import "GYHDBusinessCell.h"
+#import "MessageListCell.h"
 #import "GYMessage.h"
 
 static NSString * const GYTableViewCellID = @"GYHDBusinessCell";
-@interface GYHDBusinessCell()
+@interface MessageListCell()
 /**
  *  用户头像
  */
@@ -37,13 +37,13 @@ static NSString * const GYTableViewCellID = @"GYHDBusinessCell";
 
 @end
 
-@implementation GYHDBusinessCell
+@implementation MessageListCell
 
 + (instancetype)cellWithTableView:(UITableView * )tableView {
    
-    GYHDBusinessCell * cell = [tableView dequeueReusableCellWithIdentifier:GYTableViewCellID];
+    MessageListCell * cell = [tableView dequeueReusableCellWithIdentifier:GYTableViewCellID];
     if (cell == nil) {
-        cell = [[GYHDBusinessCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:GYTableViewCellID];
+        cell = [[MessageListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:GYTableViewCellID];
     }
     return cell;
 }

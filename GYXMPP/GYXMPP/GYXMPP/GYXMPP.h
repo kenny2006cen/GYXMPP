@@ -53,6 +53,7 @@ typedef void (^XMPPResultBlock)(XMPPResultType type);// XMPP请求结果的block
 @property (nonatomic,copy) NSString *domain;
 @property (nonatomic,copy) NSString *resource;
 
+
 + (instancetype)sharedInstance;
 
 /**

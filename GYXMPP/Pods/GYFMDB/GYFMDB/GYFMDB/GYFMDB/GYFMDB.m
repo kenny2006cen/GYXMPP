@@ -273,7 +273,6 @@
     
     //注册这个类到runtime系统中就可以使用
     
-//    NSObject * myobj = [[modelClass alloc] init];
     
     [[GYFMDB sharedInstance].dbQueue inDatabase:^(FMDatabase *db) {
        

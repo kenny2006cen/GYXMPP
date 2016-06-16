@@ -28,7 +28,7 @@
 @property (nonatomic,copy) NSObject*(^select)();
 @property (nonatomic,copy) NSObject*(^where)(NSString*);
 @property (nonatomic,copy) NSObject*(^limit)(NSString*);
-@property (nonatomic,copy) NSObject*(^offset)(NSString*);
+@property (nonatomic,copy) NSObject*(^offSet)(NSString*);
 @property (nonatomic,copy) NSObject*(^orderby)(NSString*);
 
 @property (nonatomic,copy) NSObject*(^groupby)(NSString*);

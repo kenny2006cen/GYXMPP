@@ -13,7 +13,7 @@
 @class GYMessage;
 #import <Masonry/Masonry.h>
 
-@interface GYHDBusinessCell : UITableViewCell
+@interface MessageListCell : UITableViewCell
 
 + (instancetype)cellWithTableView:(UITableView * )tableView;
 /**

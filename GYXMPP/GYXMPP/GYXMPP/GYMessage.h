@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 #import <GYFMDB/GYFMDB.h>
+#import "NSObject+GYFMDB.h"
+
 @interface GYMessage : NSObject
 
 // Insert code here to declare functionality of your managed object subclass
@@ -18,7 +20,7 @@
 @property (nullable, nonatomic, retain) NSNumber *msgType;
 @property (nullable, nonatomic, retain) NSNumber *msgState;
 @property (nullable, nonatomic, retain) NSNumber *msgRead;
-@property (nullable, nonatomic, retain) NSString *msgCard;
+//@property (nullable, nonatomic, retain) NSString *msgCard;
 
 @property (nullable, nonatomic, retain) NSNumber *msgIsSelf;
 @property (nullable, nonatomic, retain) NSString *msgSendTime;

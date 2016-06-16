@@ -6,11 +6,11 @@
 //  Copyright © 2016年 jianglincen. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MessageListViewController.h"
 #import "GYXMPP.h"
-#import "GYHDBusinessCell.h"
-
-@interface ViewController ()<UITableViewDataSource,UITableViewDelegate,GYXMPPDelegate>{
+#import "MessageListCell.h"
+#import "GYMessage.h"
+@interface MessageListViewController ()<UITableViewDataSource,UITableViewDelegate,GYXMPPDelegate>{
 
 }
 
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation ViewController
+@implementation MessageListViewController
 
 - (NSMutableArray *)messageArray
 {
@@ -38,7 +38,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   
-   
     [self setUpNav];
     
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, 568 - 108)];
@@ -52,26 +51,19 @@
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
     
-    [self.tableView registerClass:[GYHDBusinessCell class] forCellReuseIdentifier:@"GYHDBusinessCell"];
+    [self.tableView registerClass:[MessageListCell class] forCellReuseIdentifier:@"GYHDBusinessCell"];
     
-    //[self getData];
+    [self getData];
     
     [GYXMPP sharedInstance].delegate = self;
     
 }
 
 -(void)setUpNav{
+   
     self.title = @"消息";
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-    
-    [button setFrame:CGRectMake(100, 200, 100, 100)];
-    
-    [button setTitle:@"登录" forState:UIControlStateNormal];
-    
-    [button addTarget:self action:@selector(loginAction) forControlEvents:UIControlEventTouchUpInside];
-    
-    
+
     UIButton *button2 = [UIButton buttonWithType:UIButtonTypeSystem];
     
     [button2 setFrame:CGRectMake(100, 100, 100, 100)];
@@ -80,35 +72,35 @@
     
     [button2 addTarget:self action:@selector(sendAction) forControlEvents:UIControlEventTouchUpInside];
     
-    self.navigationItem.leftBarButtonItem =[[UIBarButtonItem alloc]initWithCustomView:button];
-    
-    
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithCustomView:button2];
-
-}
-
--(void)loginAction{
 
     [[GYXMPP sharedInstance]xmppUserLoginWithUserName:nil PassWord:nil :^(XMPPResultType type) {
         
-    }];
-    
-    [[GYXMPP sharedInstance]xmppUserLogin:^(XMPPResultType type) {
-        
         if (type==XMPPResultTypeLoginSuccess) {
             
-            NSLog(@"登陆成功");
+            DDLogInfo(@"登陆成功");
             
-            [self getData];
+            
         }
-        
+        else{
+            
+            
+        }
     }];
-    
+
 }
+
 
 -(void)getData{
     
+    GYMessage *message = [GYMessage findLastInDB];
+    
+    if (message) {
+         [self.messageArray addObject:message];
+    }
    
+    
+    [self.tableView reloadData];
 }
 
 -(void)sendAction{
@@ -159,7 +151,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    GYHDBusinessCell *cell = [GYHDBusinessCell cellWithTableView:tableView];
+    MessageListCell *cell = [MessageListCell cellWithTableView:tableView];
     cell.businessModel = self.messageArray[indexPath.row];
     
     return cell;

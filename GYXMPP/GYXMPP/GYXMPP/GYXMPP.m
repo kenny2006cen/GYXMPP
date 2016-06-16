@@ -120,10 +120,10 @@ static id _instace;
 //    self.userName =@"m_e_0603211000000000000";
 //    self.passWord = @"0603211000000000000,4,bc84d7991daf0fc07371e5d0285d7c7d598ae68c5e25969ecfbc92c0f1655281,06032110000";
     
-//    self.domain = @"im.gy.com";
-//    self.host = @"ldev04.dev.gyist.com";
-    self.domain = @"appledemacintosh.local";
-    self.host = @"appledemacintosh.local";
+    self.domain = @"im.gy.com";
+    self.host = @"ldev04.dev.gyist.com";
+//    self.domain = @"appledemacintosh.local";
+//    self.host = @"appledemacintosh.local";
     
     self.port = @"5222";
     
@@ -219,10 +219,10 @@ static id _instace;
     // 回调控制器登录成功
     if(_resultBlock){
         _resultBlock(XMPPResultTypeLoginSuccess);
+        _resultBlock =nil;
     }
     
-    
-    [self postNotification:XMPPResultTypeLoginSuccess];
+  //  [self postNotification:XMPPResultTypeLoginSuccess];
     
 }
 
@@ -300,10 +300,11 @@ static id _instace;
     // 如果以前连接过服务，要断开
     [_xmppStream disconnect];
     
-//    self.userName =@"m_e_0603211000000000000";
-//    self.passWord = @"0603211000000000000,4,bc84d7991daf0fc07371e5d0285d7c7d598ae68c5e25969ecfbc92c0f1655281,06032110000";
-    self.userName =@"jlc";
-    self.passWord = @"123";
+    self.userName =@"m_e_0603211000000000000";
+    self.passWord = @"0603211000000000000,4,3363e7844d0838a0bef59e6bb93af9b6d3e19bdc991f84f7aa4190794bdddeeb,06032110000";
+//    self.userName =userName;@"jlc";
+//    self.passWord =password; @"123";
+    
     // 连接主机 成功后发送登录密码
     [self connectToHost];
 }
@@ -353,6 +354,7 @@ static id _instace;
     
     [_xmppStream sendElement:xmppMessage];
     
+    [message save];
     
     if (self.delegate&&[self.delegate respondsToSelector:@selector(xmppSendingMessage:)]) {
         
@@ -360,16 +362,8 @@ static id _instace;
         
     }
     
-    [self saveMessageToDB:message];
-  
 }
 
--(BOOL)saveMessageToDB:(GYMessage *)message{
-
-   
-    
-    return YES;
-}
 
 #pragma mark - lifecycle
 -(void)dealloc{

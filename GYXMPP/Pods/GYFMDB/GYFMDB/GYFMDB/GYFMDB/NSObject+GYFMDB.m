@@ -521,10 +521,12 @@ static NSMutableString *gysql;
   [gydb.dbQueue inDatabase:^(FMDatabase *db) {
 
     NSString *tableName = NSStringFromClass(self.class);
-    NSString *sql =
-        [NSString stringWithFormat:@"SELECT * FROM %@ order by %@ desc limit 1",
-                                   tableName, primaryId];
-
+//    NSString *sql =
+//        [NSString stringWithFormat:@"SELECT * FROM %@ order by %@ desc limit 1",
+//                                   tableName, primaryId];
+      NSString *sql =
+      [NSString stringWithFormat:@"SELECT * FROM %@ order by %@ desc limit 1",
+       tableName, @"msgSendTime"];
     FMResultSet *resultSet = [db executeQuery:sql];
 
     while ([resultSet next]) {
@@ -663,7 +665,7 @@ static NSMutableString *gysql;
   };
 }
 
-- (NSObject * (^)(NSString *))offset {
+- (NSObject * (^)(NSString *))offSet {
   return ^(NSString *string) {
     //
     [gysql appendFormat:@" limit %@", string];

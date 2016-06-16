@@ -92,7 +92,6 @@
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:kTimeOut];
     
-    
     //session 大多数使用单例即可
     
     NSURLResponse *response = nil;

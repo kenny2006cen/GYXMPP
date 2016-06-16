@@ -10,6 +10,9 @@
 
 @implementation GYMessage
 
-// Insert code here to add functionality to your managed object subclass
++(void)load{
+
+    [GYMessage createTable];
+}
 
 @end

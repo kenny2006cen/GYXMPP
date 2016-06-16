@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "MessageListViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -24,10 +24,9 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
     
+    UINavigationController *navLoginVc =[[UINavigationController alloc]initWithRootViewController:[LoginViewController new]];
     
-    UINavigationController *navLoginVc =[[UINavigationController alloc]initWithRootViewController:[ViewController new]];
-    
-    navLoginVc.title=@"消息主页 ";
+    navLoginVc.title=@"登录页面";
     
     self.window.rootViewController = navLoginVc;
 

@@ -51,6 +51,11 @@
 		18CB04B51D13DB9300076DBA /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04B21D13DB9300076DBA /* UIAlertView+Blocks.m */; };
 		18CB04B61D13DB9300076DBA /* UIColor+HEX.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04B41D13DB9300076DBA /* UIColor+HEX.m */; };
 		18CB04BB1D13E3FB00076DBA /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CB04BA1D13E3FA00076DBA /* libmp3lame.a */; };
+		18CB04BE1D13F7A500076DBA /* UIViewController+DismissKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04BD1D13F7A500076DBA /* UIViewController+DismissKeyboard.m */; };
+		18CB04C31D13F7C200076DBA /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04C01D13F7C200076DBA /* NSDate+Category.m */; };
+		18CB04C41D13F7C200076DBA /* NSDateFormatter+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04C21D13F7C200076DBA /* NSDateFormatter+Category.m */; };
+		18CB04C71D13FA3700076DBA /* GYHDVoiceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04C61D13FA3700076DBA /* GYHDVoiceModel.m */; };
+		18CB04CA1D13FA6100076DBA /* GYHDVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04C91D13FA6100076DBA /* GYHDVideoModel.m */; };
 		18E92A641D12469F0065147A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E92A621D12469F0065147A /* LoginViewController.m */; };
 		18E92A651D12469F0065147A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E92A631D12469F0065147A /* LoginViewController.xib */; };
 		3D905A33E0153DD120C33C73 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5205B05BDC3E478BBBE69240 /* libPods.a */; };
@@ -161,6 +166,16 @@
 		18CB04B41D13DB9300076DBA /* UIColor+HEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HEX.m"; sourceTree = "<group>"; };
 		18CB04B91D13E3FA00076DBA /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
 		18CB04BA1D13E3FA00076DBA /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
+		18CB04BC1D13F7A500076DBA /* UIViewController+DismissKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DismissKeyboard.h"; sourceTree = "<group>"; };
+		18CB04BD1D13F7A500076DBA /* UIViewController+DismissKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DismissKeyboard.m"; sourceTree = "<group>"; };
+		18CB04BF1D13F7C200076DBA /* NSDate+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Category.h"; sourceTree = "<group>"; };
+		18CB04C01D13F7C200076DBA /* NSDate+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Category.m"; sourceTree = "<group>"; };
+		18CB04C11D13F7C200076DBA /* NSDateFormatter+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+Category.h"; sourceTree = "<group>"; };
+		18CB04C21D13F7C200076DBA /* NSDateFormatter+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+Category.m"; sourceTree = "<group>"; };
+		18CB04C51D13FA3700076DBA /* GYHDVoiceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDVoiceModel.h; sourceTree = "<group>"; };
+		18CB04C61D13FA3700076DBA /* GYHDVoiceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDVoiceModel.m; sourceTree = "<group>"; };
+		18CB04C81D13FA6100076DBA /* GYHDVideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDVideoModel.h; sourceTree = "<group>"; };
+		18CB04C91D13FA6100076DBA /* GYHDVideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDVideoModel.m; sourceTree = "<group>"; };
 		18E92A611D12469F0065147A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		18E92A621D12469F0065147A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		18E92A631D12469F0065147A /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -314,6 +329,10 @@
 			children = (
 				18CB04661D13DA0700076DBA /* GYHDNewChatModel.h */,
 				18CB04671D13DA0700076DBA /* GYHDNewChatModel.m */,
+				18CB04C51D13FA3700076DBA /* GYHDVoiceModel.h */,
+				18CB04C61D13FA3700076DBA /* GYHDVoiceModel.m */,
+				18CB04C81D13FA6100076DBA /* GYHDVideoModel.h */,
+				18CB04C91D13FA6100076DBA /* GYHDVideoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -364,6 +383,12 @@
 		18CB04B01D13DB9300076DBA /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				18CB04BF1D13F7C200076DBA /* NSDate+Category.h */,
+				18CB04C01D13F7C200076DBA /* NSDate+Category.m */,
+				18CB04C11D13F7C200076DBA /* NSDateFormatter+Category.h */,
+				18CB04C21D13F7C200076DBA /* NSDateFormatter+Category.m */,
+				18CB04BC1D13F7A500076DBA /* UIViewController+DismissKeyboard.h */,
+				18CB04BD1D13F7A500076DBA /* UIViewController+DismissKeyboard.m */,
 				18CB04B11D13DB9300076DBA /* UIAlertView+Blocks.h */,
 				18CB04B21D13DB9300076DBA /* UIAlertView+Blocks.m */,
 				18CB04B31D13DB9300076DBA /* UIColor+HEX.h */,
@@ -654,8 +679,10 @@
 				18CB04161D1386E000076DBA /* README.md in Sources */,
 				18E92A641D12469F0065147A /* LoginViewController.m in Sources */,
 				18CB04A61D13DA0700076DBA /* GYHDChatImageShowView.m in Sources */,
+				18CB04C31D13F7C200076DBA /* NSDate+Category.m in Sources */,
 				18CB048F1D13DA0700076DBA /* GYHDPhotoModel.m in Sources */,
 				18CB04AE1D13DA0700076DBA /* GYHDRightChatTextCell.m in Sources */,
+				18CB04C71D13FA3700076DBA /* GYHDVoiceModel.m in Sources */,
 				18CB04981D13DA0700076DBA /* GYHDPhotoCell.m in Sources */,
 				18CB043C1D13D19800076DBA /* GYHDChatViewController.m in Sources */,
 				189C75C41D0FFB1D00FCEC31 /* MessageListCell.m in Sources */,
@@ -680,11 +707,14 @@
 				18CB04AC1D13DA0700076DBA /* GYHDRightChatAudioCell.m in Sources */,
 				18CB04AB1D13DA0700076DBA /* GYHDLeftChatVideoCell.m in Sources */,
 				18CB04A01D13DA0700076DBA /* GYHDAudioTool.m in Sources */,
+				18CB04BE1D13F7A500076DBA /* UIViewController+DismissKeyboard.m in Sources */,
 				18CB04A91D13DA0700076DBA /* GYHDLeftChatImageCell.m in Sources */,
 				18CB049C1D13DA0700076DBA /* GYHDQuickReplyView.m in Sources */,
 				18CB04AA1D13DA0700076DBA /* GYHDLeftChatTextCell.m in Sources */,
+				18CB04C41D13F7C200076DBA /* NSDateFormatter+Category.m in Sources */,
 				18CB04951D13DA0700076DBA /* GYHDInputView.m in Sources */,
 				18CB04971D13DA0700076DBA /* GYHDMessageTextView.m in Sources */,
+				18CB04CA1D13FA6100076DBA /* GYHDVideoModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

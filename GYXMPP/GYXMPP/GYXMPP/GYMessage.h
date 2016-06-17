@@ -11,15 +11,31 @@
 #import "GYFMDB.h"
 #import "NSObject+GYFMDB.h"
 
+typedef NS_ENUM(NSInteger, MessageBodyType) {
+    MessageBodyType_Text = 0, //文本
+    MessageBodyType_Image,    //图片
+    MessageBodyType_Video,    //视频
+    MessageBodyType_Voice,    //语音
+//    MessageBodyType_File,
+//    MessageBodyType_Command
+};
+
+typedef NS_ENUM(NSInteger, MessageDeliveryState) {
+   
+    MessageDeliveryState_Delivering,//发送中
+    MessageDeliveryState_Delivered, //已经发送
+    MessageDeliveryState_Failure    //已经发送
+};
+
 @interface GYMessage : NSObject
 
 // Insert code here to declare functionality of your managed object subclass
 @property (nonatomic, strong) NSNumber *msgId;
 @property ( nonatomic, copy) NSString *msgUserJid;
 @property ( nonatomic, copy) NSString *msgFriendJid;
-@property ( nonatomic, strong) NSNumber *msgType;
-@property ( nonatomic, strong) NSNumber *msgState;
-@property ( nonatomic, strong) NSNumber *msgRead;
+@property ( nonatomic, assign) MessageBodyType  msgBodyType;
+@property ( nonatomic, assign) MessageDeliveryState deliveryState;
+@property ( nonatomic) BOOL msgRead;
 @property ( nonatomic, strong) NSNumber *msgShow;//消息是否显示
 
 @property ( nonatomic, strong) NSNumber *msgIsSelf;
@@ -28,6 +44,10 @@
 @property ( nonatomic, copy) NSString *msgBody;//json格式
 
 @property ( nonatomic, copy) NSString *msgUserName;//用户名
+
+@property ( nonatomic, copy) NSString *msgUserHead;//用户头像
+
++(BOOL)updateMesageDeliveryStatusToDB;//更新消息发送状态
 
 @end
 

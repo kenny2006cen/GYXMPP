@@ -119,7 +119,7 @@
     message.msgUserJid =[GYXMPP sharedInstance].userName;
 //    message.msgFriendJId =@"m_e_0603211000000270000@im.gy.com";
      message.msgFriendJid =@"111@im.gy.com";
-    message.msgType =@1;
+    message.msgBodyType =MessageBodyType_Text;
     
     NSDictionary *dic =@{@"msg_content":@"测试",
                          @"msg_type":@"2",

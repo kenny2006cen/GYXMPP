@@ -8,6 +8,11 @@
 
 #import "GYHDChatViewController.h"
 //#import <Masonry/Masonry.h>
+//typedef NS_ENUM(NSInteger, EMConversationType){
+//    eConversationTypeChat,
+//    eConversationTypeGroupChat,
+//    eConversationTypeChatRoom
+//};
 
 @interface GYHDChatViewController ()<UITableViewDataSource,UITableViewDelegate>{
 
@@ -23,7 +28,9 @@
 /**
  * 接收者ID
  */
-@property(nonatomic, copy)NSString  *recvMessageID;
+
+@property (copy, nonatomic, readonly) NSString *chatter;
+
 @end
 
 @implementation GYHDChatViewController
@@ -67,6 +74,26 @@
     }];
 
     
+}
+
+#pragma mark - SendMessageMethod
+
+-(void)sendTextMessage:(NSString *)textMessage{
+
+
+}
+
+-(void)sendImageMessage:(UIImage *)image{
+
+}
+
+-(void)sendAudioMessage:(GYHDVoiceModel *)voice{
+
+}
+
+-(void)sendVideoMessage:(GYHDVideoModel *)video{
+
+
 }
 
 #pragma mark - UITableView Delegate

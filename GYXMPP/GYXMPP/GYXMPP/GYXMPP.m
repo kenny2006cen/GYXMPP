@@ -201,6 +201,7 @@ static id _instace;
     
     if(error && _resultBlock){
         _resultBlock(XMPPResultTypeNetErr);
+        
     }
     
     if (error) {
@@ -234,6 +235,7 @@ static id _instace;
     // 判断block有无值，再回调给登录控制器
     if (_resultBlock) {
         _resultBlock(XMPPResultTypeLoginFailure);
+        
     }
     
     [self postNotification:XMPPResultTypeLoginFailure];
@@ -324,7 +326,7 @@ static id _instace;
     [self connectToHost];
 }
 
--(void)sendMessage:(GYMessage *)message{
+-(GYMessage*)sendMessage:(GYMessage *)message{
     
     //先保存默认数据
     message.msgId = [NSNumber numberWithLongLong:[[NSDate date] timeIntervalSince1970]] ;
@@ -368,6 +370,7 @@ static id _instace;
         
     }
     
+    return message;
 }
 
 

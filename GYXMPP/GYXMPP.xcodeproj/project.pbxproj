@@ -17,6 +17,40 @@
 		18CB04151D1386E000076DBA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 18CB04111D1386E000076DBA /* LICENSE */; };
 		18CB04161D1386E000076DBA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04121D1386E000076DBA /* README.md */; };
 		18CB043C1D13D19800076DBA /* GYHDChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB043B1D13D19800076DBA /* GYHDChatViewController.m */; };
+		18CB048E1D13DA0700076DBA /* GYHDEmojiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04451D13DA0700076DBA /* GYHDEmojiModel.m */; };
+		18CB048F1D13DA0700076DBA /* GYHDPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04471D13DA0700076DBA /* GYHDPhotoModel.m */; };
+		18CB04901D13DA0700076DBA /* GYHDAudioView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB044A1D13DA0700076DBA /* GYHDAudioView.m */; };
+		18CB04911D13DA0700076DBA /* GYHDCameraShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB044C1D13DA0700076DBA /* GYHDCameraShowView.m */; };
+		18CB04921D13DA0700076DBA /* GYHDCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB044E1D13DA0700076DBA /* GYHDCameraView.m */; };
+		18CB04931D13DA0700076DBA /* GYHDEmojiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04501D13DA0700076DBA /* GYHDEmojiCell.m */; };
+		18CB04941D13DA0700076DBA /* GYHDEmojiView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04521D13DA0700076DBA /* GYHDEmojiView.m */; };
+		18CB04951D13DA0700076DBA /* GYHDInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04541D13DA0700076DBA /* GYHDInputView.m */; };
+		18CB04961D13DA0700076DBA /* GYHDKeyboardSelectBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04561D13DA0700076DBA /* GYHDKeyboardSelectBaseView.m */; };
+		18CB04971D13DA0700076DBA /* GYHDMessageTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04581D13DA0700076DBA /* GYHDMessageTextView.m */; };
+		18CB04981D13DA0700076DBA /* GYHDPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB045A1D13DA0700076DBA /* GYHDPhotoCell.m */; };
+		18CB04991D13DA0700076DBA /* GYHDPhotoShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB045C1D13DA0700076DBA /* GYHDPhotoShowView.m */; };
+		18CB049A1D13DA0700076DBA /* GYHDPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB045E1D13DA0700076DBA /* GYHDPhotoView.m */; };
+		18CB049B1D13DA0700076DBA /* GYHDPlayVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04601D13DA0700076DBA /* GYHDPlayVideoView.m */; };
+		18CB049C1D13DA0700076DBA /* GYHDQuickReplyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04621D13DA0700076DBA /* GYHDQuickReplyView.m */; };
+		18CB049D1D13DA0700076DBA /* GYHDVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04641D13DA0700076DBA /* GYHDVideoView.m */; };
+		18CB049E1D13DA0700076DBA /* GYHDNewChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04671D13DA0700076DBA /* GYHDNewChatModel.m */; };
+		18CB049F1D13DA0700076DBA /* EmojiTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB046A1D13DA0700076DBA /* EmojiTextAttachment.m */; };
+		18CB04A01D13DA0700076DBA /* GYHDAudioTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB046C1D13DA0700076DBA /* GYHDAudioTool.m */; };
+		18CB04A41D13DA0700076DBA /* GYHDRecordVideoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04741D13DA0700076DBA /* GYHDRecordVideoTool.m */; };
+		18CB04A51D13DA0700076DBA /* GYHDBaseChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04771D13DA0700076DBA /* GYHDBaseChatCell.m */; };
+		18CB04A61D13DA0700076DBA /* GYHDChatImageShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB047A1D13DA0700076DBA /* GYHDChatImageShowView.m */; };
+		18CB04A71D13DA0700076DBA /* GYHDChatVideoShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB047C1D13DA0700076DBA /* GYHDChatVideoShowView.m */; };
+		18CB04A81D13DA0700076DBA /* GYHDLeftChatAudioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB047E1D13DA0700076DBA /* GYHDLeftChatAudioCell.m */; };
+		18CB04A91D13DA0700076DBA /* GYHDLeftChatImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04801D13DA0700076DBA /* GYHDLeftChatImageCell.m */; };
+		18CB04AA1D13DA0700076DBA /* GYHDLeftChatTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04821D13DA0700076DBA /* GYHDLeftChatTextCell.m */; };
+		18CB04AB1D13DA0700076DBA /* GYHDLeftChatVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04841D13DA0700076DBA /* GYHDLeftChatVideoCell.m */; };
+		18CB04AC1D13DA0700076DBA /* GYHDRightChatAudioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04861D13DA0700076DBA /* GYHDRightChatAudioCell.m */; };
+		18CB04AD1D13DA0700076DBA /* GYHDRightChatImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04881D13DA0700076DBA /* GYHDRightChatImageCell.m */; };
+		18CB04AE1D13DA0700076DBA /* GYHDRightChatTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB048A1D13DA0700076DBA /* GYHDRightChatTextCell.m */; };
+		18CB04AF1D13DA0700076DBA /* GYHDRightChatVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB048C1D13DA0700076DBA /* GYHDRightChatVideoCell.m */; };
+		18CB04B51D13DB9300076DBA /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04B21D13DB9300076DBA /* UIAlertView+Blocks.m */; };
+		18CB04B61D13DB9300076DBA /* UIColor+HEX.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04B41D13DB9300076DBA /* UIColor+HEX.m */; };
+		18CB04BB1D13E3FB00076DBA /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CB04BA1D13E3FA00076DBA /* libmp3lame.a */; };
 		18E92A641D12469F0065147A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E92A621D12469F0065147A /* LoginViewController.m */; };
 		18E92A651D12469F0065147A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E92A631D12469F0065147A /* LoginViewController.xib */; };
 		3D905A33E0153DD120C33C73 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5205B05BDC3E478BBBE69240 /* libPods.a */; };
@@ -58,6 +92,75 @@
 		18CB043A1D13D19800076DBA /* GYHDChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDChatViewController.h; sourceTree = "<group>"; };
 		18CB043B1D13D19800076DBA /* GYHDChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDChatViewController.m; sourceTree = "<group>"; };
 		18CB043D1D13D40900076DBA /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		18CB04441D13DA0700076DBA /* GYHDEmojiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDEmojiModel.h; sourceTree = "<group>"; };
+		18CB04451D13DA0700076DBA /* GYHDEmojiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDEmojiModel.m; sourceTree = "<group>"; };
+		18CB04461D13DA0700076DBA /* GYHDPhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDPhotoModel.h; sourceTree = "<group>"; };
+		18CB04471D13DA0700076DBA /* GYHDPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDPhotoModel.m; sourceTree = "<group>"; };
+		18CB04491D13DA0700076DBA /* GYHDAudioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDAudioView.h; sourceTree = "<group>"; };
+		18CB044A1D13DA0700076DBA /* GYHDAudioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDAudioView.m; sourceTree = "<group>"; };
+		18CB044B1D13DA0700076DBA /* GYHDCameraShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDCameraShowView.h; sourceTree = "<group>"; };
+		18CB044C1D13DA0700076DBA /* GYHDCameraShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDCameraShowView.m; sourceTree = "<group>"; };
+		18CB044D1D13DA0700076DBA /* GYHDCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDCameraView.h; sourceTree = "<group>"; };
+		18CB044E1D13DA0700076DBA /* GYHDCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDCameraView.m; sourceTree = "<group>"; };
+		18CB044F1D13DA0700076DBA /* GYHDEmojiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDEmojiCell.h; sourceTree = "<group>"; };
+		18CB04501D13DA0700076DBA /* GYHDEmojiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDEmojiCell.m; sourceTree = "<group>"; };
+		18CB04511D13DA0700076DBA /* GYHDEmojiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDEmojiView.h; sourceTree = "<group>"; };
+		18CB04521D13DA0700076DBA /* GYHDEmojiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDEmojiView.m; sourceTree = "<group>"; };
+		18CB04531D13DA0700076DBA /* GYHDInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDInputView.h; sourceTree = "<group>"; };
+		18CB04541D13DA0700076DBA /* GYHDInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDInputView.m; sourceTree = "<group>"; };
+		18CB04551D13DA0700076DBA /* GYHDKeyboardSelectBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDKeyboardSelectBaseView.h; sourceTree = "<group>"; };
+		18CB04561D13DA0700076DBA /* GYHDKeyboardSelectBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDKeyboardSelectBaseView.m; sourceTree = "<group>"; };
+		18CB04571D13DA0700076DBA /* GYHDMessageTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDMessageTextView.h; sourceTree = "<group>"; };
+		18CB04581D13DA0700076DBA /* GYHDMessageTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDMessageTextView.m; sourceTree = "<group>"; };
+		18CB04591D13DA0700076DBA /* GYHDPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDPhotoCell.h; sourceTree = "<group>"; };
+		18CB045A1D13DA0700076DBA /* GYHDPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDPhotoCell.m; sourceTree = "<group>"; };
+		18CB045B1D13DA0700076DBA /* GYHDPhotoShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDPhotoShowView.h; sourceTree = "<group>"; };
+		18CB045C1D13DA0700076DBA /* GYHDPhotoShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDPhotoShowView.m; sourceTree = "<group>"; };
+		18CB045D1D13DA0700076DBA /* GYHDPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDPhotoView.h; sourceTree = "<group>"; };
+		18CB045E1D13DA0700076DBA /* GYHDPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDPhotoView.m; sourceTree = "<group>"; };
+		18CB045F1D13DA0700076DBA /* GYHDPlayVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDPlayVideoView.h; sourceTree = "<group>"; };
+		18CB04601D13DA0700076DBA /* GYHDPlayVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDPlayVideoView.m; sourceTree = "<group>"; };
+		18CB04611D13DA0700076DBA /* GYHDQuickReplyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDQuickReplyView.h; sourceTree = "<group>"; };
+		18CB04621D13DA0700076DBA /* GYHDQuickReplyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDQuickReplyView.m; sourceTree = "<group>"; };
+		18CB04631D13DA0700076DBA /* GYHDVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDVideoView.h; sourceTree = "<group>"; };
+		18CB04641D13DA0700076DBA /* GYHDVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDVideoView.m; sourceTree = "<group>"; };
+		18CB04661D13DA0700076DBA /* GYHDNewChatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDNewChatModel.h; sourceTree = "<group>"; };
+		18CB04671D13DA0700076DBA /* GYHDNewChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDNewChatModel.m; sourceTree = "<group>"; };
+		18CB04691D13DA0700076DBA /* EmojiTextAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmojiTextAttachment.h; sourceTree = "<group>"; };
+		18CB046A1D13DA0700076DBA /* EmojiTextAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmojiTextAttachment.m; sourceTree = "<group>"; };
+		18CB046B1D13DA0700076DBA /* GYHDAudioTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDAudioTool.h; sourceTree = "<group>"; };
+		18CB046C1D13DA0700076DBA /* GYHDAudioTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDAudioTool.m; sourceTree = "<group>"; };
+		18CB04731D13DA0700076DBA /* GYHDRecordVideoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDRecordVideoTool.h; sourceTree = "<group>"; };
+		18CB04741D13DA0700076DBA /* GYHDRecordVideoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDRecordVideoTool.m; sourceTree = "<group>"; };
+		18CB04761D13DA0700076DBA /* GYHDBaseChatCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDBaseChatCell.h; sourceTree = "<group>"; };
+		18CB04771D13DA0700076DBA /* GYHDBaseChatCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDBaseChatCell.m; sourceTree = "<group>"; };
+		18CB04781D13DA0700076DBA /* GYHDChatDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDChatDelegate.h; sourceTree = "<group>"; };
+		18CB04791D13DA0700076DBA /* GYHDChatImageShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDChatImageShowView.h; sourceTree = "<group>"; };
+		18CB047A1D13DA0700076DBA /* GYHDChatImageShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDChatImageShowView.m; sourceTree = "<group>"; };
+		18CB047B1D13DA0700076DBA /* GYHDChatVideoShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDChatVideoShowView.h; sourceTree = "<group>"; };
+		18CB047C1D13DA0700076DBA /* GYHDChatVideoShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDChatVideoShowView.m; sourceTree = "<group>"; };
+		18CB047D1D13DA0700076DBA /* GYHDLeftChatAudioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDLeftChatAudioCell.h; sourceTree = "<group>"; };
+		18CB047E1D13DA0700076DBA /* GYHDLeftChatAudioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDLeftChatAudioCell.m; sourceTree = "<group>"; };
+		18CB047F1D13DA0700076DBA /* GYHDLeftChatImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDLeftChatImageCell.h; sourceTree = "<group>"; };
+		18CB04801D13DA0700076DBA /* GYHDLeftChatImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDLeftChatImageCell.m; sourceTree = "<group>"; };
+		18CB04811D13DA0700076DBA /* GYHDLeftChatTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDLeftChatTextCell.h; sourceTree = "<group>"; };
+		18CB04821D13DA0700076DBA /* GYHDLeftChatTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDLeftChatTextCell.m; sourceTree = "<group>"; };
+		18CB04831D13DA0700076DBA /* GYHDLeftChatVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDLeftChatVideoCell.h; sourceTree = "<group>"; };
+		18CB04841D13DA0700076DBA /* GYHDLeftChatVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDLeftChatVideoCell.m; sourceTree = "<group>"; };
+		18CB04851D13DA0700076DBA /* GYHDRightChatAudioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDRightChatAudioCell.h; sourceTree = "<group>"; };
+		18CB04861D13DA0700076DBA /* GYHDRightChatAudioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDRightChatAudioCell.m; sourceTree = "<group>"; };
+		18CB04871D13DA0700076DBA /* GYHDRightChatImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDRightChatImageCell.h; sourceTree = "<group>"; };
+		18CB04881D13DA0700076DBA /* GYHDRightChatImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDRightChatImageCell.m; sourceTree = "<group>"; };
+		18CB04891D13DA0700076DBA /* GYHDRightChatTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDRightChatTextCell.h; sourceTree = "<group>"; };
+		18CB048A1D13DA0700076DBA /* GYHDRightChatTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDRightChatTextCell.m; sourceTree = "<group>"; };
+		18CB048B1D13DA0700076DBA /* GYHDRightChatVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDRightChatVideoCell.h; sourceTree = "<group>"; };
+		18CB048C1D13DA0700076DBA /* GYHDRightChatVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDRightChatVideoCell.m; sourceTree = "<group>"; };
+		18CB04B11D13DB9300076DBA /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
+		18CB04B21D13DB9300076DBA /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
+		18CB04B31D13DB9300076DBA /* UIColor+HEX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HEX.h"; sourceTree = "<group>"; };
+		18CB04B41D13DB9300076DBA /* UIColor+HEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HEX.m"; sourceTree = "<group>"; };
+		18CB04B91D13E3FA00076DBA /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		18CB04BA1D13E3FA00076DBA /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 		18E92A611D12469F0065147A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		18E92A621D12469F0065147A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		18E92A631D12469F0065147A /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -87,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D905A33E0153DD120C33C73 /* libPods.a in Frameworks */,
+				18CB04BB1D13E3FB00076DBA /* libmp3lame.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +239,154 @@
 				18CB04101D1386E000076DBA /* NSObject+GYFMDB.m */,
 			);
 			path = GYFMDB;
+			sourceTree = "<group>";
+		};
+		18CB043E1D13D9D700076DBA /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				18CB04B71D13E3ED00076DBA /* Tool */,
+				18CB04B01D13DB9300076DBA /* Category */,
+				18CB04421D13DA0700076DBA /* KeyBoard */,
+				18CB04651D13DA0700076DBA /* Model */,
+				18CB04681D13DA0700076DBA /* Other */,
+				18CB04751D13DA0700076DBA /* View */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		18CB04421D13DA0700076DBA /* KeyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				18CB04431D13DA0700076DBA /* Model */,
+				18CB04481D13DA0700076DBA /* View */,
+			);
+			path = KeyBoard;
+			sourceTree = "<group>";
+		};
+		18CB04431D13DA0700076DBA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18CB04441D13DA0700076DBA /* GYHDEmojiModel.h */,
+				18CB04451D13DA0700076DBA /* GYHDEmojiModel.m */,
+				18CB04461D13DA0700076DBA /* GYHDPhotoModel.h */,
+				18CB04471D13DA0700076DBA /* GYHDPhotoModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18CB04481D13DA0700076DBA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18CB04491D13DA0700076DBA /* GYHDAudioView.h */,
+				18CB044A1D13DA0700076DBA /* GYHDAudioView.m */,
+				18CB044B1D13DA0700076DBA /* GYHDCameraShowView.h */,
+				18CB044C1D13DA0700076DBA /* GYHDCameraShowView.m */,
+				18CB044D1D13DA0700076DBA /* GYHDCameraView.h */,
+				18CB044E1D13DA0700076DBA /* GYHDCameraView.m */,
+				18CB044F1D13DA0700076DBA /* GYHDEmojiCell.h */,
+				18CB04501D13DA0700076DBA /* GYHDEmojiCell.m */,
+				18CB04511D13DA0700076DBA /* GYHDEmojiView.h */,
+				18CB04521D13DA0700076DBA /* GYHDEmojiView.m */,
+				18CB04531D13DA0700076DBA /* GYHDInputView.h */,
+				18CB04541D13DA0700076DBA /* GYHDInputView.m */,
+				18CB04551D13DA0700076DBA /* GYHDKeyboardSelectBaseView.h */,
+				18CB04561D13DA0700076DBA /* GYHDKeyboardSelectBaseView.m */,
+				18CB04571D13DA0700076DBA /* GYHDMessageTextView.h */,
+				18CB04581D13DA0700076DBA /* GYHDMessageTextView.m */,
+				18CB04591D13DA0700076DBA /* GYHDPhotoCell.h */,
+				18CB045A1D13DA0700076DBA /* GYHDPhotoCell.m */,
+				18CB045B1D13DA0700076DBA /* GYHDPhotoShowView.h */,
+				18CB045C1D13DA0700076DBA /* GYHDPhotoShowView.m */,
+				18CB045D1D13DA0700076DBA /* GYHDPhotoView.h */,
+				18CB045E1D13DA0700076DBA /* GYHDPhotoView.m */,
+				18CB045F1D13DA0700076DBA /* GYHDPlayVideoView.h */,
+				18CB04601D13DA0700076DBA /* GYHDPlayVideoView.m */,
+				18CB04611D13DA0700076DBA /* GYHDQuickReplyView.h */,
+				18CB04621D13DA0700076DBA /* GYHDQuickReplyView.m */,
+				18CB04631D13DA0700076DBA /* GYHDVideoView.h */,
+				18CB04641D13DA0700076DBA /* GYHDVideoView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18CB04651D13DA0700076DBA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18CB04661D13DA0700076DBA /* GYHDNewChatModel.h */,
+				18CB04671D13DA0700076DBA /* GYHDNewChatModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18CB04681D13DA0700076DBA /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				18CB04691D13DA0700076DBA /* EmojiTextAttachment.h */,
+				18CB046A1D13DA0700076DBA /* EmojiTextAttachment.m */,
+				18CB046B1D13DA0700076DBA /* GYHDAudioTool.h */,
+				18CB046C1D13DA0700076DBA /* GYHDAudioTool.m */,
+				18CB04731D13DA0700076DBA /* GYHDRecordVideoTool.h */,
+				18CB04741D13DA0700076DBA /* GYHDRecordVideoTool.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		18CB04751D13DA0700076DBA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18CB04761D13DA0700076DBA /* GYHDBaseChatCell.h */,
+				18CB04771D13DA0700076DBA /* GYHDBaseChatCell.m */,
+				18CB04781D13DA0700076DBA /* GYHDChatDelegate.h */,
+				18CB04791D13DA0700076DBA /* GYHDChatImageShowView.h */,
+				18CB047A1D13DA0700076DBA /* GYHDChatImageShowView.m */,
+				18CB047B1D13DA0700076DBA /* GYHDChatVideoShowView.h */,
+				18CB047C1D13DA0700076DBA /* GYHDChatVideoShowView.m */,
+				18CB047D1D13DA0700076DBA /* GYHDLeftChatAudioCell.h */,
+				18CB047E1D13DA0700076DBA /* GYHDLeftChatAudioCell.m */,
+				18CB047F1D13DA0700076DBA /* GYHDLeftChatImageCell.h */,
+				18CB04801D13DA0700076DBA /* GYHDLeftChatImageCell.m */,
+				18CB04811D13DA0700076DBA /* GYHDLeftChatTextCell.h */,
+				18CB04821D13DA0700076DBA /* GYHDLeftChatTextCell.m */,
+				18CB04831D13DA0700076DBA /* GYHDLeftChatVideoCell.h */,
+				18CB04841D13DA0700076DBA /* GYHDLeftChatVideoCell.m */,
+				18CB04851D13DA0700076DBA /* GYHDRightChatAudioCell.h */,
+				18CB04861D13DA0700076DBA /* GYHDRightChatAudioCell.m */,
+				18CB04871D13DA0700076DBA /* GYHDRightChatImageCell.h */,
+				18CB04881D13DA0700076DBA /* GYHDRightChatImageCell.m */,
+				18CB04891D13DA0700076DBA /* GYHDRightChatTextCell.h */,
+				18CB048A1D13DA0700076DBA /* GYHDRightChatTextCell.m */,
+				18CB048B1D13DA0700076DBA /* GYHDRightChatVideoCell.h */,
+				18CB048C1D13DA0700076DBA /* GYHDRightChatVideoCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18CB04B01D13DB9300076DBA /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				18CB04B11D13DB9300076DBA /* UIAlertView+Blocks.h */,
+				18CB04B21D13DB9300076DBA /* UIAlertView+Blocks.m */,
+				18CB04B31D13DB9300076DBA /* UIColor+HEX.h */,
+				18CB04B41D13DB9300076DBA /* UIColor+HEX.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		18CB04B71D13E3ED00076DBA /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				18CB04B81D13E3FA00076DBA /* lame */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		18CB04B81D13E3FA00076DBA /* lame */ = {
+			isa = PBXGroup;
+			children = (
+				18CB04B91D13E3FA00076DBA /* lame.h */,
+				18CB04BA1D13E3FA00076DBA /* libmp3lame.a */,
+			);
+			path = lame;
 			sourceTree = "<group>";
 		};
 		29C3568654A1F6183E2E20EB /* Pods */ = {
@@ -187,6 +439,7 @@
 				189C75C31D0FFB1D00FCEC31 /* MessageListCell.m */,
 				6043576D1D026B4600CF2228 /* MessageListViewController.h */,
 				6043576E1D026B4600CF2228 /* MessageListViewController.m */,
+				18CB043E1D13D9D700076DBA /* Chat */,
 				18CB043A1D13D19800076DBA /* GYHDChatViewController.h */,
 				18CB043B1D13D19800076DBA /* GYHDChatViewController.m */,
 				18E92A611D12469F0065147A /* LoginViewController.h */,
@@ -385,20 +638,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CB04AF1D13DA0700076DBA /* GYHDRightChatVideoCell.m in Sources */,
 				6043578F1D027AD100CF2228 /* GYXMPP.m in Sources */,
+				18CB04911D13DA0700076DBA /* GYHDCameraShowView.m in Sources */,
+				18CB04961D13DA0700076DBA /* GYHDKeyboardSelectBaseView.m in Sources */,
+				18CB04A81D13DA0700076DBA /* GYHDLeftChatAudioCell.m in Sources */,
 				6043576F1D026B4600CF2228 /* MessageListViewController.m in Sources */,
+				18CB049F1D13DA0700076DBA /* EmojiTextAttachment.m in Sources */,
 				189C75BC1D0FDED000FCEC31 /* GYMessengeExtendElement.m in Sources */,
+				18CB04A41D13DA0700076DBA /* GYHDRecordVideoTool.m in Sources */,
+				18CB049D1D13DA0700076DBA /* GYHDVideoView.m in Sources */,
 				6043576C1D026B4600CF2228 /* AppDelegate.m in Sources */,
+				18CB04941D13DA0700076DBA /* GYHDEmojiView.m in Sources */,
+				18CB049A1D13DA0700076DBA /* GYHDPhotoView.m in Sources */,
 				18CB04161D1386E000076DBA /* README.md in Sources */,
 				18E92A641D12469F0065147A /* LoginViewController.m in Sources */,
+				18CB04A61D13DA0700076DBA /* GYHDChatImageShowView.m in Sources */,
+				18CB048F1D13DA0700076DBA /* GYHDPhotoModel.m in Sources */,
+				18CB04AE1D13DA0700076DBA /* GYHDRightChatTextCell.m in Sources */,
+				18CB04981D13DA0700076DBA /* GYHDPhotoCell.m in Sources */,
 				18CB043C1D13D19800076DBA /* GYHDChatViewController.m in Sources */,
 				189C75C41D0FFB1D00FCEC31 /* MessageListCell.m in Sources */,
+				18CB04A51D13DA0700076DBA /* GYHDBaseChatCell.m in Sources */,
+				18CB049B1D13DA0700076DBA /* GYHDPlayVideoView.m in Sources */,
+				18CB04A71D13DA0700076DBA /* GYHDChatVideoShowView.m in Sources */,
+				18CB04991D13DA0700076DBA /* GYHDPhotoShowView.m in Sources */,
 				18CB04131D1386E000076DBA /* GYFMDB.m in Sources */,
+				18CB04921D13DA0700076DBA /* GYHDCameraView.m in Sources */,
 				189C75AD1D0FB14500FCEC31 /* GYMessage.m in Sources */,
+				18CB049E1D13DA0700076DBA /* GYHDNewChatModel.m in Sources */,
 				18CB04141D1386E000076DBA /* NSObject+GYFMDB.m in Sources */,
+				18CB048E1D13DA0700076DBA /* GYHDEmojiModel.m in Sources */,
 				189C75BF1D0FDF3E00FCEC31 /* GYGenUUID.m in Sources */,
 				604357921D028ED900CF2228 /* GYXMPPTool.m in Sources */,
 				604357691D026B4600CF2228 /* main.m in Sources */,
+				18CB04931D13DA0700076DBA /* GYHDEmojiCell.m in Sources */,
+				18CB04AD1D13DA0700076DBA /* GYHDRightChatImageCell.m in Sources */,
+				18CB04B61D13DB9300076DBA /* UIColor+HEX.m in Sources */,
+				18CB04901D13DA0700076DBA /* GYHDAudioView.m in Sources */,
+				18CB04B51D13DB9300076DBA /* UIAlertView+Blocks.m in Sources */,
+				18CB04AC1D13DA0700076DBA /* GYHDRightChatAudioCell.m in Sources */,
+				18CB04AB1D13DA0700076DBA /* GYHDLeftChatVideoCell.m in Sources */,
+				18CB04A01D13DA0700076DBA /* GYHDAudioTool.m in Sources */,
+				18CB04A91D13DA0700076DBA /* GYHDLeftChatImageCell.m in Sources */,
+				18CB049C1D13DA0700076DBA /* GYHDQuickReplyView.m in Sources */,
+				18CB04AA1D13DA0700076DBA /* GYHDLeftChatTextCell.m in Sources */,
+				18CB04951D13DA0700076DBA /* GYHDInputView.m in Sources */,
+				18CB04971D13DA0700076DBA /* GYHDMessageTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +796,10 @@
 				INFOPLIST_FILE = GYXMPP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GYXMPP/Chat/Tool/lame",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = jlc.GYXMPP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -524,6 +814,10 @@
 				INFOPLIST_FILE = GYXMPP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GYXMPP/Chat/Tool/lame",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = jlc.GYXMPP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -62,7 +62,7 @@
     WSHD(weakSelf);
     [_chatTableView mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.top.left.right.equalTo(self.view);
+        make.top.left.right.equalTo(weakSelf.view);
         make.height.mas_equalTo(kScreenHeight - 105 -64+15);
     }];
 

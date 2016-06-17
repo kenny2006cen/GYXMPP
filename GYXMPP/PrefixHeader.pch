@@ -18,6 +18,12 @@
 #define kScreenScale  [UIScreen mainScreen].scale
 
 #define WSHD(weakSelf) __weak __typeof(self) weakSelf = self;
+
+#import "UIColor+HEX.h"
+
+#define kLoadPng(fileName) [UIImage imageNamed:fileName]
+#define kLightRedColor [UIColor colorWithHexString:@"#E94F37"]
+
 #import <Masonry/Masonry.h>
 
 #endif /* PrefixHeader_pch */

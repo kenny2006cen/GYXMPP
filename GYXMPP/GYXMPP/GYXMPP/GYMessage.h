@@ -27,5 +27,7 @@
 @property ( nonatomic, copy) NSString *msgRecTime;
 @property ( nonatomic, copy) NSString *msgBody;//json格式
 
+@property ( nonatomic, copy) NSString *msgUserName;//用户名
+
 @end
 

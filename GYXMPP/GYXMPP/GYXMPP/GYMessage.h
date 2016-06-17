@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import <GYFMDB/GYFMDB.h>
+#import "GYFMDB.h"
 #import "NSObject+GYFMDB.h"
 
 @interface GYMessage : NSObject

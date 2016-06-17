@@ -12,6 +12,10 @@
 		189C75BF1D0FDF3E00FCEC31 /* GYGenUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C75BE1D0FDF3E00FCEC31 /* GYGenUUID.m */; };
 		189C75C11D0FF97900FCEC31 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 189C75C01D0FF97900FCEC31 /* Default-568h@2x.png */; };
 		189C75C41D0FFB1D00FCEC31 /* MessageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C75C31D0FFB1D00FCEC31 /* MessageListCell.m */; };
+		18CB04131D1386E000076DBA /* GYFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB040E1D1386E000076DBA /* GYFMDB.m */; };
+		18CB04141D1386E000076DBA /* NSObject+GYFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04101D1386E000076DBA /* NSObject+GYFMDB.m */; };
+		18CB04151D1386E000076DBA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 18CB04111D1386E000076DBA /* LICENSE */; };
+		18CB04161D1386E000076DBA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04121D1386E000076DBA /* README.md */; };
 		18E92A641D12469F0065147A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E92A621D12469F0065147A /* LoginViewController.m */; };
 		18E92A651D12469F0065147A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E92A631D12469F0065147A /* LoginViewController.xib */; };
 		3D905A33E0153DD120C33C73 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5205B05BDC3E478BBBE69240 /* libPods.a */; };
@@ -44,6 +48,12 @@
 		189C75C01D0FF97900FCEC31 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		189C75C21D0FFB1D00FCEC31 /* MessageListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageListCell.h; sourceTree = "<group>"; };
 		189C75C31D0FFB1D00FCEC31 /* MessageListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageListCell.m; sourceTree = "<group>"; };
+		18CB040D1D1386E000076DBA /* GYFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYFMDB.h; sourceTree = "<group>"; };
+		18CB040E1D1386E000076DBA /* GYFMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYFMDB.m; sourceTree = "<group>"; };
+		18CB040F1D1386E000076DBA /* NSObject+GYFMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GYFMDB.h"; sourceTree = "<group>"; };
+		18CB04101D1386E000076DBA /* NSObject+GYFMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GYFMDB.m"; sourceTree = "<group>"; };
+		18CB04111D1386E000076DBA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		18CB04121D1386E000076DBA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		18E92A611D12469F0065147A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		18E92A621D12469F0065147A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		18E92A631D12469F0065147A /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -86,6 +96,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18CB04091D1386E000076DBA /* GYFMDB */ = {
+			isa = PBXGroup;
+			children = (
+				18CB040A1D1386E000076DBA /* GYFMDB */,
+				18CB04111D1386E000076DBA /* LICENSE */,
+				18CB04121D1386E000076DBA /* README.md */,
+			);
+			path = GYFMDB;
+			sourceTree = "<group>";
+		};
+		18CB040A1D1386E000076DBA /* GYFMDB */ = {
+			isa = PBXGroup;
+			children = (
+				18CB040B1D1386E000076DBA /* GYFMDB */,
+			);
+			path = GYFMDB;
+			sourceTree = "<group>";
+		};
+		18CB040B1D1386E000076DBA /* GYFMDB */ = {
+			isa = PBXGroup;
+			children = (
+				18CB040C1D1386E000076DBA /* GYFMDB */,
+			);
+			path = GYFMDB;
+			sourceTree = "<group>";
+		};
+		18CB040C1D1386E000076DBA /* GYFMDB */ = {
+			isa = PBXGroup;
+			children = (
+				18CB040D1D1386E000076DBA /* GYFMDB.h */,
+				18CB040E1D1386E000076DBA /* GYFMDB.m */,
+				18CB040F1D1386E000076DBA /* NSObject+GYFMDB.h */,
+				18CB04101D1386E000076DBA /* NSObject+GYFMDB.m */,
+			);
+			path = GYFMDB;
+			sourceTree = "<group>";
+		};
 		29C3568654A1F6183E2E20EB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +174,7 @@
 		604357661D026B4600CF2228 /* GYXMPP */ = {
 			isa = PBXGroup;
 			children = (
+				18CB04091D1386E000076DBA /* GYFMDB */,
 				6043578C1D027A8F00CF2228 /* GYXMPP */,
 				6043576A1D026B4600CF2228 /* AppDelegate.h */,
 				6043576B1D026B4600CF2228 /* AppDelegate.m */,
@@ -263,6 +311,7 @@
 			files = (
 				604357741D026B4600CF2228 /* Assets.xcassets in Resources */,
 				189C75C11D0FF97900FCEC31 /* Default-568h@2x.png in Resources */,
+				18CB04151D1386E000076DBA /* LICENSE in Resources */,
 				18E92A651D12469F0065147A /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,9 +382,12 @@
 				6043576F1D026B4600CF2228 /* MessageListViewController.m in Sources */,
 				189C75BC1D0FDED000FCEC31 /* GYMessengeExtendElement.m in Sources */,
 				6043576C1D026B4600CF2228 /* AppDelegate.m in Sources */,
+				18CB04161D1386E000076DBA /* README.md in Sources */,
 				18E92A641D12469F0065147A /* LoginViewController.m in Sources */,
 				189C75C41D0FFB1D00FCEC31 /* MessageListCell.m in Sources */,
+				18CB04131D1386E000076DBA /* GYFMDB.m in Sources */,
 				189C75AD1D0FB14500FCEC31 /* GYMessage.m in Sources */,
+				18CB04141D1386E000076DBA /* NSObject+GYFMDB.m in Sources */,
 				189C75BF1D0FDF3E00FCEC31 /* GYGenUUID.m in Sources */,
 				604357921D028ED900CF2228 /* GYXMPPTool.m in Sources */,
 				604357691D026B4600CF2228 /* main.m in Sources */,

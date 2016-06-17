@@ -1,8 +1,9 @@
 platform:ios, '7.0'
 inhibit_all_warnings!
 pod 'Masonry'
+pod 'AFNetworking'
 pod 'IQKeyboardManager'
 pod 'XMPPFramework'
 pod 'FMDB'
 pod 'UITableView+FDTemplateLayoutCell'
-pod 'GYFMDB',:git =>'https://github.com/kenny2006cen/GYFMDB.git'
+#pod 'GYFMDB',:git =>'https://github.com/kenny2006cen/GYFMDB.git'

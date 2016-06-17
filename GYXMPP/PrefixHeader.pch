@@ -1,0 +1,23 @@
+//
+//  PrefixHeader.pch
+//  GYXMPP
+//
+//  Created by User on 16/6/17.
+//  Copyright © 2016年 jianglincen. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+//获取屏幕 宽度、高度 、倍率
+#define kScreenBounds  [[UIScreen mainScreen] bounds]
+#define kScreenWidth  kScreenBounds.size.width
+#define kScreenHeight kScreenBounds.size.height
+#define kScreenScale  [UIScreen mainScreen].scale
+
+#define WSHD(weakSelf) __weak __typeof(self) weakSelf = self;
+#import <Masonry/Masonry.h>
+
+#endif /* PrefixHeader_pch */

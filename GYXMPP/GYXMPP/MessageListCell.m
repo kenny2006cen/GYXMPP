@@ -17,23 +17,23 @@ static NSString * const GYTableViewCellID = @"GYHDBusinessCell";
 /**
  *  用户头像
  */
-@property(nonatomic, weak) UIImageView *iconImageView;
+@property(nonatomic, strong) UIImageView *iconImageView;
 /**
  *  用户昵称
  */
-@property(nonatomic, weak) UILabel *userNameLabel;
+@property(nonatomic, strong) UILabel *userNameLabel;
 /**
  *  最后一条消息时间
  */
-@property(nonatomic, weak) UILabel *lasttimeLabel;
+@property(nonatomic, strong) UILabel *lasttimeLabel;
 /**
  *  消息正文
  */
-@property(nonatomic, weak) UILabel *messageContentLabel;
+@property(nonatomic, strong) UILabel *messageContentLabel;
 /**
  * 未读消息
  */
-@property(nonatomic, weak) UIButton *unreadMessageButton;
+@property(nonatomic, strong) UIButton *unreadMessageButton;
 
 @end
 
@@ -52,45 +52,44 @@ static NSString * const GYTableViewCellID = @"GYHDBusinessCell";
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (!self) return  self;
     // 头像
-    UIImageView *iconImageView = [[UIImageView alloc] init];
-    iconImageView.layer.masksToBounds = YES;
-    iconImageView.layer.cornerRadius = 3.0f;
-    [self.contentView addSubview:iconImageView];
-    _iconImageView = iconImageView;
+    _iconImageView = [[UIImageView alloc] init];
+    _iconImageView.layer.masksToBounds = YES;
+    _iconImageView.layer.cornerRadius = 3.0f;
+    [self.contentView addSubview:_iconImageView];
 
     // 名称
-    UILabel     *userNameLabel = [[UILabel alloc] init];
-    userNameLabel.font = [UIFont systemFontOfSize:16.0f];
-    [self.contentView addSubview:userNameLabel];
-    _userNameLabel = userNameLabel;
+    _userNameLabel = [[UILabel alloc] init];
+    _userNameLabel.font = [UIFont systemFontOfSize:16.0f];
+    [self.contentView addSubview:_userNameLabel];
     
     //消息
-    UILabel     *messageContentLabel = [[UILabel alloc] init];
-    messageContentLabel.font = [UIFont systemFontOfSize:12.0f];
-    messageContentLabel.textColor = [UIColor colorWithRed:153/255.0f green:153/255.0f blue:153/255.0f alpha:1];
-    [self.contentView addSubview:messageContentLabel];
-    _messageContentLabel = messageContentLabel;
+    _messageContentLabel = [[UILabel alloc] init];
+    _messageContentLabel.font = [UIFont systemFontOfSize:12.0f];
+    _messageContentLabel.textColor = [UIColor colorWithRed:153/255.0f green:153/255.0f blue:153/255.0f alpha:1];
+    [self.contentView addSubview:_messageContentLabel];
     
     //未读消息标签
-    UIButton  *unreadMessageButton = [[UIButton alloc] init];
-    unreadMessageButton.titleLabel.font = [UIFont systemFontOfSize:11.0f];
-    unreadMessageButton.imageView.contentMode = UIViewContentModeCenter;
-    unreadMessageButton.userInteractionEnabled = NO;
-    [self.contentView addSubview:unreadMessageButton];
-    _unreadMessageButton = unreadMessageButton;
-    [unreadMessageButton setBackgroundImage:[UIImage imageNamed:@"icon-xxts2"] forState:UIControlStateNormal];
+    _unreadMessageButton = [[UIButton alloc] init];
+    _unreadMessageButton.titleLabel.font = [UIFont systemFontOfSize:11.0f];
+    _unreadMessageButton.imageView.contentMode = UIViewContentModeCenter;
+    _unreadMessageButton.userInteractionEnabled = NO;
+    [self.contentView addSubview:_unreadMessageButton];
+   
+    [_unreadMessageButton setBackgroundImage:[UIImage imageNamed:@"icon-xxts2"] forState:UIControlStateNormal];
 
-    UILabel     *lasttimeLabel = [[UILabel alloc] init];
-    lasttimeLabel.font = [UIFont systemFontOfSize:11.0f];
-    lasttimeLabel.textColor = [UIColor colorWithRed:153/255.0f green:153/255.0f blue:153/255.0f alpha:1];
-    lasttimeLabel.textAlignment = NSTextAlignmentRight;
-    [self.contentView addSubview:lasttimeLabel];
-    _lasttimeLabel = lasttimeLabel;
+    _lasttimeLabel = [[UILabel alloc] init];
+    _lasttimeLabel.font = [UIFont systemFontOfSize:11.0f];
+    _lasttimeLabel.textColor = [UIColor colorWithRed:153/255.0f green:153/255.0f blue:153/255.0f alpha:1];
+    _lasttimeLabel.textAlignment = NSTextAlignmentRight;
+   
+    [self.contentView addSubview:_lasttimeLabel];
     
     UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, 67.5, 320, 0.5)];
     lineView.backgroundColor = [UIColor lightGrayColor];
     [self addSubview:lineView];
+   
     [self setUIFrame];
+  
     return self;
 }
 

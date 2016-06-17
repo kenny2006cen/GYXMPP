@@ -14,18 +14,18 @@
 @interface GYMessage : NSObject
 
 // Insert code here to declare functionality of your managed object subclass
-@property (nullable, nonatomic, strong) NSNumber *msgId;
-@property (nullable, nonatomic, copy) NSString *msgUserJid;
-@property (nullable, nonatomic, copy) NSString *msgFriendJid;
-@property (nullable, nonatomic, strong) NSNumber *msgType;
-@property (nullable, nonatomic, strong) NSNumber *msgState;
-@property (nullable, nonatomic, strong) NSNumber *msgRead;
-@property (nullable, nonatomic, strong) NSNumber *msgShow;//消息是否显示
+@property (nonatomic, strong) NSNumber *msgId;
+@property ( nonatomic, copy) NSString *msgUserJid;
+@property ( nonatomic, copy) NSString *msgFriendJid;
+@property ( nonatomic, strong) NSNumber *msgType;
+@property ( nonatomic, strong) NSNumber *msgState;
+@property ( nonatomic, strong) NSNumber *msgRead;
+@property ( nonatomic, strong) NSNumber *msgShow;//消息是否显示
 
-@property (nullable, nonatomic, retain) NSNumber *msgIsSelf;
-@property (nullable, nonatomic, copy) NSString *msgSendTime;
-@property (nullable, nonatomic, copy) NSString *msgRecTime;
-@property (nullable, nonatomic, copy) NSString *msgBody;//json格式
+@property ( nonatomic, strong) NSNumber *msgIsSelf;
+@property ( nonatomic, copy) NSString *msgSendTime;
+@property ( nonatomic, copy) NSString *msgRecTime;
+@property ( nonatomic, copy) NSString *msgBody;//json格式
 
 @end
 

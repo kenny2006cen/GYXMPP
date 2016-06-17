@@ -10,6 +10,8 @@
 #import "GYXMPP.h"
 #import "MessageListCell.h"
 #import "GYMessage.h"
+#import "GYHDChatViewController.h"
+
 @interface MessageListViewController ()<UITableViewDataSource,UITableViewDelegate,GYXMPPDelegate>{
 
 }
@@ -172,24 +174,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    GYMessage *message = self.messageArray[indexPath.row];
+   
+    if (self.messageArray.count>0) {
+        
+        GYMessage *message = self.messageArray[indexPath.row];
+
+        GYHDChatViewController *chatCtrol =[[GYHDChatViewController alloc]init];
+        
+        [self.navigationController pushViewController:chatCtrol animated:YES];
+    }
     
-    
-//    GYHDBasicViewController *NextVC = [[businessModel.pushNextController alloc] init];
-//    NextVC.title = businessModel.userNameStr;
-//    
-//    NSString *messageCard = businessModel.messageCard;
-//    NextVC.messageCard = messageCard;
-//    
-//    NextVC.operatorName = businessModel.operatorName;//如果有数据的话
-//    NextVC.operId = businessModel.operId;
-//    
-//    if ([businessModel.userType containsString:@"c"]) {
-//        
-//        [NextVC segmentViewTitle:businessModel.userNameStr];
-//    }
-//    
-//    [self.navigationController pushViewController:NextVC animated:YES];
 }
 
 #pragma mark - GYXMPP Delegate

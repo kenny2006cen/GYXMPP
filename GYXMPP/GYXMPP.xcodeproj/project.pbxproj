@@ -16,6 +16,7 @@
 		18CB04141D1386E000076DBA /* NSObject+GYFMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04101D1386E000076DBA /* NSObject+GYFMDB.m */; };
 		18CB04151D1386E000076DBA /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 18CB04111D1386E000076DBA /* LICENSE */; };
 		18CB04161D1386E000076DBA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04121D1386E000076DBA /* README.md */; };
+		18CB043C1D13D19800076DBA /* GYHDChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB043B1D13D19800076DBA /* GYHDChatViewController.m */; };
 		18E92A641D12469F0065147A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E92A621D12469F0065147A /* LoginViewController.m */; };
 		18E92A651D12469F0065147A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E92A631D12469F0065147A /* LoginViewController.xib */; };
 		3D905A33E0153DD120C33C73 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5205B05BDC3E478BBBE69240 /* libPods.a */; };
@@ -54,6 +55,9 @@
 		18CB04101D1386E000076DBA /* NSObject+GYFMDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GYFMDB.m"; sourceTree = "<group>"; };
 		18CB04111D1386E000076DBA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		18CB04121D1386E000076DBA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		18CB043A1D13D19800076DBA /* GYHDChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDChatViewController.h; sourceTree = "<group>"; };
+		18CB043B1D13D19800076DBA /* GYHDChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDChatViewController.m; sourceTree = "<group>"; };
+		18CB043D1D13D40900076DBA /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		18E92A611D12469F0065147A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		18E92A621D12469F0065147A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		18E92A631D12469F0065147A /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 		6043575B1D026B4600CF2228 = {
 			isa = PBXGroup;
 			children = (
+				18CB043D1D13D40900076DBA /* PrefixHeader.pch */,
 				189C75C01D0FF97900FCEC31 /* Default-568h@2x.png */,
 				604357661D026B4600CF2228 /* GYXMPP */,
 				604357801D026B4600CF2228 /* GYXMPPUITests */,
@@ -182,6 +187,8 @@
 				189C75C31D0FFB1D00FCEC31 /* MessageListCell.m */,
 				6043576D1D026B4600CF2228 /* MessageListViewController.h */,
 				6043576E1D026B4600CF2228 /* MessageListViewController.m */,
+				18CB043A1D13D19800076DBA /* GYHDChatViewController.h */,
+				18CB043B1D13D19800076DBA /* GYHDChatViewController.m */,
 				18E92A611D12469F0065147A /* LoginViewController.h */,
 				18E92A621D12469F0065147A /* LoginViewController.m */,
 				18E92A631D12469F0065147A /* LoginViewController.xib */,
@@ -384,6 +391,7 @@
 				6043576C1D026B4600CF2228 /* AppDelegate.m in Sources */,
 				18CB04161D1386E000076DBA /* README.md in Sources */,
 				18E92A641D12469F0065147A /* LoginViewController.m in Sources */,
+				18CB043C1D13D19800076DBA /* GYHDChatViewController.m in Sources */,
 				189C75C41D0FFB1D00FCEC31 /* MessageListCell.m in Sources */,
 				18CB04131D1386E000076DBA /* GYFMDB.m in Sources */,
 				189C75AD1D0FB14500FCEC31 /* GYMessage.m in Sources */,
@@ -498,6 +506,7 @@
 			baseConfigurationReference = 207A870B5368F32B0EACE0E8 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = /Users/apple/GitHub/GYXMPP/GYXMPP/PrefixHeader.pch;
 				INFOPLIST_FILE = GYXMPP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -511,6 +520,7 @@
 			baseConfigurationReference = F96369142F567A2A9EFBFFAE /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = /Users/apple/GitHub/GYXMPP/GYXMPP/PrefixHeader.pch;
 				INFOPLIST_FILE = GYXMPP/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

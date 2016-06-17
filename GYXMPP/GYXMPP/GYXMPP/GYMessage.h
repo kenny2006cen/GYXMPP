@@ -36,9 +36,9 @@ typedef NS_ENUM(NSInteger, MessageDeliveryState) {
 @property ( nonatomic, assign) MessageBodyType  msgBodyType;
 @property ( nonatomic, assign) MessageDeliveryState deliveryState;
 @property ( nonatomic) BOOL msgRead;
-@property ( nonatomic, strong) NSNumber *msgShow;//消息是否显示
+@property ( nonatomic) BOOL msgShow;//消息是否显示
 
-@property ( nonatomic, strong) NSNumber *msgIsSelf;
+@property ( nonatomic) BOOL msgIsSelf;
 @property ( nonatomic, copy) NSString *msgSendTime;
 @property ( nonatomic, copy) NSString *msgRecTime;
 @property ( nonatomic, copy) NSString *msgBody;//json格式

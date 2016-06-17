@@ -258,8 +258,16 @@ static id _instace;
 }
 
 -(void)xmppStream:(XMPPStream *)sender didSendMessage:(XMPPMessage *)message{
-
+    
     DDLogInfo(@"消息发送成功");
+    
+    if ([message isChatMessageWithBody]){
+        NSString *msgID = [[message attributeForName:@"id"] stringValue];
+        if (msgID){
+           
+        }
+        
+    }
 }
 
 - (void)xmppStream:(XMPPStream *)sender didFailToSendMessage:(XMPPMessage *)message error:(NSError *)error{
@@ -339,11 +347,12 @@ static id _instace;
     message.msgSendTime=dateString;
     message.msgRecTime =dateString;
     
-    message.msgIsSelf=@(YES);
-    message.msgRead=@(NO);
+    message.msgIsSelf=YES;
+    message.msgRead=YES;//默认发送消息为已读，暂时先这样处理
     message.msgUserJid = self.userName;
+    message.deliveryState =MessageDeliveryState_Delivering;
     
-    message.msgShow= @(YES);
+    message.msgShow= YES;
     
     NSString *elementID = [NSString stringWithFormat:@"%@",message.msgId];
     

@@ -74,7 +74,7 @@
     return self.chatArrayM.count;
 }
 
-static NSDateFormatter *chatfmt = nil;
+    static NSDateFormatter *chatfmt = nil;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 

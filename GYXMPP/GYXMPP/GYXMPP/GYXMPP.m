@@ -14,6 +14,7 @@
 #import "XMPPLogging.h"
 #import "GYGenUUID.h"
 #import "GYMessengeExtendElement.h"
+#import "NSString+dictionaryToJsonString.h"
 
 //#import "GYMessengeExtendElement.h"
 
@@ -442,6 +443,69 @@ static id _instace;
     return message;
 }
 
+
+//发送文本
+-(GYMessage*)sendTextMessageWithString:(NSString*)text ToUser:(NSString*)userName{
+
+    GYMessage *message =[[GYMessage alloc]init];
+    
+    message.msgUserJid =[GYXMPP sharedInstance].userName;
+    
+    message.msgFriendJid =userName;
+    
+    message.msgBodyType =MessageBodyType_Text;
+    
+    if ((text==nil||[text isKindOfClass:[NSNull class]])) {
+        
+        DDLogCVerbose(@"发送文本为空,请停止发送");
+        
+        return nil;
+    }
+    
+    else{
+    
+        if (self.userNickName==nil||[self.userNickName isKindOfClass:[NSNull class]]) {
+            
+            self.userNickName=@"";
+            self.userNickName=@"系统操作员";
+            
+        }
+        
+        if (self.userPhoto==nil||[self.userPhoto isKindOfClass:[NSNull class]]) {
+            
+            self.userPhoto=@"";
+        }
+        
+        NSDictionary *dic =@{@"msg_content":text,
+                             @"msg_type":@"2",
+                             @"msg_icon":self.userPhoto,
+                             @"msg_note":self.userNickName,
+                             @"msg_code":@"00"};
+        
+        message.msgBody =[NSString dictionaryToJsonString:dic];
+        
+        [[GYXMPP sharedInstance]sendMessage:message];
+        
+        return message;
+       
+    }
+    
+
+}
+
+//发送图片
+-(GYMessage*)sendImageMessageWithImage:(UIImage*)image ToUser:(NSString*)userName{
+
+    return nil;
+
+}
+
+//发送语音
+-(GYMessage*)sendAudioMessageWithVoice:(GYHDVoiceModel*)voice ToUser:(NSString*)userName{
+
+    return nil;
+
+}
 
 #pragma mark - lifecycle
 -(void)dealloc{

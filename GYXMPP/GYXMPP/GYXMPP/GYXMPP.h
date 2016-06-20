@@ -12,6 +12,8 @@
 #import "DDASLLogger.h"
 
 #import "GYMessage.h"
+#import "GYHDVoiceModel.h"
+#import "GYHDVideoModel.h"
 
 //// 自定义Log
 
@@ -56,6 +58,9 @@ typedef void (^XMPPResultBlock)(XMPPResultType type);// XMPP请求结果的block
 @property (nonatomic,copy) NSString *domain;
 @property (nonatomic,copy) NSString *resource;
 
+@property (nonatomic,copy) NSString *userNickName;//当前用户昵称,需要在发送前配置
+
+@property (nonatomic,copy) NSString *userPhoto;//当前用户头像,需要在发送前配置
 
 + (instancetype)sharedInstance;
 
@@ -73,8 +78,17 @@ typedef void (^XMPPResultBlock)(XMPPResultType type);// XMPP请求结果的block
 
 
 
-
+/*
+  最终发送方法
+ */
 -(GYMessage*)sendMessage:(GYMessage*)message;
 
+//发送文本
+-(GYMessage*)sendTextMessageWithString:(NSString*)text ToUser:(NSString*)userName;
 
+//发送图片
+-(GYMessage*)sendImageMessageWithImage:(UIImage*)image ToUser:(NSString*)userName;
+
+//发送语音
+-(GYMessage*)sendAudioMessageWithVoice:(GYHDVoiceModel*)voice ToUser:(NSString*)userName;
 @end

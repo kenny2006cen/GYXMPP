@@ -114,23 +114,27 @@
 
 -(void)sendAction{
 
-    GYMessage *message =[[GYMessage alloc]init];
+//    GYMessage *message =[[GYMessage alloc]init];
+//    
+//    message.msgUserJid =[GYXMPP sharedInstance].userName;
+////    message.msgFriendJId =@"m_e_0603211000000270000@im.gy.com";
+//     message.msgFriendJid =@"111@im.gy.com";
+//    message.msgBodyType =MessageBodyType_Text;
+//    
+//    NSDictionary *dic =@{@"msg_content":@"测试",
+//                         @"msg_type":@"2",
+//                         @"msg_icon":@"",
+//                         @"msg_note":@"系统操作员",
+//                         @"msg_code":@"00"};
+//    
+//    
+//    message.msgBody =[self dictionaryToString:dic];
+//    
+//    [[GYXMPP sharedInstance]sendMessage:message];
     
-    message.msgUserJid =[GYXMPP sharedInstance].userName;
-//    message.msgFriendJId =@"m_e_0603211000000270000@im.gy.com";
-     message.msgFriendJid =@"111@im.gy.com";
-    message.msgBodyType =MessageBodyType_Text;
+    /***********/
     
-    NSDictionary *dic =@{@"msg_content":@"测试",
-                         @"msg_type":@"2",
-                         @"msg_icon":@"",
-                         @"msg_note":@"系统操作员",
-                         @"msg_code":@"00"};
-    
-    
-    message.msgBody =[self dictionaryToString:dic];
-    
-    [[GYXMPP sharedInstance]sendMessage:message];
+    [[GYXMPP sharedInstance]sendTextMessageWithString:@"测试" ToUser:@"222@im.gy.com"];
     
 }
 

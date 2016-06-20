@@ -7,6 +7,7 @@
 //
 
 #import "GYHDChatViewController.h"
+#import "GYMessage.h"
 //#import <Masonry/Masonry.h>
 //typedef NS_ENUM(NSInteger, EMConversationType){
 //    eConversationTypeChat,
@@ -80,7 +81,7 @@
 
 -(void)sendTextMessage:(NSString *)textMessage{
 
-
+    
 }
 
 -(void)sendImageMessage:(UIImage *)image{
@@ -93,6 +94,10 @@
 
 -(void)sendVideoMessage:(GYHDVideoModel *)video{
 
+
+}
+
+-(void)addMessage:(GYMessage *)message{
 
 }
 

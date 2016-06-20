@@ -56,6 +56,7 @@
 		18CB04C41D13F7C200076DBA /* NSDateFormatter+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04C21D13F7C200076DBA /* NSDateFormatter+Category.m */; };
 		18CB04C71D13FA3700076DBA /* GYHDVoiceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04C61D13FA3700076DBA /* GYHDVoiceModel.m */; };
 		18CB04CA1D13FA6100076DBA /* GYHDVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CB04C91D13FA6100076DBA /* GYHDVideoModel.m */; };
+		18CC52F31D17A19E00B59628 /* NSString+dictionaryToJsonString.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CC52F21D17A19E00B59628 /* NSString+dictionaryToJsonString.m */; };
 		18E92A641D12469F0065147A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E92A621D12469F0065147A /* LoginViewController.m */; };
 		18E92A651D12469F0065147A /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E92A631D12469F0065147A /* LoginViewController.xib */; };
 		3D905A33E0153DD120C33C73 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5205B05BDC3E478BBBE69240 /* libPods.a */; };
@@ -176,6 +177,8 @@
 		18CB04C61D13FA3700076DBA /* GYHDVoiceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDVoiceModel.m; sourceTree = "<group>"; };
 		18CB04C81D13FA6100076DBA /* GYHDVideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYHDVideoModel.h; sourceTree = "<group>"; };
 		18CB04C91D13FA6100076DBA /* GYHDVideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYHDVideoModel.m; sourceTree = "<group>"; };
+		18CC52F11D17A19E00B59628 /* NSString+dictionaryToJsonString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+dictionaryToJsonString.h"; sourceTree = "<group>"; };
+		18CC52F21D17A19E00B59628 /* NSString+dictionaryToJsonString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+dictionaryToJsonString.m"; sourceTree = "<group>"; };
 		18E92A611D12469F0065147A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		18E92A621D12469F0065147A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		18E92A631D12469F0065147A /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -421,6 +424,8 @@
 				189C75BB1D0FDED000FCEC31 /* GYMessengeExtendElement.m */,
 				189C75BD1D0FDF3E00FCEC31 /* GYGenUUID.h */,
 				189C75BE1D0FDF3E00FCEC31 /* GYGenUUID.m */,
+				18CC52F11D17A19E00B59628 /* NSString+dictionaryToJsonString.h */,
+				18CC52F21D17A19E00B59628 /* NSString+dictionaryToJsonString.m */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -677,6 +682,7 @@
 				18CB04961D13DA0700076DBA /* GYHDKeyboardSelectBaseView.m in Sources */,
 				18CB04A81D13DA0700076DBA /* GYHDLeftChatAudioCell.m in Sources */,
 				6043576F1D026B4600CF2228 /* MessageListViewController.m in Sources */,
+				18CC52F31D17A19E00B59628 /* NSString+dictionaryToJsonString.m in Sources */,
 				18CB049F1D13DA0700076DBA /* EmojiTextAttachment.m in Sources */,
 				189C75BC1D0FDED000FCEC31 /* GYMessengeExtendElement.m in Sources */,
 				18CB04A41D13DA0700076DBA /* GYHDRecordVideoTool.m in Sources */,

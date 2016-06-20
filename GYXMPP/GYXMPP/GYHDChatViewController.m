@@ -48,13 +48,9 @@
     
     self.view.backgroundColor  = [UIColor colorWithRed:245/255.0f green:245/255.0f blue:245/255.0f alpha:1];
   
-    _chatTableView = [[UITableView alloc] init];
-    _chatTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _chatTableView.delegate = self;
-    _chatTableView.dataSource = self;
-    _chatTableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
-    _chatTableView.backgroundColor = [UIColor colorWithRed:245/255.0f green:245/255.0f blue:245/255.0f alpha:1];
     self.automaticallyAdjustsScrollViewInsets = NO;
+
+    [self configUI];
     /*
     [chatTableView registerClass:[GYHDLeftChatTextCell class] forCellReuseIdentifier:@"GYHDLeftChatTextCellID"];
     [chatTableView registerClass:[GYHDRightChatTextCell class] forCellReuseIdentifier:@"GYHDRightChatTextCellID"];
@@ -65,20 +61,36 @@
     [chatTableView registerClass:[GYHDLeftChatAudioCell class] forCellReuseIdentifier:@"GYHDLeftChatAudioCellID"];
     [chatTableView registerClass:[GYHDRightChatAudioCell class] forCellReuseIdentifier:@"GYHDRightChatAudioCellID"];
      */
-    [self.view addSubview:_chatTableView];
+   
 
-    WSHD(weakSelf);
-    [_chatTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.top.left.right.equalTo(weakSelf.view);
-        make.height.mas_equalTo(kScreenHeight - 105 -64+15);
-    }];
-
+    self.title = self.friendUserId;
     
 }
 
-#pragma mark - SendMessageMethod
+-(void)configUI{
 
+
+    _chatTableView = [[UITableView alloc] init];
+    _chatTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _chatTableView.delegate = self;
+    _chatTableView.dataSource = self;
+    _chatTableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    
+    _chatTableView.backgroundColor = [UIColor colorWithRed:245/255.0f green:245/255.0f blue:245/255.0f alpha:1];
+    
+     [self.view addSubview:_chatTableView];
+    
+    
+    WSHD(weakSelf);
+    
+    [_chatTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.top.left.right.equalTo(weakSelf.view);
+        make.height.mas_equalTo(kScreenHeight - 105 -64+15);
+    }];
+}
+
+#pragma mark - SendMessageMethod
 -(void)sendTextMessage:(NSString *)textMessage{
 
     

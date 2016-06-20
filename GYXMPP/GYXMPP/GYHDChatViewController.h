@@ -15,6 +15,10 @@
 
 @interface GYHDChatViewController : UIViewController
 
+@property(nonatomic,copy) NSString *friendUserId;//聊天对象id
+
+@property(nonatomic,copy) NSString *friendUserName;//聊天对象名称
+
 - (instancetype)initWithChatter:(NSString *)chatter isGroup:(BOOL)isGroup;
 
 - (void)reloadData;

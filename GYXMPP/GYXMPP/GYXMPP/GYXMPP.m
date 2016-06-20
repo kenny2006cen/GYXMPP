@@ -319,10 +319,13 @@ static id _instace;
                     [self.delegate xmppDidFailedSendMessage:sendMessage];
                 }
                 
-                DDLogCVerbose(@"消息更新发送失败");
 
                 //更新消息发送状态后刷新UI
               //  [[NSNotificationCenter defaultCenter]postNotificationName:@"updateMessageState" object:sendMessage];
+            }
+            else{
+                DDLogCVerbose(@"消息更新发送失败");
+
             }
 
             

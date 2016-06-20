@@ -40,6 +40,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   
+     self.view.backgroundColor  = [UIColor colorWithRed:245/255.0f green:245/255.0f blue:245/255.0f alpha:1];
+    
     [self setUpNav];
     
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, 568 - 108)];
@@ -184,6 +186,10 @@
         GYMessage *message = self.messageArray[indexPath.row];
 
         GYHDChatViewController *chatCtrol =[[GYHDChatViewController alloc]init];
+        
+        chatCtrol.friendUserId=message.msgFriendJid;
+        chatCtrol.friendUserName=message.msgUserName;
+        
         
         [self.navigationController pushViewController:chatCtrol animated:YES];
     }

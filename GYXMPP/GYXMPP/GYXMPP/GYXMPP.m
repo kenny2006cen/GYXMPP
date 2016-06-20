@@ -278,7 +278,12 @@ static id _instace;
             
             if (flag) {
                 //更新消息发送状态后刷新UI
-                [[NSNotificationCenter defaultCenter]postNotificationName:@"updateMessageState" object:sendMessage];
+                
+                if (self.delegate&&[self.delegate respondsToSelector:@selector(xmppDidSendMessage:)]) {
+                    
+                    [self.delegate xmppDidSendMessage:sendMessage];
+                }
+            //    [[NSNotificationCenter defaultCenter]postNotificationName:@"updateMessageState" object:sendMessage];
             }
         }
         
@@ -289,29 +294,34 @@ static id _instace;
 
     DDLogInfo(@"消息发送失败");
 
-
     if ([message isChatMessageWithBody]){
        
         NSString *msgID = [[message attributeForName:@"id"]stringValue];
         if (msgID){
         
             GYMessage *sendMessage = [GYMessage findByAttribute:@"msgId" WithValue:msgID];
+           
             if (!sendMessage||[sendMessage isKindOfClass:[NSNull class]]) {
                 
                 DDLogCVerbose(@"找不到该条消息");
                 return;
             }
             
-         //   sendMessage.msgId=[NSNumber numberWithLongLong:[msgID longLongValue]];
-            sendMessage.deliveryState=MessageDeliveryState_Delivered;
+            sendMessage.deliveryState=MessageDeliveryState_Failure;
             
             BOOL flag= [sendMessage update];
             
             if (flag) {
-                DDLogCVerbose(@"消息更新发送成功");
+                
+                if (self.delegate&&[self.delegate respondsToSelector:@selector(xmppDidFailedSendMessage:)]) {
+                    
+                    [self.delegate xmppDidFailedSendMessage:sendMessage];
+                }
+                
+                DDLogCVerbose(@"消息更新发送失败");
 
                 //更新消息发送状态后刷新UI
-                [[NSNotificationCenter defaultCenter]postNotificationName:@"updateMessageState" object:sendMessage];
+              //  [[NSNotificationCenter defaultCenter]postNotificationName:@"updateMessageState" object:sendMessage];
             }
 
             
@@ -384,7 +394,6 @@ static id _instace;
     
     message.msgBodyType =(int)MessageBodyType_Text;
 
-    
     NSDate *date = [NSDate date];
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];

@@ -414,6 +414,17 @@
 			path = lame;
 			sourceTree = "<group>";
 		};
+		18CC52F01D17944100B59628 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				189C75BA1D0FDED000FCEC31 /* GYMessengeExtendElement.h */,
+				189C75BB1D0FDED000FCEC31 /* GYMessengeExtendElement.m */,
+				189C75BD1D0FDF3E00FCEC31 /* GYGenUUID.h */,
+				189C75BE1D0FDF3E00FCEC31 /* GYGenUUID.m */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
 		29C3568654A1F6183E2E20EB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,10 +514,7 @@
 				604357911D028ED900CF2228 /* GYXMPPTool.m */,
 				189C75AA1D0FB14500FCEC31 /* GYMessage.h */,
 				189C75AB1D0FB14500FCEC31 /* GYMessage.m */,
-				189C75BA1D0FDED000FCEC31 /* GYMessengeExtendElement.h */,
-				189C75BB1D0FDED000FCEC31 /* GYMessengeExtendElement.m */,
-				189C75BD1D0FDF3E00FCEC31 /* GYGenUUID.h */,
-				189C75BE1D0FDF3E00FCEC31 /* GYGenUUID.m */,
+				18CC52F01D17944100B59628 /* Tool */,
 			);
 			path = GYXMPP;
 			sourceTree = "<group>";

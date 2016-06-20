@@ -42,22 +42,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GYXMPP/GYXMPP/GYXMPP.m"
-            timestampString = "488079385.506174"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "289"
-            endingLineNumber = "289"
-            landmarkName = "-xmppStream:didFailToSendMessage:error:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GYXMPP/GYXMPP/GYXMPP.m"
             timestampString = "488081637.583005"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"

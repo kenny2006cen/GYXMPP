@@ -678,12 +678,16 @@ static NSMutableString *gysql;
     
     id object = nil;
     
+    NSString *tableName = NSStringFromClass(self.class);
+
+    
   __block  NSString *sql = [NSString
-                     stringWithFormat:@"SELECT * FROM %@ where %@==%@", propertyName, value];
+                     stringWithFormat:@"SELECT * FROM %@ where %@==%@ limit 1", tableName,propertyName, value];
+    
+    __block NSMutableArray *dataArray =[NSMutableArray new];
     
     [gydb.dbQueue inDatabase:^(FMDatabase *db) {
         
-        NSString *tableName = NSStringFromClass(self.class);
         
         FMResultSet *resultSet = [db executeQuery:sql];
         
@@ -710,11 +714,18 @@ static NSMutableString *gysql;
                                      [resultSet longLongIntForColumn:columeName]]
                              forKey:columeName];
                 }
+              
+                [dataArray addObject:model];
             }
            
             FMDBRelease(model);
         }
     }];
+    
+    if (dataArray.count>0) {
+        
+        object = dataArray[0];
+    }
     
     return object;
 }

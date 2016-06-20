@@ -22,7 +22,7 @@ typedef NS_ENUM(NSInteger, MessageBodyType) {
 
 typedef NS_ENUM(NSInteger, MessageDeliveryState) {
    
-    MessageDeliveryState_Delivering,//发送中
+    MessageDeliveryState_Delivering =0,//发送中
     MessageDeliveryState_Delivered, //已经发送
     MessageDeliveryState_Failure    //已经发送
 };
@@ -47,7 +47,7 @@ typedef NS_ENUM(NSInteger, MessageDeliveryState) {
 
 @property ( nonatomic, copy) NSString *msgUserHead;//用户头像
 
-+(BOOL)updateMesageDeliveryStatusToDB;//更新消息发送状态
+//+(BOOL)updateMesageDeliveryStatusToDB;//更新消息发送状态
 
 @end
 

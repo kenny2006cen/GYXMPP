@@ -262,9 +262,24 @@ static id _instace;
     DDLogInfo(@"消息发送成功");
     
     if ([message isChatMessageWithBody]){
-        NSString *msgID = [[message attributeForName:@"id"] stringValue];
+        NSString *msgID = [[message attributeForName:@"id"]stringValue];
         if (msgID){
            
+            GYMessage *sendMessage = [GYMessage findByAttribute:@"msgId" WithValue:msgID];
+            if (!sendMessage||[sendMessage isKindOfClass:[NSNull class]]) {
+                
+                DDLogCVerbose(@"找不到该条消息");
+                return;
+            }
+
+            sendMessage.deliveryState=MessageDeliveryState_Delivered;
+            
+           BOOL flag= [sendMessage update];
+            
+            if (flag) {
+                //更新消息发送状态后刷新UI
+                [[NSNotificationCenter defaultCenter]postNotificationName:@"updateMessageState" object:sendMessage];
+            }
         }
         
     }
@@ -274,6 +289,34 @@ static id _instace;
 
     DDLogInfo(@"消息发送失败");
 
+
+    if ([message isChatMessageWithBody]){
+       
+        NSString *msgID = [[message attributeForName:@"id"]stringValue];
+        if (msgID){
+        
+            GYMessage *sendMessage = [GYMessage findByAttribute:@"msgId" WithValue:msgID];
+            if (!sendMessage||[sendMessage isKindOfClass:[NSNull class]]) {
+                
+                DDLogCVerbose(@"找不到该条消息");
+                return;
+            }
+            
+         //   sendMessage.msgId=[NSNumber numberWithLongLong:[msgID longLongValue]];
+            sendMessage.deliveryState=MessageDeliveryState_Delivered;
+            
+            BOOL flag= [sendMessage update];
+            
+            if (flag) {
+                DDLogCVerbose(@"消息更新发送成功");
+
+                //更新消息发送状态后刷新UI
+                [[NSNotificationCenter defaultCenter]postNotificationName:@"updateMessageState" object:sendMessage];
+            }
+
+            
+        }
+    }
 }
 
 -(void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence{
@@ -339,6 +382,9 @@ static id _instace;
     //先保存默认数据
     message.msgId = [NSNumber numberWithLongLong:[[NSDate date] timeIntervalSince1970]] ;
     
+    message.msgBodyType =(int)MessageBodyType_Text;
+
+    
     NSDate *date = [NSDate date];
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
@@ -361,23 +407,28 @@ static id _instace;
     XMPPMessage *xmppMessage = [XMPPMessage messageWithType:@"chat" to:JID elementID:elementID];
     
     NSString *uuid=[GYGenUUID gen_uuid];
-    NSXMLElement *element=[GYMessengeExtendElement GYExtendElementWithID:uuid];
+    NSXMLElement *uidelement=[GYMessengeExtendElement GYExtendElementWithID:uuid];
     
-    [xmppMessage addChild:element];
+    [xmppMessage addChild:uidelement];
     
     [xmppMessage addAttributeWithName:@"from" stringValue:[NSString stringWithFormat:@"%@@%@",message.msgUserJid,self.domain]];
     
     [xmppMessage addBody:message.msgBody];
     
-    [_xmppStream sendElement:xmppMessage];
+   
+  BOOL flag= [message save];
     
-    [message save];
-    
-    if (self.delegate&&[self.delegate respondsToSelector:@selector(xmppSendingMessage:)]) {
+    if (flag) {
         
-        [self.delegate xmppSendingMessage:message];
+         [_xmppStream sendElement:xmppMessage];
         
+        if (self.delegate&&[self.delegate respondsToSelector:@selector(xmppSendingMessage:)]) {
+            
+            [self.delegate xmppSendingMessage:message];
+            
+        }
     }
+   
     
     return message;
 }

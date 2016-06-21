@@ -8,12 +8,15 @@
 
 #import "GYHDChatViewController.h"
 #import "GYMessage.h"
-//#import <Masonry/Masonry.h>
-//typedef NS_ENUM(NSInteger, EMConversationType){
-//    eConversationTypeChat,
-//    eConversationTypeGroupChat,
-//    eConversationTypeChatRoom
-//};
+#import "GYXMPP.h"
+#import "GYHDLeftChatTextCell.h"
+#import "GYHDRightChatTextCell.h"
+#import "GYHDLeftChatImageCell.h"
+#import "GYHDRightChatImageCell.h"
+#import "GYHDLeftChatVideoCell.h"
+#import "GYHDRightChatVideoCell.h"
+#import "GYHDLeftChatAudioCell.h"
+#import "GYHDRightChatAudioCell.h"
 
 @interface GYHDChatViewController ()<UITableViewDataSource,UITableViewDelegate>{
 
@@ -31,6 +34,8 @@
  */
 
 @property (copy, nonatomic, readonly) NSString *chatter;
+
+@property (strong, nonatomic) UIRefreshControl *control;
 
 @end
 
@@ -51,18 +56,9 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
 
     [self configUI];
-    /*
-    [chatTableView registerClass:[GYHDLeftChatTextCell class] forCellReuseIdentifier:@"GYHDLeftChatTextCellID"];
-    [chatTableView registerClass:[GYHDRightChatTextCell class] forCellReuseIdentifier:@"GYHDRightChatTextCellID"];
-    [chatTableView registerClass:[GYHDLeftChatImageCell class] forCellReuseIdentifier:@"GYHDLeftChatImageCellID"];
-    [chatTableView registerClass:[GYHDRightChatImageCell class] forCellReuseIdentifier:@"GYHDRightChatImageCellID"];
-    [chatTableView registerClass:[GYHDLeftChatVideoCell class] forCellReuseIdentifier:@"GYHDLeftChatVideoCellID"];
-    [chatTableView registerClass:[GYHDRightChatVideoCell class] forCellReuseIdentifier:@"GYHDRightChatVideoCellID"];
-    [chatTableView registerClass:[GYHDLeftChatAudioCell class] forCellReuseIdentifier:@"GYHDLeftChatAudioCellID"];
-    [chatTableView registerClass:[GYHDRightChatAudioCell class] forCellReuseIdentifier:@"GYHDRightChatAudioCellID"];
-     */
-   
-
+    
+    [self setupRefresh];
+    
     self.title = self.friendUserId;
     
 }
@@ -77,23 +73,63 @@
     _chatTableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     
     _chatTableView.backgroundColor = [UIColor colorWithRed:245/255.0f green:245/255.0f blue:245/255.0f alpha:1];
+//    _chatTableView.backgroundColor=[UIColor redColor];
     
      [self.view addSubview:_chatTableView];
     
-    
-    WSHD(weakSelf);
+     WSHD(weakSelf);
     
     [_chatTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.top.left.right.equalTo(weakSelf.view);
-        make.height.mas_equalTo(kScreenHeight - 105 -64+15);
+        make.left.right.equalTo(weakSelf.view);
+        make.top.mas_equalTo(64);
+        make.height.mas_equalTo(kScreenHeight - 105+15);
     }];
+    
+    
+     [_chatTableView registerClass:[GYHDLeftChatTextCell class] forCellReuseIdentifier:@"GYHDLeftChatTextCellID"];
+     [_chatTableView registerClass:[GYHDRightChatTextCell class] forCellReuseIdentifier:@"GYHDRightChatTextCellID"];
+     [_chatTableView registerClass:[GYHDLeftChatImageCell class] forCellReuseIdentifier:@"GYHDLeftChatImageCellID"];
+     [_chatTableView registerClass:[GYHDRightChatImageCell class] forCellReuseIdentifier:@"GYHDRightChatImageCellID"];
+     [_chatTableView registerClass:[GYHDLeftChatVideoCell class] forCellReuseIdentifier:@"GYHDLeftChatVideoCellID"];
+     [_chatTableView registerClass:[GYHDRightChatVideoCell class] forCellReuseIdentifier:@"GYHDRightChatVideoCellID"];
+     [_chatTableView registerClass:[GYHDLeftChatAudioCell class] forCellReuseIdentifier:@"GYHDLeftChatAudioCellID"];
+     [_chatTableView registerClass:[GYHDRightChatAudioCell class] forCellReuseIdentifier:@"GYHDRightChatAudioCellID"];
+     
+
+}
+
+-(void)setupRefresh{
+
+    _control=[[UIRefreshControl alloc]init];
+    
+    [_control addTarget:self action:@selector(refreshStateChange:) forControlEvents:UIControlEventValueChanged];
+    
+    [self.chatTableView addSubview:_control];
+    
+  //  [_control beginRefreshing];
+    
+    //[control beginRefreshing];
+    // 3.加载数据
+   // [self refreshStateChange:control];
+}
+
+-(void)refreshStateChange:(UIRefreshControl *)control{
+    [_control beginRefreshing];
+    sleep(1);
+    [_control endRefreshing];
+}
+
+/**加载聊天记录*/
+- (void)loadChat {
+
+
 }
 
 #pragma mark - SendMessageMethod
 -(void)sendTextMessage:(NSString *)textMessage{
 
-    
+     [[GYXMPP sharedInstance]sendTextMessageWithString:textMessage ToUser:self.friendUserId];
 }
 
 -(void)sendImageMessage:(UIImage *)image{

@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SWTableViewCell.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UITableView+FDTemplateLayoutCell.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,11 +67,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4B1D0140FF98A080A5C25E36B37FB5F4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
 		<dict>
 			<key>primary</key>
@@ -77,7 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>787AF767198A57F66801BD96F4EAFE43</key>
+		<key>6549AEC78773516544DE7832AA5DE5AC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6CD40364CE90608879945960CCCF360B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,7 +97,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C2F4EF50D8120AA735151210C1E92BA0</key>
+		<key>B5761F7AC80A94D123DFC8D1DEBD863E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BF8B1D212FFFAC859B5129DDA4762848</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -128,7 +128,8 @@
 
 #pragma mark - SendMessageMethod
 -(void)sendTextMessage:(NSString *)textMessage{
-
+    
+      
      [[GYXMPP sharedInstance]sendTextMessageWithString:textMessage ToUser:self.friendUserId];
 }
 

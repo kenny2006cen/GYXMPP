@@ -31,6 +31,9 @@ PODS:
   - FMDB/standard (2.6.2)
   - IQKeyboardManager (3.3.7)
   - Masonry (1.0.0)
+  - SDWebImage (3.7.6):
+    - SDWebImage/Core (= 3.7.6)
+  - SDWebImage/Core (3.7.6)
   - SWTableViewCell (0.3.7)
   - UITableView+FDTemplateLayoutCell (1.4)
   - XMPPFramework (3.6.6):
@@ -181,6 +184,7 @@ DEPENDENCIES:
   - FMDB
   - IQKeyboardManager
   - Masonry
+  - SDWebImage
   - SWTableViewCell (~> 0.3.7)
   - UITableView+FDTemplateLayoutCell
   - XMPPFramework
@@ -192,6 +196,7 @@ SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
   Masonry: b529bb169217897b6354d4b56b1fada6d475b13d
+  SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
   XMPPFramework: b06c210b0b71c08aa41a646bffd2021fa43bb43b

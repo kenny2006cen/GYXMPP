@@ -11,8 +11,9 @@
 #import "MessageListCell.h"
 #import "GYMessage.h"
 #import "GYHDChatViewController.h"
+#import "SWTableViewCell.h"
 
-@interface MessageListViewController ()<UITableViewDataSource,UITableViewDelegate,GYXMPPDelegate>{
+@interface MessageListViewController ()<UITableViewDataSource,UITableViewDelegate,GYXMPPDelegate,SWTableViewCellDelegate,SWTableViewCellDelegate>{
 
 }
 
@@ -170,6 +171,10 @@
     MessageListCell *cell = [MessageListCell cellWithTableView:tableView];
     cell.businessModel = self.messageArray[indexPath.row];
     
+     [cell setRightUtilityButtons:[self rightButtons] WithButtonWidth:70.0f];
+  
+    cell.delegate=self;
+    
     return cell;
 }
 
@@ -196,8 +201,45 @@
     
 }
 
-#pragma mark - GYXMPP Delegate
+#pragma mark -Swipe ButtonAction
+- (NSArray *)rightButtons
+{
+    NSMutableArray *rightUtilityButtons = [NSMutableArray new];
+   
+    [rightUtilityButtons sw_addUtilityButtonWithColor:
+     [UIColor lightGrayColor]
+                                                title:@"置顶"];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:
+     [UIColor colorWithRed:1.0f green:0.231f blue:0.188 alpha:1.0f]
+                                                title:@"删除"];
+    return rightUtilityButtons;
+}
+- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index
+{
+   
+    switch (index) {
+        case 0:
+        {
+            //置顶
+            [cell hideUtilityButtonsAnimated:YES];
+        }
+            break;
+        case 1:
+        {
+            //删除
+           
+            [cell hideUtilityButtonsAnimated:YES];
 
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
+
+#pragma mark - GYXMPP Delegate
 -(void)xmppSendingMessage:(GYMessage *)message{
 
    // [self.messageArray addObject:message];
@@ -207,4 +249,16 @@
     [self.tableView reloadData];
 }
 
+-(void)xmppDidSendMessage:(GYMessage *)message{
+
+}
+
+-(void)xmppDidFailedSendMessage:(GYMessage *)message{
+
+}
+
+-(void)xmppdidReceiveMessage:(GYMessage *)message{
+
+
+}
 @end

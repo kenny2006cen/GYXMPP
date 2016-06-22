@@ -12,8 +12,8 @@
 #import <UIKit/UIKit.h>
 @class GYMessage;
 #import <Masonry/Masonry.h>
-
-@interface MessageListCell : UITableViewCell
+#import "SWTableViewCell.h"
+@interface MessageListCell : SWTableViewCell
 
 + (instancetype)cellWithTableView:(UITableView * )tableView;
 /**

@@ -88,6 +88,16 @@ static NSString * const GYTableViewCellID = @"GYHDBusinessCell";
     lineView.backgroundColor = [UIColor lightGrayColor];
     [self addSubview:lineView];
    
+    __block  PPDragDropBadgeView* badgeView
+    = [[PPDragDropBadgeView alloc] initWithFrame:CGRectMake(kScreenWidth-40, 40, 20, 20) dragdropCompletion:^{
+        NSLog(@"Drag drop done.");
+        
+        badgeView.text=@"";
+    }];
+    badgeView.text = @"6";
+    
+    [self.contentView addSubview:badgeView];
+    
     [self setUIFrame];
   
     return self;
@@ -127,6 +137,7 @@ static NSString * const GYTableViewCellID = @"GYHDBusinessCell";
         make.centerY.equalTo(self.iconImageView.mas_top);
     }];
     
+ 
 }
 
 - (void)setBusinessModel:(GYMessage *)businessModel {

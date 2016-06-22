@@ -19,6 +19,10 @@
 		182FEEE41D1A65DE005768F1 /* M13ProgressViewStripedBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FEEDA1D1A65DE005768F1 /* M13ProgressViewStripedBar.m */; };
 		182FEEEA1D1A65E2005768F1 /* M13ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FEEE71D1A65E2005768F1 /* M13ProgressHUD.m */; };
 		182FEEEB1D1A65E2005768F1 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FEEE91D1A65E2005768F1 /* UIImage+ImageEffects.m */; };
+		182FEF3B1D1A738B005768F1 /* PPDragDropBadgeView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 182FEF331D1A738B005768F1 /* PPDragDropBadgeView.bundle */; };
+		182FEF3C1D1A738B005768F1 /* PPDragDropBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FEF351D1A738B005768F1 /* PPDragDropBadgeView.m */; };
+		182FEF3D1D1A738B005768F1 /* PRTween.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FEF381D1A738B005768F1 /* PRTween.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		182FEF3E1D1A738B005768F1 /* PRTweenTimingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FEF3A1D1A738B005768F1 /* PRTweenTimingFunctions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		189C75AD1D0FB14500FCEC31 /* GYMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C75AB1D0FB14500FCEC31 /* GYMessage.m */; };
 		189C75BC1D0FDED000FCEC31 /* GYMessengeExtendElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C75BB1D0FDED000FCEC31 /* GYMessengeExtendElement.m */; };
 		189C75BF1D0FDF3E00FCEC31 /* GYGenUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C75BE1D0FDF3E00FCEC31 /* GYGenUUID.m */; };
@@ -116,6 +120,13 @@
 		182FEEE71D1A65E2005768F1 /* M13ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13ProgressHUD.m; sourceTree = "<group>"; };
 		182FEEE81D1A65E2005768F1 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		182FEEE91D1A65E2005768F1 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		182FEF331D1A738B005768F1 /* PPDragDropBadgeView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PPDragDropBadgeView.bundle; sourceTree = "<group>"; };
+		182FEF341D1A738B005768F1 /* PPDragDropBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDragDropBadgeView.h; sourceTree = "<group>"; };
+		182FEF351D1A738B005768F1 /* PPDragDropBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDragDropBadgeView.m; sourceTree = "<group>"; };
+		182FEF371D1A738B005768F1 /* PRTween.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRTween.h; sourceTree = "<group>"; };
+		182FEF381D1A738B005768F1 /* PRTween.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRTween.m; sourceTree = "<group>"; };
+		182FEF391D1A738B005768F1 /* PRTweenTimingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRTweenTimingFunctions.h; sourceTree = "<group>"; };
+		182FEF3A1D1A738B005768F1 /* PRTweenTimingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRTweenTimingFunctions.m; sourceTree = "<group>"; };
 		189C75AA1D0FB14500FCEC31 /* GYMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYMessage.h; sourceTree = "<group>"; };
 		189C75AB1D0FB14500FCEC31 /* GYMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYMessage.m; sourceTree = "<group>"; };
 		189C75BA1D0FDED000FCEC31 /* GYMessengeExtendElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYMessengeExtendElement.h; sourceTree = "<group>"; };
@@ -296,6 +307,28 @@
 			path = HUD;
 			sourceTree = "<group>";
 		};
+		182FEF321D1A738B005768F1 /* PPDragDropBadgeView */ = {
+			isa = PBXGroup;
+			children = (
+				182FEF331D1A738B005768F1 /* PPDragDropBadgeView.bundle */,
+				182FEF341D1A738B005768F1 /* PPDragDropBadgeView.h */,
+				182FEF351D1A738B005768F1 /* PPDragDropBadgeView.m */,
+				182FEF361D1A738B005768F1 /* PRTween */,
+			);
+			path = PPDragDropBadgeView;
+			sourceTree = "<group>";
+		};
+		182FEF361D1A738B005768F1 /* PRTween */ = {
+			isa = PBXGroup;
+			children = (
+				182FEF371D1A738B005768F1 /* PRTween.h */,
+				182FEF381D1A738B005768F1 /* PRTween.m */,
+				182FEF391D1A738B005768F1 /* PRTweenTimingFunctions.h */,
+				182FEF3A1D1A738B005768F1 /* PRTweenTimingFunctions.m */,
+			);
+			path = PRTween;
+			sourceTree = "<group>";
+		};
 		18CB04091D1386E000076DBA /* GYFMDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,7 +369,7 @@
 		18CB043E1D13D9D700076DBA /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				18CB04B71D13E3ED00076DBA /* Tool */,
+				18CB04B71D13E3ED00076DBA /* Library */,
 				18CB04B01D13DB9300076DBA /* Category */,
 				18CB04421D13DA0700076DBA /* KeyBoard */,
 				18CB04651D13DA0700076DBA /* Model */,
@@ -474,13 +507,15 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		18CB04B71D13E3ED00076DBA /* Tool */ = {
+		18CB04B71D13E3ED00076DBA /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				182FEF321D1A738B005768F1 /* PPDragDropBadgeView */,
 				182FEEE51D1A65E2005768F1 /* HUD */,
 				182FEEC61D1A65DE005768F1 /* ProgressViews */,
 				18CB04B81D13E3FA00076DBA /* lame */,
 			);
+			name = Library;
 			path = Tool;
 			sourceTree = "<group>";
 		};
@@ -683,6 +718,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				182FEF3B1D1A738B005768F1 /* PPDragDropBadgeView.bundle in Resources */,
 				604357741D026B4600CF2228 /* Assets.xcassets in Resources */,
 				189C75C11D0FF97900FCEC31 /* Default-568h@2x.png in Resources */,
 				18CB04151D1386E000076DBA /* LICENSE in Resources */,
@@ -779,6 +815,7 @@
 				18CB04AE1D13DA0700076DBA /* GYHDRightChatTextCell.m in Sources */,
 				18CB04C71D13FA3700076DBA /* GYHDVoiceModel.m in Sources */,
 				18CB04981D13DA0700076DBA /* GYHDPhotoCell.m in Sources */,
+				182FEF3C1D1A738B005768F1 /* PPDragDropBadgeView.m in Sources */,
 				18CB043C1D13D19800076DBA /* GYHDChatViewController.m in Sources */,
 				182FEEDE1D1A65DE005768F1 /* M13ProgressViewFilteredImage.m in Sources */,
 				189C75C41D0FFB1D00FCEC31 /* MessageListCell.m in Sources */,
@@ -804,6 +841,7 @@
 				18CB04B61D13DB9300076DBA /* UIColor+HEX.m in Sources */,
 				18CB04901D13DA0700076DBA /* GYHDAudioView.m in Sources */,
 				18CB04B51D13DB9300076DBA /* UIAlertView+Blocks.m in Sources */,
+				182FEF3E1D1A738B005768F1 /* PRTweenTimingFunctions.m in Sources */,
 				18CB04AC1D13DA0700076DBA /* GYHDRightChatAudioCell.m in Sources */,
 				18CB04AB1D13DA0700076DBA /* GYHDLeftChatVideoCell.m in Sources */,
 				182FEEDC1D1A65DE005768F1 /* M13ProgressViewBar.m in Sources */,
@@ -811,6 +849,7 @@
 				18CB04A01D13DA0700076DBA /* GYHDAudioTool.m in Sources */,
 				18CB04BE1D13F7A500076DBA /* UIViewController+DismissKeyboard.m in Sources */,
 				18CB04A91D13DA0700076DBA /* GYHDLeftChatImageCell.m in Sources */,
+				182FEF3D1D1A738B005768F1 /* PRTween.m in Sources */,
 				18CB049C1D13DA0700076DBA /* GYHDQuickReplyView.m in Sources */,
 				18CB04AA1D13DA0700076DBA /* GYHDLeftChatTextCell.m in Sources */,
 				18CB04C41D13F7C200076DBA /* NSDateFormatter+Category.m in Sources */,

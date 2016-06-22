@@ -13,6 +13,8 @@
 @class GYMessage;
 #import <Masonry/Masonry.h>
 #import "SWTableViewCell.h"
+#import "PPDragDropBadgeView.h"
+
 @interface MessageListCell : SWTableViewCell
 
 + (instancetype)cellWithTableView:(UITableView * )tableView;

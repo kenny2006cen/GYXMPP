@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182FEEDB1D1A65DE005768F1 /* M13ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FEEC81D1A65DE005768F1 /* M13ProgressView.m */; };
+		182FEEDC1D1A65DE005768F1 /* M13ProgressViewBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FEECA1D1A65DE005768F1 /* M13ProgressViewBar.m */; };
+		182FEEDD1D1A65DE005768F1 /* M13ProgressViewBorderedBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FEECC1D1A65DE005768F1 /* M13ProgressViewBorderedBar.m */; };
+		182FEEDE1D1A65DE005768F1 /* M13ProgressViewFilteredImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FEECE1D1A65DE005768F1 /* M13ProgressViewFilteredImage.m */; };
+		182FEEDF1D1A65DE005768F1 /* M13ProgressViewImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FEED01D1A65DE005768F1 /* M13ProgressViewImage.m */; };
+		182FEEE01D1A65DE005768F1 /* M13ProgressViewPie.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FEED21D1A65DE005768F1 /* M13ProgressViewPie.m */; };
+		182FEEE11D1A65DE005768F1 /* M13ProgressViewRing.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FEED41D1A65DE005768F1 /* M13ProgressViewRing.m */; };
+		182FEEE21D1A65DE005768F1 /* M13ProgressViewSegmentedBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FEED61D1A65DE005768F1 /* M13ProgressViewSegmentedBar.m */; };
+		182FEEE31D1A65DE005768F1 /* M13ProgressViewSegmentedRing.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FEED81D1A65DE005768F1 /* M13ProgressViewSegmentedRing.m */; };
+		182FEEE41D1A65DE005768F1 /* M13ProgressViewStripedBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FEEDA1D1A65DE005768F1 /* M13ProgressViewStripedBar.m */; };
+		182FEEEA1D1A65E2005768F1 /* M13ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FEEE71D1A65E2005768F1 /* M13ProgressHUD.m */; };
+		182FEEEB1D1A65E2005768F1 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 182FEEE91D1A65E2005768F1 /* UIImage+ImageEffects.m */; };
 		189C75AD1D0FB14500FCEC31 /* GYMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C75AB1D0FB14500FCEC31 /* GYMessage.m */; };
 		189C75BC1D0FDED000FCEC31 /* GYMessengeExtendElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C75BB1D0FDED000FCEC31 /* GYMessengeExtendElement.m */; };
 		189C75BF1D0FDF3E00FCEC31 /* GYGenUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 189C75BE1D0FDF3E00FCEC31 /* GYGenUUID.m */; };
@@ -80,6 +92,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182FEEC71D1A65DE005768F1 /* M13ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13ProgressView.h; sourceTree = "<group>"; };
+		182FEEC81D1A65DE005768F1 /* M13ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13ProgressView.m; sourceTree = "<group>"; };
+		182FEEC91D1A65DE005768F1 /* M13ProgressViewBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13ProgressViewBar.h; sourceTree = "<group>"; };
+		182FEECA1D1A65DE005768F1 /* M13ProgressViewBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13ProgressViewBar.m; sourceTree = "<group>"; };
+		182FEECB1D1A65DE005768F1 /* M13ProgressViewBorderedBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13ProgressViewBorderedBar.h; sourceTree = "<group>"; };
+		182FEECC1D1A65DE005768F1 /* M13ProgressViewBorderedBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13ProgressViewBorderedBar.m; sourceTree = "<group>"; };
+		182FEECD1D1A65DE005768F1 /* M13ProgressViewFilteredImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13ProgressViewFilteredImage.h; sourceTree = "<group>"; };
+		182FEECE1D1A65DE005768F1 /* M13ProgressViewFilteredImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13ProgressViewFilteredImage.m; sourceTree = "<group>"; };
+		182FEECF1D1A65DE005768F1 /* M13ProgressViewImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13ProgressViewImage.h; sourceTree = "<group>"; };
+		182FEED01D1A65DE005768F1 /* M13ProgressViewImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13ProgressViewImage.m; sourceTree = "<group>"; };
+		182FEED11D1A65DE005768F1 /* M13ProgressViewPie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13ProgressViewPie.h; sourceTree = "<group>"; };
+		182FEED21D1A65DE005768F1 /* M13ProgressViewPie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13ProgressViewPie.m; sourceTree = "<group>"; };
+		182FEED31D1A65DE005768F1 /* M13ProgressViewRing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13ProgressViewRing.h; sourceTree = "<group>"; };
+		182FEED41D1A65DE005768F1 /* M13ProgressViewRing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13ProgressViewRing.m; sourceTree = "<group>"; };
+		182FEED51D1A65DE005768F1 /* M13ProgressViewSegmentedBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13ProgressViewSegmentedBar.h; sourceTree = "<group>"; };
+		182FEED61D1A65DE005768F1 /* M13ProgressViewSegmentedBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13ProgressViewSegmentedBar.m; sourceTree = "<group>"; };
+		182FEED71D1A65DE005768F1 /* M13ProgressViewSegmentedRing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13ProgressViewSegmentedRing.h; sourceTree = "<group>"; };
+		182FEED81D1A65DE005768F1 /* M13ProgressViewSegmentedRing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13ProgressViewSegmentedRing.m; sourceTree = "<group>"; };
+		182FEED91D1A65DE005768F1 /* M13ProgressViewStripedBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13ProgressViewStripedBar.h; sourceTree = "<group>"; };
+		182FEEDA1D1A65DE005768F1 /* M13ProgressViewStripedBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13ProgressViewStripedBar.m; sourceTree = "<group>"; };
+		182FEEE61D1A65E2005768F1 /* M13ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13ProgressHUD.h; sourceTree = "<group>"; };
+		182FEEE71D1A65E2005768F1 /* M13ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13ProgressHUD.m; sourceTree = "<group>"; };
+		182FEEE81D1A65E2005768F1 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		182FEEE91D1A65E2005768F1 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		189C75AA1D0FB14500FCEC31 /* GYMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYMessage.h; sourceTree = "<group>"; };
 		189C75AB1D0FB14500FCEC31 /* GYMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYMessage.m; sourceTree = "<group>"; };
 		189C75BA1D0FDED000FCEC31 /* GYMessengeExtendElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYMessengeExtendElement.h; sourceTree = "<group>"; };
@@ -222,6 +258,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		182FEEC61D1A65DE005768F1 /* ProgressViews */ = {
+			isa = PBXGroup;
+			children = (
+				182FEEC71D1A65DE005768F1 /* M13ProgressView.h */,
+				182FEEC81D1A65DE005768F1 /* M13ProgressView.m */,
+				182FEEC91D1A65DE005768F1 /* M13ProgressViewBar.h */,
+				182FEECA1D1A65DE005768F1 /* M13ProgressViewBar.m */,
+				182FEECB1D1A65DE005768F1 /* M13ProgressViewBorderedBar.h */,
+				182FEECC1D1A65DE005768F1 /* M13ProgressViewBorderedBar.m */,
+				182FEECD1D1A65DE005768F1 /* M13ProgressViewFilteredImage.h */,
+				182FEECE1D1A65DE005768F1 /* M13ProgressViewFilteredImage.m */,
+				182FEECF1D1A65DE005768F1 /* M13ProgressViewImage.h */,
+				182FEED01D1A65DE005768F1 /* M13ProgressViewImage.m */,
+				182FEED11D1A65DE005768F1 /* M13ProgressViewPie.h */,
+				182FEED21D1A65DE005768F1 /* M13ProgressViewPie.m */,
+				182FEED31D1A65DE005768F1 /* M13ProgressViewRing.h */,
+				182FEED41D1A65DE005768F1 /* M13ProgressViewRing.m */,
+				182FEED51D1A65DE005768F1 /* M13ProgressViewSegmentedBar.h */,
+				182FEED61D1A65DE005768F1 /* M13ProgressViewSegmentedBar.m */,
+				182FEED71D1A65DE005768F1 /* M13ProgressViewSegmentedRing.h */,
+				182FEED81D1A65DE005768F1 /* M13ProgressViewSegmentedRing.m */,
+				182FEED91D1A65DE005768F1 /* M13ProgressViewStripedBar.h */,
+				182FEEDA1D1A65DE005768F1 /* M13ProgressViewStripedBar.m */,
+			);
+			path = ProgressViews;
+			sourceTree = "<group>";
+		};
+		182FEEE51D1A65E2005768F1 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				182FEEE61D1A65E2005768F1 /* M13ProgressHUD.h */,
+				182FEEE71D1A65E2005768F1 /* M13ProgressHUD.m */,
+				182FEEE81D1A65E2005768F1 /* UIImage+ImageEffects.h */,
+				182FEEE91D1A65E2005768F1 /* UIImage+ImageEffects.m */,
+			);
+			path = HUD;
+			sourceTree = "<group>";
+		};
 		18CB04091D1386E000076DBA /* GYFMDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +477,8 @@
 		18CB04B71D13E3ED00076DBA /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				182FEEE51D1A65E2005768F1 /* HUD */,
+				182FEEC61D1A65DE005768F1 /* ProgressViews */,
 				18CB04B81D13E3FA00076DBA /* lame */,
 			);
 			path = Tool;
@@ -677,6 +753,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18CB04AF1D13DA0700076DBA /* GYHDRightChatVideoCell.m in Sources */,
+				182FEEEB1D1A65E2005768F1 /* UIImage+ImageEffects.m in Sources */,
 				6043578F1D027AD100CF2228 /* GYXMPP.m in Sources */,
 				18CB04911D13DA0700076DBA /* GYHDCameraShowView.m in Sources */,
 				18CB04961D13DA0700076DBA /* GYHDKeyboardSelectBaseView.m in Sources */,
@@ -685,12 +762,16 @@
 				18CC52F31D17A19E00B59628 /* NSString+dictionaryToJsonString.m in Sources */,
 				18CB049F1D13DA0700076DBA /* EmojiTextAttachment.m in Sources */,
 				189C75BC1D0FDED000FCEC31 /* GYMessengeExtendElement.m in Sources */,
+				182FEEE11D1A65DE005768F1 /* M13ProgressViewRing.m in Sources */,
 				18CB04A41D13DA0700076DBA /* GYHDRecordVideoTool.m in Sources */,
+				182FEEE01D1A65DE005768F1 /* M13ProgressViewPie.m in Sources */,
 				18CB049D1D13DA0700076DBA /* GYHDVideoView.m in Sources */,
+				182FEEDF1D1A65DE005768F1 /* M13ProgressViewImage.m in Sources */,
 				6043576C1D026B4600CF2228 /* AppDelegate.m in Sources */,
 				18CB04941D13DA0700076DBA /* GYHDEmojiView.m in Sources */,
 				18CB049A1D13DA0700076DBA /* GYHDPhotoView.m in Sources */,
 				18CB04161D1386E000076DBA /* README.md in Sources */,
+				182FEEEA1D1A65E2005768F1 /* M13ProgressHUD.m in Sources */,
 				18E92A641D12469F0065147A /* LoginViewController.m in Sources */,
 				18CB04A61D13DA0700076DBA /* GYHDChatImageShowView.m in Sources */,
 				18CB04C31D13F7C200076DBA /* NSDate+Category.m in Sources */,
@@ -699,18 +780,23 @@
 				18CB04C71D13FA3700076DBA /* GYHDVoiceModel.m in Sources */,
 				18CB04981D13DA0700076DBA /* GYHDPhotoCell.m in Sources */,
 				18CB043C1D13D19800076DBA /* GYHDChatViewController.m in Sources */,
+				182FEEDE1D1A65DE005768F1 /* M13ProgressViewFilteredImage.m in Sources */,
 				189C75C41D0FFB1D00FCEC31 /* MessageListCell.m in Sources */,
 				18CB04A51D13DA0700076DBA /* GYHDBaseChatCell.m in Sources */,
 				18CB049B1D13DA0700076DBA /* GYHDPlayVideoView.m in Sources */,
 				18CB04A71D13DA0700076DBA /* GYHDChatVideoShowView.m in Sources */,
+				182FEEE41D1A65DE005768F1 /* M13ProgressViewStripedBar.m in Sources */,
 				18CB04991D13DA0700076DBA /* GYHDPhotoShowView.m in Sources */,
 				18CB04131D1386E000076DBA /* GYFMDB.m in Sources */,
+				182FEEDB1D1A65DE005768F1 /* M13ProgressView.m in Sources */,
 				18CB04921D13DA0700076DBA /* GYHDCameraView.m in Sources */,
 				189C75AD1D0FB14500FCEC31 /* GYMessage.m in Sources */,
 				18CB049E1D13DA0700076DBA /* GYHDNewChatModel.m in Sources */,
+				182FEEE21D1A65DE005768F1 /* M13ProgressViewSegmentedBar.m in Sources */,
 				18CB04141D1386E000076DBA /* NSObject+GYFMDB.m in Sources */,
 				18CB048E1D13DA0700076DBA /* GYHDEmojiModel.m in Sources */,
 				189C75BF1D0FDF3E00FCEC31 /* GYGenUUID.m in Sources */,
+				182FEEDD1D1A65DE005768F1 /* M13ProgressViewBorderedBar.m in Sources */,
 				604357921D028ED900CF2228 /* GYXMPPTool.m in Sources */,
 				604357691D026B4600CF2228 /* main.m in Sources */,
 				18CB04931D13DA0700076DBA /* GYHDEmojiCell.m in Sources */,
@@ -720,6 +806,8 @@
 				18CB04B51D13DB9300076DBA /* UIAlertView+Blocks.m in Sources */,
 				18CB04AC1D13DA0700076DBA /* GYHDRightChatAudioCell.m in Sources */,
 				18CB04AB1D13DA0700076DBA /* GYHDLeftChatVideoCell.m in Sources */,
+				182FEEDC1D1A65DE005768F1 /* M13ProgressViewBar.m in Sources */,
+				182FEEE31D1A65DE005768F1 /* M13ProgressViewSegmentedRing.m in Sources */,
 				18CB04A01D13DA0700076DBA /* GYHDAudioTool.m in Sources */,
 				18CB04BE1D13F7A500076DBA /* UIViewController+DismissKeyboard.m in Sources */,
 				18CB04A91D13DA0700076DBA /* GYHDLeftChatImageCell.m in Sources */,

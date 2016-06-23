@@ -19,4 +19,7 @@
 
 @property(nonatomic, weak) GYHDNewChatModel *chatModel;
 @property(nonatomic, weak) id<GYHDChatDelegate> delegate;
+
+
+-(void)loadChatMessage:(GYMessage *)chatMessage;
 @end

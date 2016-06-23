@@ -18,9 +18,12 @@
 #import "GYHDLeftChatAudioCell.h"
 #import "GYHDRightChatAudioCell.h"
 
-@interface GYHDChatViewController ()<UITableViewDataSource,UITableViewDelegate>{
+#import "GYHDInputView.h"
+#import "UITableView+FDTemplateLayoutCell.h"
+@interface GYHDChatViewController ()<UITableViewDataSource,UITableViewDelegate,GYHDInputViewDelegate>{
 
-    
+  BOOL  _isScrollToBottom;//是否滚动到底部
+
 }
 
 @property(nonatomic, strong)UITableView *chatTableView;
@@ -29,6 +32,7 @@
  */
 @property(nonatomic, strong)NSMutableArray *chatArrayM;
 
+@property(nonatomic, strong)GYHDInputView *chatInputView;
 /**
  * 接收者ID
  */
@@ -61,6 +65,7 @@
     
     self.title = self.friendUserId;
     
+    [self loadChat];
 }
 
 -(void)configUI{
@@ -97,6 +102,12 @@
      [_chatTableView registerClass:[GYHDRightChatAudioCell class] forCellReuseIdentifier:@"GYHDRightChatAudioCellID"];
      
 
+    _chatInputView= [[GYHDInputView alloc] init];
+    _chatInputView.delegate = self;
+    
+    [_chatInputView showToSuperView:self.view];
+    
+    [self.chatInputView addObserver:self forKeyPath:@"center" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 -(void)setupRefresh{
@@ -122,6 +133,39 @@
 
 /**加载聊天记录*/
 - (void)loadChat {
+
+    NSArray *dataArray =[GYMessage findMessageListWithFriendId:self.friendUserId Page:0];
+    
+    if (dataArray&&dataArray.count>0) {
+        
+        [self.chatArrayM addObjectsFromArray:dataArray];
+        
+        [self.chatTableView reloadData];
+        
+            }
+}
+
+#pragma mark - InputView KVO
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    if([keyPath isEqualToString:@"center"])
+    {
+        if (self.chatArrayM.count > 0) {
+            CGRect rectInKey =  [self.chatInputView convertRect:self.chatInputView.bounds toView:[self.chatInputView superview]];
+            [self.chatTableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.top.left.right.mas_equalTo(0);
+                make.height.mas_equalTo(rectInKey.origin.y);
+            }];
+            [self.chatTableView layoutIfNeeded];
+            [self.chatTableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:self.chatArrayM.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+        }
+    }
+    
+}
+
+#pragma mark - GYHDInputViewDelegate
+- (void)GYHDInputView:(GYHDInputView *)inputView
+             sendDict:(NSDictionary *)dict
+             SendType:(GYHDInputeViewSendType)type{
 
 
 }
@@ -158,8 +202,106 @@
     static NSDateFormatter *chatfmt = nil;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (self.chatArrayM.count>0) {
+        
+        GYMessage *chatMessage = self.chatArrayM[indexPath.row];
+        //当前消息的上一条
+        GYMessage *lastMessage = nil;
+        
+        if (indexPath.row>=1) {
+            lastMessage = self.chatArrayM[indexPath.row-1];
+        }
+        
+        switch (chatMessage.msgBodyType){
+        
+            case MessageBodyType_Text:{
+                
+                if (!chatMessage.msgIsSelf) {
+                    GYHDLeftChatTextCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GYHDLeftChatTextCellID" forIndexPath:indexPath];
+                //    cell.delegate = self;
+                    [cell loadChatMessage:chatMessage];
+                    
+                   // [cell timeWithinTwoMinute:lastMessage CurrentModel:chatMessage];
+                    
+                    return cell;
+                } else {
+                    GYHDRightChatTextCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GYHDRightChatTextCellID" forIndexPath:indexPath];
+                 //   cell.delegate = self;
+                    [cell loadChatMessage:chatMessage];
 
+                    
+                  //   [cell timeWithinTwoMinute:lastMessage CurrentModel:chatMessage];
+                    
+                    return cell;
+                }
+
+            
+            }break;
+            default:
+                break;
+        
+        }
+        
+    }
+    
+    else{
+    
+        return nil;
+    }
+    
     return nil;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    WSHD(weakSelf);
+    
+    GYMessage *chatModel = weakSelf.chatArrayM[indexPath.row];
+    
+    switch (chatModel.msgBodyType) {
+        case MessageBodyType_Text:{
+            
+            //不是是自己发的
+                if (!chatModel.msgIsSelf)
+                  {
+                   return [tableView fd_heightForCellWithIdentifier:@"GYHDLeftChatTextCellID" configuration:^(GYHDLeftChatTextCell *cell) {
+                   
+                    cell.chatMessage = chatModel;
+                    }];
+                  }
+                else{
+                    
+                    CGFloat height = [tableView fd_heightForCellWithIdentifier:@"GYHDRightChatTextCellID" configuration:^(GYHDRightChatTextCell *cell) {
+                        
+                        cell.chatMessage = chatModel;
+                    }];
+                    
+                    NSLog(@"height = %f",height);
+                    
+                    return height;
+
+                    }
+            
+        }break;
+        case MessageBodyType_Image:{
+        
+            return 100;
+        }break;
+        case MessageBodyType_Voice:{
+            return 100;
+
+        }break;
+        case MessageBodyType_Video:{
+            return 100;
+
+        }break;
+        default:
+            return 0;
+            break;
+    }
+                           
+                   
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -167,6 +309,12 @@
    // [self.chatInputView disMiss];
 }
 
+
+#pragma mark - dealloc
+-(void)dealloc{
+
+     [self.chatInputView removeObserver:self forKeyPath:@"center"];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

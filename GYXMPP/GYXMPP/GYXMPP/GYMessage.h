@@ -47,7 +47,9 @@ typedef NS_ENUM(NSInteger, MessageDeliveryState) {
 
 @property ( nonatomic, copy) NSString *msgUserHead;//用户头像
 
-//+(BOOL)updateMesageDeliveryStatusToDB;//更新消息发送状态
+
+//一次分页加载的消息数,默认从最后一条开始找起来
++(NSArray*)findMessageListWithFriendId:(NSString*)friendId Page:(NSInteger)num;
 
 @end
 

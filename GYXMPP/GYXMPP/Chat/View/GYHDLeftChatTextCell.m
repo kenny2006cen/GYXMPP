@@ -83,7 +83,28 @@
   self.chatRecvTimeLabel = recvTimeLabel;
 }
 
-
+-(void)loadChatMessage:(GYMessage *)chatMessage{
+    
+    self.chatMessage = chatMessage;
+    
+    //    self.chatRecvTimeLabel.text = chatModel.chatRecvTime;
+    self.chatRecvTimeLabel.text = [self changeTimeShow:chatMessage.msgRecTime];
+    
+    
+    
+    NSAttributedString *attributeString = [[NSAttributedString alloc]initWithString:chatMessage.msgBody];
+    
+    // modify by jianglincen
+    
+    self.chatCharacterLabel.attributedText = attributeString;
+    
+    [self.iconImageView sd_setImageWithPreviousCachedImageWithURL:nil placeholderImage:[UIImage imageNamed:@"defaultheadimg"] options:kNilOptions progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        
+    }];
+    
+}
 /*
 - (void)setChatModel:(GYHDNewChatModel *)chatModel {
   _chatModel = chatModel;

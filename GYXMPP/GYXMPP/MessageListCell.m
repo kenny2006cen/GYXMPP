@@ -68,14 +68,14 @@ static NSString * const GYTableViewCellID = @"GYHDBusinessCell";
     _messageContentLabel.textColor = [UIColor colorWithRed:153/255.0f green:153/255.0f blue:153/255.0f alpha:1];
     [self.contentView addSubview:_messageContentLabel];
     
-    //未读消息标签
-    _unreadMessageButton = [[UIButton alloc] init];
-    _unreadMessageButton.titleLabel.font = [UIFont systemFontOfSize:11.0f];
-    _unreadMessageButton.imageView.contentMode = UIViewContentModeCenter;
-    _unreadMessageButton.userInteractionEnabled = NO;
-    [self.contentView addSubview:_unreadMessageButton];
-   
-    [_unreadMessageButton setBackgroundImage:[UIImage imageNamed:@"icon-xxts2"] forState:UIControlStateNormal];
+//    //未读消息标签
+//    _unreadMessageButton = [[UIButton alloc] init];
+//    _unreadMessageButton.titleLabel.font = [UIFont systemFontOfSize:11.0f];
+//    _unreadMessageButton.imageView.contentMode = UIViewContentModeCenter;
+//    _unreadMessageButton.userInteractionEnabled = NO;
+//    [self.contentView addSubview:_unreadMessageButton];
+//   
+//    [_unreadMessageButton setBackgroundImage:[UIImage imageNamed:@"icon-xxts2"] forState:UIControlStateNormal];
 
     _lasttimeLabel = [[UILabel alloc] init];
     _lasttimeLabel.font = [UIFont systemFontOfSize:11.0f];
@@ -89,12 +89,12 @@ static NSString * const GYTableViewCellID = @"GYHDBusinessCell";
     [self addSubview:lineView];
    
     __block  PPDragDropBadgeView* badgeView
-    = [[PPDragDropBadgeView alloc] initWithFrame:CGRectMake(kScreenWidth-40, 40, 20, 20) dragdropCompletion:^{
-        NSLog(@"Drag drop done.");
+    = [[PPDragDropBadgeView alloc] initWithFrame:CGRectMake(kScreenWidth-40, 30, 20, 20) dragdropCompletion:^{
+       // NSLog(@"Drag drop done.");
         
         badgeView.text=@"";
     }];
-    badgeView.text = @"6";
+    badgeView.text = @"1";
     
     [self.contentView addSubview:badgeView];
     
@@ -130,13 +130,13 @@ static NSString * const GYTableViewCellID = @"GYHDBusinessCell";
         make.height.equalTo(self.iconImageView.mas_height).multipliedBy(0.5);
         make.right.mas_equalTo(-47.0f);
     }];
-//修改未读数显示大小 设置成固定大小不在随字符长度变动 zhangx
-    [_unreadMessageButton mas_makeConstraints:^(MASConstraintMaker *make) {
-              make.size.mas_equalTo(CGSizeMake(20.0f, 20.0f));
-        make.centerX.equalTo(self.iconImageView.mas_right);
-        make.centerY.equalTo(self.iconImageView.mas_top);
-    }];
-    
+////修改未读数显示大小 设置成固定大小不在随字符长度变动 zhangx
+//    [_unreadMessageButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//              make.size.mas_equalTo(CGSizeMake(20.0f, 20.0f));
+//        make.centerX.equalTo(self.iconImageView.mas_right);
+//        make.centerY.equalTo(self.iconImageView.mas_top);
+//    }];
+//    
  
 }
 

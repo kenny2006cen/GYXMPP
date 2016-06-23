@@ -15,6 +15,13 @@
 #import "SWTableViewCell.h"
 #import "PPDragDropBadgeView.h"
 
+@protocol MessageListCellDelegate <NSObject>
+
+//清除未读消息
+-(void)clearUnreadMessage:(GYMessage*)message;
+
+@end
+
 @interface MessageListCell : SWTableViewCell
 
 + (instancetype)cellWithTableView:(UITableView * )tableView;

@@ -68,21 +68,21 @@ static NSMutableString *gysql;
     NSString *propertyType =
         [NSString stringWithCString:property_getAttributes(property)
                            encoding:NSUTF8StringEncoding];
-    /*
-     c char         C unsigned char
-     i int          I unsigned int
-     l long         L unsigned long
-     s short        S unsigned short
-     d double       D unsigned double
-     f float        F unsigned float
-     q long long    Q unsigned long long
-     B BOOL
-     @ 对象类型 //指针 对象类型 如NSString 是@“NSString”
-
-
-     64位下long 和long long 都是Tq
-     SQLite 默认支持五种数据类型TEXT、INTEGER、REAL、BLOB、NULL
-     */
+    
+//     c char         C unsigned char
+//     i int          I unsigned int
+//     l long         L unsigned long
+//     s short        S unsigned short
+//     d double       D unsigned double
+//     f float        F unsigned float
+//     q long long    Q unsigned long long
+//     B BOOL
+//     @ 对象类型 //指针 对象类型 如NSString 是@“NSString”
+//
+//
+//     64位下long 和long long 都是Tq
+//     SQLite 默认支持五种数据类型TEXT、INTEGER、REAL、BLOB、NULL
+     
     if ([propertyType hasPrefix:@"T@"]) {
       [proTypes addObject:SQLTEXT];
     } else if ([propertyType hasPrefix:@"Ti"] ||
@@ -101,7 +101,7 @@ static NSMutableString *gysql;
       dictionaryWithObjectsAndKeys:proNames, @"name", proTypes, @"type", nil];
 }
 
-/** 获取所有属性，包含主键pk */
+//获取所有属性，包含主键pk
 + (NSDictionary *)getAllProperties {
   NSDictionary *dict = [self.class getPropertys];
 
@@ -119,8 +119,8 @@ static NSMutableString *gysql;
 }
 
 #pragma mark - otherMethod
-/** 如果子类中有一些property不需要创建数据库字段，那么这个方法必须在子类中重写
- */
+// 如果子类中有一些property不需要创建数据库字段，那么这个方法必须在子类中重写
+
 + (NSArray *)transients {
   return [NSArray arrayWithObject:@"aliasName"];
 }
@@ -188,7 +188,7 @@ static NSMutableString *gysql;
   return YES;
 }
 
-/** 数据库中是否存在表 */
+
 + (BOOL)isExistInTable {
   __block BOOL res = NO;
 
@@ -459,13 +459,9 @@ static NSMutableString *gysql;
 
   return users;
 }
-/**
- *
- *
- *  @param condition @"where pk =1 limit 1"
- *
- *  @return ModelArray
- */
+//  @param condition @"where pk =1 limit 1"
+
+
 + (NSArray *)findByCondition:(NSString *)condition {
   GYFMDB *gydb = [GYFMDB sharedInstance];
 
@@ -731,6 +727,7 @@ static NSMutableString *gysql;
 }
 
 #pragma mark - Block method
+/*
 - (NSObject * (^)())select {
   return ^() {
     //
@@ -808,7 +805,7 @@ static NSMutableString *gysql;
     return self;
   };
 }
-/*
+
 - (NSObject*(^)(NSString*))join{
 
     return ^(NSString *string){
@@ -825,7 +822,7 @@ static NSMutableString *gysql;
         return self;
     };
 }
-*/
+
 //暂时做2表连接
 - (NSObject * (^)(NSString *, NSString *))joinWithOn {
   return ^(NSString *string, NSString *condition) {
@@ -866,8 +863,6 @@ static NSMutableString *gysql;
     return self;
   };
 }
-
-/*
 - (NSObject*(^)(NSString*))on{
 
     return ^(NSString *string){
@@ -877,7 +872,7 @@ static NSMutableString *gysql;
         return self;
     };
 }
-*/
+
 - (NSMutableArray * (^)())runSql {
   return ^() {
 
@@ -923,7 +918,7 @@ static NSMutableString *gysql;
     return users;
   };
 }
-
+*/
 #pragma mark - method
 + (NSString *)getColumeAndTypeString {
   NSMutableString *pars = [NSMutableString string];

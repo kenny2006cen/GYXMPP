@@ -16,16 +16,16 @@
 
 @interface GYHDRightChatTextCell ()
 /**用户头像*/
-@property(nonatomic, weak) UIImageView *iconImageView;
+@property(nonatomic, strong) UIImageView *iconImageView;
 /**接收时间*/
 //@property(nonatomic, weak)UILabel *chatRecvTimeLabel;
 /**聊天背景*/
-@property(nonatomic, weak) UIImageView *chatbackgroundView;
+@property(nonatomic, strong) UIImageView *chatbackgroundView;
 /**聊天文字类容*/
-@property(nonatomic, weak) UILabel *chatCharacterLabel;
+@property(nonatomic, strong) UILabel *chatCharacterLabel;
 
 /**发送内容状态*/
-@property(nonatomic, weak) UIButton *chatStateButton;
+@property(nonatomic, strong) UIButton *chatStateButton;
 @end
 
 @implementation GYHDRightChatTextCell
@@ -44,60 +44,79 @@
                                                       blue:245 / 255.0f
                                                      alpha:1];
   [self setSelectionStyle:UITableViewCellSelectionStyleNone];
+    
+    
+    // 1. 发送时间
+    self.chatRecvTimeLabel = [[UILabel alloc] init];
+    
+     [self.chatRecvTimeLabel setFrame:CGRectMake(0, 0, kScreenWidth, 20)];
+    self.chatRecvTimeLabel.backgroundColor=[UIColor blackColor];
+    self.chatRecvTimeLabel.textAlignment = NSTextAlignmentCenter;
+    self.chatRecvTimeLabel.font = [UIFont systemFontOfSize:11.0];
+    self.chatRecvTimeLabel.textColor = [UIColor colorWithRed:153.0 / 255.0f
+                                                       green:153.0 / 255.0f
+                                                        blue:153.0 / 255.0f
+                                                       alpha:1];
+    [self.contentView addSubview: self.chatRecvTimeLabel];
+    
   // 1. 聊天背景
-  UIImageView *chatbackgroundView = [[UIImageView alloc] init];
-  chatbackgroundView.image = [UIImage imageNamed:@"icon-ltk3"];
-  [self.contentView addSubview:chatbackgroundView];
-  _chatbackgroundView = chatbackgroundView;
-  // 2. 文本聊天视图
-  UILabel *chatCharacterLabel = [[UILabel alloc] init];
-  chatCharacterLabel.userInteractionEnabled = YES;
-  chatCharacterLabel.numberOfLines = 0;
-  chatCharacterLabel.text = @"11";
-    chatCharacterLabel.text = @"11";
-    chatCharacterLabel.textColor=[UIColor whiteColor];
+   self.chatbackgroundView = [[UIImageView alloc] init];
+    
+    UIImage *tempImage = [UIImage imageNamed:@"icon-ltk3"];
 
-  chatCharacterLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    self.chatbackgroundView.image =tempImage;
+    
+   // self.chatbackgroundView.image=[tempImage stretchableImageWithLeftCapWidth:15 topCapHeight:15];
+    
+  [self.contentView addSubview:self.chatbackgroundView];
+  
+    // 2 .头像
+    self.iconImageView = [[UIImageView alloc] init];
+    
+    [self.iconImageView setFrame:CGRectMake(kScreenWidth-44-10, self.chatRecvTimeLabel.frame.origin.y+10, 44, 44)];
+    
+    self.iconImageView.image = kLoadPng(@"defaultheadimg");
+    self.iconImageView.contentMode = UIViewContentModeScaleAspectFit;
+    
+    self.iconImageView.userInteractionEnabled = YES;
+    self.iconImageView.layer.masksToBounds = YES;
+    self.iconImageView.layer.cornerRadius = 3;
+    UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc]
+                                     initWithTarget:self
+                                     action:@selector(iconImageViewClick:)];
+    [ self.iconImageView addGestureRecognizer:tapGR];
+    [self.contentView addSubview: self.iconImageView];
+
+  // 2. 文本聊天视图
+ self.chatCharacterLabel = [[UILabel alloc] init];
+ self.
+    
+  self.chatCharacterLabel.userInteractionEnabled = YES;
+  self.chatCharacterLabel.numberOfLines = 0;
+  //self.chatCharacterLabel.text = @"11";
+   
+    self.chatCharacterLabel.textColor=[UIColor whiteColor];
+
+  self.chatCharacterLabel.lineBreakMode = NSLineBreakByTruncatingTail;
 
   UILongPressGestureRecognizer *longTap = [[UILongPressGestureRecognizer alloc]
       initWithTarget:self
               action:@selector(chatCharacterLabelLongtap:)];
-  [chatCharacterLabel addGestureRecognizer:longTap];
-  [self.contentView addSubview:chatCharacterLabel];
-  _chatCharacterLabel = chatCharacterLabel;
+  [self.chatCharacterLabel addGestureRecognizer:longTap];
 
-  // 3 .头像
-  UIImageView *iconImageView = [[UIImageView alloc] init];
-  iconImageView.image = kLoadPng(@"defaultheadimg");
-  iconImageView.contentMode = UIViewContentModeScaleAspectFit;
+  [self.contentView addSubview:self.chatCharacterLabel];
 
-  iconImageView.userInteractionEnabled = YES;
-  iconImageView.layer.masksToBounds = YES;
-  iconImageView.layer.cornerRadius = 3;
-  UITapGestureRecognizer *tapGR = [[UITapGestureRecognizer alloc]
-      initWithTarget:self
-              action:@selector(iconImageViewClick:)];
-  [iconImageView addGestureRecognizer:tapGR];
-  [self.contentView addSubview:iconImageView];
-  _iconImageView = iconImageView;
+  
 
-  // 4. 发送时间
-  UILabel *recvTimeLabel = [[UILabel alloc] init];
-  recvTimeLabel.textAlignment = NSTextAlignmentCenter;
-  recvTimeLabel.font = [UIFont systemFontOfSize:11.0];
-  recvTimeLabel.textColor = [UIColor colorWithRed:153.0 / 255.0f
-                                            green:153.0 / 255.0f
-                                             blue:153.0 / 255.0f
-                                            alpha:1];
-  [self.contentView addSubview:recvTimeLabel];
-  self.chatRecvTimeLabel = recvTimeLabel;
-  // 3. 消息状态
-  UIButton *chatStateButton = [[UIButton alloc] init];
-  [chatStateButton addTarget:self
+
+
+    // 3. 消息状态
+  self.chatStateButton = [[UIButton alloc] init];
+  [self.chatStateButton addTarget:self
                       action:@selector(chatStateButtonClick:)
             forControlEvents:UIControlEventTouchUpInside];
-  chatStateButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
-  chatStateButton.imageView.animationDuration = 1.4f;
+   self.chatStateButton.imageView.contentMode = UIViewContentModeScaleAspectFill;
+   self.chatStateButton.imageView.animationDuration = 1.4f;
 
   NSMutableArray *imageArray = [NSMutableArray array];
   for (int i = 1; i < 13; i++) {
@@ -107,98 +126,121 @@
       [imageArray addObject:image];
     }
   }
-  chatStateButton.imageView.animationImages = imageArray;
-  [chatStateButton setImage:[UIImage imageNamed:@"hd_failure"]
+   self.chatStateButton.imageView.animationImages = imageArray;
+  [self.chatStateButton setImage:[UIImage imageNamed:@"hd_failure"]
                    forState:UIControlStateNormal];
-  [self.contentView addSubview:chatStateButton];
-  _chatStateButton = chatStateButton;
+    
+  [self.contentView addSubview: self.chatStateButton];
+
+    
 }
 
-- (CGSize)sizeWithFont:(UIFont *)font
-               maxSize:(CGSize)maxSize
-                String:(NSString *)str {
-  NSDictionary *attrs = @{NSFontAttributeName : font};
-  return [str boundingRectWithSize:maxSize
-                           options:NSStringDrawingUsesLineFragmentOrigin
-                        attributes:attrs
-                           context:nil]
-      .size;
-}
 
-/*
-- (void)setChatModel:(GYHDNewChatModel *)chatModel {
-  _chatModel = chatModel;
-  //    self.chatRecvTimeLabel.text = chatModel.chatRecvTime;
-  self.chatRecvTimeLabel.text = [self changeTimeShow:chatModel.chatRecvTime];
+-(void)loadChatMessage:(GYMessage *)chatMessage{
 
-  NSAttributedString *attributeString = chatModel.chatContentAttString;
-
-  // modify by jianglincen
-
-  if ([[[UIDevice currentDevice] systemVersion] floatValue] < 9) {
+    self.chatMessage = chatMessage;
+    
+    self.contentView.backgroundColor=[UIColor grayColor];
+//    self.chatRecvTimeLabel.text = [self changeTimeShow:chatMessage.msgRecTime];
+   
+    self.chatRecvTimeLabel.text = @"2016-06-1";
+    NSAttributedString *attributeString = [[NSAttributedString alloc]initWithString:@"abcsdfdsfhskdfjsadkfjsakdffsdsjfsdfjsakfjsakfjksdjfdskfjksafjkjkjfkfjdsakfjaslkfjsl"];
+    
+    // modify by jianglincen
+    
     self.chatCharacterLabel.attributedText = attributeString;
+    
 
-  } else {
-    self.chatCharacterLabel.attributedText = attributeString;
-  }
-
-  [self.iconImageView
-      setImageWithURL:[NSURL URLWithString:globalData.loginModel.headPic] placeholder:kLoadPng(@"defaultheadimg") options:kNilOptions completion:nil ];
-  switch (chatModel.chatSendState) {
-    case GYHDDataBaseCenterMessageSentStateSuccess:  // 发送成功
-      self.chatStateButton.hidden = YES;
-      [self.chatStateButton.imageView stopAnimating];
-      break;
-    case GYHDDataBaseCenterMessageSentStateSending:
-      self.chatStateButton.hidden = NO;
-      [self.chatStateButton.imageView startAnimating];
-      break;
-    case GYHDDataBaseCenterMessageSentStateFailure:
-      self.chatStateButton.hidden = NO;
-      [self.chatStateButton.imageView stopAnimating];
-      break;
-    default:
-      break;
-  }
+    
+    [self.iconImageView sd_setImageWithPreviousCachedImageWithURL:nil placeholderImage:[UIImage imageNamed:@"defaultheadimg"] options:kNilOptions progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        
+    }];
+    
+    switch (chatMessage.deliveryState) {
+        case MessageDeliveryState_Delivering:{
+            //发送中
+            [self.chatStateButton.imageView startAnimating];
+            self.chatStateButton.hidden = NO;
+            
+        }break;
+        case MessageDeliveryState_Delivered:{
+        
+            // 发送成功
+            [self.chatStateButton.imageView stopAnimating];
+            self.chatStateButton.hidden = YES;
+           
+        }break;
+        case MessageDeliveryState_Failure:{
+            //发送失败
+            [self.chatStateButton.imageView stopAnimating];
+            self.chatStateButton.hidden = NO;
+           
+        }break;
+        default:
+            break;
+    }
+    
+    
+   // [self.chatCharacterLabel updateConstraintsIfNeeded];
+    
+    [self layoutIfNeeded];
+   // [self layoutSubviews];
 }
- */
+
+
 - (void)setupAuto {
 
     WSHD(weakSelf);
-    
-  [self.chatRecvTimeLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+   
+  [self.chatRecvTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
     make.top.left.right.mas_equalTo(0);
+      make.height.mas_equalTo(20);
   }];
 
-  [self.iconImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+  [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
     
     make.right.mas_equalTo(-10);
     make.height.width.mas_equalTo(44);
-    make.top.equalTo(weakSelf.chatRecvTimeLabel.mas_bottom).offset(25);
+    make.top.equalTo(weakSelf.chatRecvTimeLabel.mas_bottom).offset(20);
   }];
   self.iconImageView.contentMode = UIViewContentModeScaleAspectFit;
 
-  [self.chatCharacterLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+    
+//    
+//    [self.chatCharacterLabel setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
+    
+   
+    
+  [self.chatCharacterLabel mas_makeConstraints:^(MASConstraintMaker *make) {
    
     make.top.equalTo(weakSelf.iconImageView).offset(6);
     make.left.mas_greaterThanOrEqualTo(50);
     make.right.equalTo(weakSelf.iconImageView.mas_left).offset(-20);
-    make.bottom.mas_equalTo(-20);
+    //下一句一定要加
+    make.height.mas_greaterThanOrEqualTo(44);
+   //   make.height.mas_equalTo(100);
+    make.bottom.mas_equalTo(-10);
   }];
 
-  [self.chatbackgroundView mas_remakeConstraints:^(MASConstraintMaker *make) {
+
+    
+  [self.chatbackgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
     
     make.top.equalTo(weakSelf.chatCharacterLabel).offset(-5);
     make.left.equalTo(weakSelf.chatCharacterLabel).offset(-5);
     make.right.equalTo(weakSelf.chatCharacterLabel).offset(15);
     make.height.mas_greaterThanOrEqualTo(weakSelf.iconImageView);
-    make.bottom.equalTo(self.chatCharacterLabel).offset(5);
+    make.bottom.equalTo(weakSelf.chatCharacterLabel).offset(5);
   }];
-  [self.chatStateButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+  [self.chatStateButton mas_makeConstraints:^(MASConstraintMaker *make) {
    
     make.centerY.equalTo(weakSelf.chatbackgroundView);
     make.right.equalTo(weakSelf.chatbackgroundView.mas_left).offset(-10);
+    
   }];
+ 
 }
 - (void)iconImageViewClick:(UITapGestureRecognizer *)tap {
   if ([self.delegate
@@ -216,6 +258,13 @@
                       chatModel:self.chatModel];
   }
 }
+
+-(void)layoutSubviews{
+
+    [super layoutSubviews];
+    
+}
+
 - (void)chatCharacterLabelLongtap:(UILongPressGestureRecognizer *)longTap {
   if (longTap.state == UIGestureRecognizerStateBegan) {
     [self becomeFirstResponder];

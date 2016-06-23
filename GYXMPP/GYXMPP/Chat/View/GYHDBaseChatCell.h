@@ -9,14 +9,21 @@
 
 #import <UIKit/UIKit.h>
 #import "GYHDNewChatModel.h"
+#import "GYMessage.h"
+#import "UIImageView+WebCache.h"
+#import "NSString+dictionaryToJsonString.h"
 
 @interface GYHDBaseChatCell : UITableViewCell
 
-@property(nonatomic, weak) UILabel *chatRecvTimeLabel;
+@property(nonatomic,strong)GYMessage *chatMessage;
+
+@property(nonatomic, strong) UILabel *chatRecvTimeLabel;
 
 - (NSString *)changeTimeShow:(NSString *)timeStr;
 
 - (void)timeWithinTwoMinute:(GYHDNewChatModel *)lastModel
                CurrentModel:(GYHDNewChatModel *)chatModel;
+
+-(void)loadChatMessage:(GYMessage *)chatMessage;
 
 @end

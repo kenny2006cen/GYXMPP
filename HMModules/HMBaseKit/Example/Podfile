@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'HMBaseKit_Example' do
+  pod 'HMBaseKit', :path => '../'
+
+  target 'HMBaseKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

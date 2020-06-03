@@ -1,0 +1,16 @@
+PODS:
+  - HMBaseKit (0.0.1)
+
+DEPENDENCIES:
+  - HMBaseKit (from `../`)
+
+EXTERNAL SOURCES:
+  HMBaseKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  HMBaseKit: be60ee08eda154653b9f0a1697465fc0f881cefc
+
+PODFILE CHECKSUM: e29214b286110f774da998ef9cd5c7622fabade3
+
+COCOAPODS: 1.9.1

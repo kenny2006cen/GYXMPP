@@ -1,0 +1,6 @@
+framework module HMBaseKit {
+  umbrella header "HMBaseKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

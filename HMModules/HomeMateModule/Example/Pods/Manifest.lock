@@ -1,0 +1,45 @@
+PODS:
+  - CocoaAsyncSocket (7.6.3)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - HomeMateModule (0.0.1):
+    - CocoaAsyncSocket
+    - FMDB (~> 2.4)
+    - MJExtension
+    - Reachability
+    - SQLCipher
+  - MJExtension (3.2.1)
+  - Reachability (3.2)
+  - SQLCipher (4.3.0):
+    - SQLCipher/standard (= 4.3.0)
+  - SQLCipher/common (4.3.0)
+  - SQLCipher/standard (4.3.0):
+    - SQLCipher/common
+
+DEPENDENCIES:
+  - HomeMateModule (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - CocoaAsyncSocket
+    - FMDB
+    - MJExtension
+    - Reachability
+    - SQLCipher
+
+EXTERNAL SOURCES:
+  HomeMateModule:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  HomeMateModule: cfc7e6f37b4499f98c15afef3281e57679f9bc62
+  MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  SQLCipher: d305a7bd9af4b64f095c79bdc1a1fa50f2a15116
+
+PODFILE CHECKSUM: e49538a87446c88b5e0744561d48a1a41854b326
+
+COCOAPODS: 1.9.1

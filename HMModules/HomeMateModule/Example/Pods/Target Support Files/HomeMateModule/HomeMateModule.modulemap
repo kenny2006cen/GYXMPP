@@ -1,0 +1,6 @@
+framework module HomeMateModule {
+  umbrella header "HomeMateModule-umbrella.h"
+
+  export *
+  module * { export * }
+}

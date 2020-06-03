@@ -1,0 +1,46 @@
+{
+  "name": "HomeMateModule",
+  "version": "0.0.1",
+  "summary": "HomeMateSDK底层模块",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/likaiou@orvibo.com/HomeMateModule",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "likaiou@orvibo": "likaiou@orvibo.com"
+  },
+  "source": {
+    "git": "https://github.com/273307137@qq.com/HomeMateModule.git",
+    "tag": "0.0.1"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "HomeMateModule/Classes/**/*",
+  "compiler_flags": [
+    "-DSQLITE_HAS_CODEC",
+    "-DSQLITE_TEMP_STORE=2",
+    "-DSQLCIPHER_CRYPTO_CC",
+    "-DSQLITE_THREADSAFE"
+  ],
+  "dependencies": {
+    "SQLCipher": [
+
+    ],
+    "FMDB": [
+      "~> 2.4"
+    ],
+    "MJExtension": [
+
+    ],
+    "CocoaAsyncSocket": [
+
+    ],
+    "Reachability": [
+
+    ]
+  },
+  "libraries": "sqlite3"
+}
